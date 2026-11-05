@@ -1,0 +1,93 @@
+@import "tailwindcss";
+
+@custom-variant dark (&:where(.dark, .dark *));
+
+:root {
+  --font-serif: "Times New Roman", Times, "Liberation Serif", Georgia, serif;
+  --font-sans: "Times New Roman", Times, "Liberation Serif", Georgia, serif;
+  --font-mono: "Times New Roman", Times, "Liberation Serif", Georgia, serif;
+  --theme-purple: #1e3a8a;
+  --theme-purple-dark: #1e40af;
+  --theme-lavender: #dbeafe;
+  --theme-plum: #3b6cb7;
+}
+
+*, *::before, *::after {
+  box-sizing: border-box;
+}
+
+/* Ensure Times New Roman is the universal base font across all elements */
+html, body {
+  font-family: "Times New Roman", Times, "Liberation Serif", Georgia, serif;
+  color: #1e293b;
+  background-color: #ffffff;
+  max-width: 100vw;
+  overflow-x: hidden;
+  scroll-behavior: smooth;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+  text-rendering: optimizeLegibility;
+}
+
+#root {
+  min-height: 100dvh;
+  display: flex;
+  flex-direction: column;
+  width: 100%;
+  overflow-x: hidden;
+}
+
+/* Default all text-bearing HTML tags, headings, and buttons to Times New Roman */
+h1, h2, h3, h4, h5, h6, button, p, span, li, a, label, input, textarea, select, blockquote, figcaption, td, th, div {
+  font-family: "Times New Roman", Times, "Liberation Serif", Georgia, serif;
+}
+
+/* Prevent iOS zoom on form inputs on mobile while preserving desktop sizing */
+@media (max-width: 640px) {
+  input, select, textarea {
+    font-size: 16px;
+  }
+}
+
+/* Base academic typography utilities */
+.font-times, .font-sans-modern, .font-mono {
+  font-family: "Times New Roman", Times, "Liberation Serif", Georgia, serif !important;
+}
+
+code, pre {
+  font-family: ui-monospace, SFMono-Regular, Menlo, Monaco, Consolas, "Liberation Mono", "Courier New", monospace;
+}
+
+/* Strict academic italic styling: traditional, elegant, high-contrast serif italic */
+em, i, .italic, .font-times.italic {
+  font-family: var(--font-serif) !important;
+  font-style: italic !important;
+  letter-spacing: 0.01em;
+}
+
+/* Academic pull-quotes & emphasis blocks */
+blockquote {
+  font-family: var(--font-serif);
+  font-style: italic;
+  border-left: 2px solid #1e3a8a;
+  padding-left: 1rem;
+}
+
+/* Custom scrollbar for academic data tables & modals */
+::-webkit-scrollbar {
+  width: 6px;
+  height: 6px;
+}
+
+::-webkit-scrollbar-track {
+  background: transparent;
+}
+
+::-webkit-scrollbar-thumb {
+  background: #cbd5e1;
+  border-radius: 3px;
+}
+
+::-webkit-scrollbar-thumb:hover {
+  background: #94a3b8;
+}

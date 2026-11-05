@@ -1,0 +1,19 @@
+# Med-Silico Lab — Bun Runtime & Package Manager Configuration
+
+[install]
+# Use exact lockfile resolution and fast cache
+exact = false
+production = false
+peer = true
+
+[install.cache]
+disable = false
+
+[test]
+# Run unit & security tests across src/
+coverage = false
+timeout = 10000
+
+[run]
+silent = false
+

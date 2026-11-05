@@ -1,0 +1,7 @@
+{
+  "name": "Med-Silico Lab",
+  "description": "Med-Silico Lab is a premier in silico research consulting and academic publishing platform specializing in Molecular Docking, MD Simulations, QSAR, ADME/Tox, and Journal Guidance.",
+  "requestFramePermissions": [],
+  "majorCapabilities": ["MAJOR_CAPABILITY_SERVER_SIDE_GEMINI_API"]
+}
+
