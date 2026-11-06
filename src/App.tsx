@@ -203,7 +203,7 @@ export default function App() {
                           <img
                             src={shankarThapaImg}
                             alt="Shankar Thapa, M.Pharm"
-                            className="w-full h-full object-cover object-top"
+                            className="w-full h-full object-cover object-center"
                           />
                         </div>
                         <h4 className="text-base sm:text-lg font-bold text-slate-900 font-times">Shankar Thapa</h4>
@@ -222,7 +222,7 @@ export default function App() {
                           <img
                             src={sadikShaikImg}
                             alt="Sadik Shaik, PhD"
-                            className="w-full h-full object-cover object-top"
+                            className="w-full h-full object-cover object-center"
                           />
                         </div>
                         <h4 className="text-base sm:text-lg font-bold text-slate-900 font-times">Sadik Shaik</h4>
@@ -241,7 +241,7 @@ export default function App() {
                           <img
                             src={mahalakshmiBiradarImg}
                             alt="Mahalakshmi Suresha Biradar, M.Pharm"
-                            className="w-full h-full object-cover object-top"
+                            className="w-full h-full object-cover object-center"
                           />
                         </div>
                         <h4 className="text-base sm:text-lg font-bold text-slate-900 font-times">Mahalakshmi Suresha Biradar</h4>
