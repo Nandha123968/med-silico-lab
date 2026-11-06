@@ -70,11 +70,6 @@ export default function App() {
               <div className="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8">
                 <div className="grid grid-cols-1 lg:grid-cols-12 gap-8 items-center">
                   <div className="lg:col-span-8">
-                    <div className="inline-flex items-center gap-2 px-3 py-1 rounded-full bg-blue-50 border border-blue-200 text-[#1e3a8a] text-xs font-semibold uppercase tracking-wider mb-3">
-                      <span>MED-SILICO LAB</span>
-                      <span>&bull;</span>
-                      <span>EST. 2026</span>
-                    </div>
                     <h2 className="text-2xl sm:text-3xl font-bold text-slate-900 tracking-tight mb-2 font-times">
                       About Med-Silico Lab
                     </h2>
@@ -197,74 +192,53 @@ export default function App() {
                     </p>
                   </div>
 
-                  <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6 sm:gap-8 max-w-6xl mx-auto text-center font-times">
+                  <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-6 max-w-7xl mx-auto text-center font-times">
                     {/* Member 1: Shankar Thapa */}
-                    <div className="bg-white border border-slate-200/90 rounded-xl p-6 text-center flex flex-col items-center h-full shadow-2xs hover:shadow-md transition-shadow">
-                      <div className="w-24 h-24 sm:w-28 sm:h-28 rounded-full bg-gradient-to-tr from-blue-100 to-indigo-100 border-2 border-[#1e3a8a]/30 mb-4 overflow-hidden flex items-center justify-center text-[#1e3a8a] font-times text-2xl font-bold shrink-0 shadow-2xs">
-                        ST
-                      </div>
-                      <h4 className="text-base sm:text-lg font-bold text-slate-900 font-times">Shankar Thapa</h4>
-                      <p className="text-xs text-[#1e3a8a] font-bold mt-0.5">Founder, @ Med-Silico Lab</p>
-                      <div className="mt-3 pt-3 border-t border-slate-100 text-xs text-slate-600 space-y-1 text-center w-full">
-                        <div><strong>Qualification:</strong> M.Pharm (Medicinal Chemistry)</div>
-                        <div><strong>Specialization:</strong> In Silico Drug Design &amp; Molecular Modeling</div>
+                    <div className="bg-white border border-slate-200/90 rounded-xl p-6 text-center flex flex-col items-center justify-between h-full shadow-2xs hover:shadow-md transition-shadow">
+                      <div className="flex flex-col items-center w-full">
+                        <div className="w-24 h-24 sm:w-28 sm:h-28 rounded-full bg-gradient-to-tr from-blue-100 to-indigo-100 border-2 border-[#1e3a8a]/30 mb-4 overflow-hidden flex items-center justify-center text-[#1e3a8a] font-times text-2xl font-bold shrink-0 shadow-2xs">
+                          ST
+                        </div>
+                        <h4 className="text-base sm:text-lg font-bold text-slate-900 font-times">Shankar Thapa</h4>
+                        <p className="text-xs text-[#1e3a8a] font-bold mt-0.5">Founder, @ Med-Silico Lab</p>
+                        <div className="mt-3 pt-3 border-t border-slate-100 text-xs text-slate-600 space-y-1 text-center w-full">
+                          <div><strong>Qualification:</strong> M.Pharm (Medicinal Chemistry)</div>
+                          <div><strong>Specialization:</strong> In Silico Drug Design &amp; Molecular Modeling</div>
+                        </div>
                       </div>
                     </div>
 
                     {/* Member 2: Sadik Shaik */}
-                    <div className="bg-white border border-slate-200/90 rounded-xl p-6 text-center flex flex-col items-center h-full shadow-2xs hover:shadow-md transition-shadow">
-                      <div className="w-24 h-24 sm:w-28 sm:h-28 rounded-full bg-gradient-to-tr from-blue-100 to-indigo-100 border-2 border-[#1e3a8a]/30 mb-4 overflow-hidden flex items-center justify-center text-[#1e3a8a] font-times text-2xl font-bold shrink-0 shadow-2xs">
-                        SS
-                      </div>
-                      <h4 className="text-base sm:text-lg font-bold text-slate-900 font-times">Sadik Shaik</h4>
-                      <p className="text-xs text-[#1e3a8a] font-bold mt-0.5">Supervisor &amp; Consultant, Pharmacology Research</p>
-                      <div className="mt-3 pt-3 border-t border-slate-100 text-xs text-slate-600 space-y-1 text-center w-full">
-                        <div><strong>Qualification:</strong> PhD (Pharmacology)</div>
-                        <div><strong>Specialization:</strong> Pharmacological Screening &amp; In Vivo/In Silico Correlation</div>
+                    <div className="bg-white border border-slate-200/90 rounded-xl p-6 text-center flex flex-col items-center justify-between h-full shadow-2xs hover:shadow-md transition-shadow">
+                      <div className="flex flex-col items-center w-full">
+                        <div className="w-24 h-24 sm:w-28 sm:h-28 rounded-full bg-gradient-to-tr from-blue-100 to-indigo-100 border-2 border-[#1e3a8a]/30 mb-4 overflow-hidden flex items-center justify-center text-[#1e3a8a] font-times text-2xl font-bold shrink-0 shadow-2xs">
+                          SS
+                        </div>
+                        <h4 className="text-base sm:text-lg font-bold text-slate-900 font-times">Sadik Shaik</h4>
+                        <p className="text-xs text-[#1e3a8a] font-bold mt-0.5">Supervisor &amp; Consultant, Pharmacology Research</p>
+                        <div className="mt-3 pt-3 border-t border-slate-100 text-xs text-slate-600 space-y-1 text-center w-full">
+                          <div><strong>Qualification:</strong> PhD (Pharmacology)</div>
+                          <div><strong>Specialization:</strong> Pharmacological Screening &amp; In Vivo/In Silico Correlation</div>
+                        </div>
                       </div>
                     </div>
 
                     {/* Member 3: Mahalakshmi Suresha Biradar */}
-                    <div className="bg-white border border-slate-200/90 rounded-xl p-6 text-center flex flex-col items-center h-full shadow-2xs hover:shadow-md transition-shadow">
-                      <div className="w-24 h-24 sm:w-28 sm:h-28 rounded-full bg-gradient-to-tr from-blue-100 to-indigo-100 border-2 border-[#1e3a8a]/30 mb-4 overflow-hidden flex items-center justify-center text-[#1e3a8a] font-times text-2xl font-bold shrink-0 shadow-2xs">
-                        MB
-                      </div>
-                      <h4 className="text-base sm:text-lg font-bold text-slate-900 font-times">Mahalakshmi Suresha Biradar</h4>
-                      <p className="text-xs text-[#1e3a8a] font-bold mt-0.5">Expert CADD Research and Publication</p>
-                      <div className="mt-3 pt-3 border-t border-slate-100 text-xs text-slate-600 space-y-1 text-center w-full">
-                        <div><strong>Qualification:</strong> M.Pharm (Medicinal/Pharmaceutical Chemistry)</div>
-                        <div><strong>Specialization:</strong> CADD Workflows, Q1/Q2 Manuscript Publication Mentorship</div>
-                      </div>
-                    </div>
-
-                    {/* Member 4: Dr. Shivakumar */}
-                    <div className="bg-white border border-slate-200/90 rounded-xl p-6 text-center flex flex-col items-center h-full shadow-2xs hover:shadow-md transition-shadow">
-                      <div className="w-24 h-24 sm:w-28 sm:h-28 rounded-full bg-[#dbeafe] border-2 border-[#1e3a8a]/30 mb-4 overflow-hidden flex items-center justify-center text-[#1e3a8a] font-times text-2xl font-bold shrink-0">
-                        RS
-                      </div>
-                      <h4 className="text-base sm:text-lg font-bold text-slate-900 font-times">Dr. R. Shivakumar</h4>
-                      <p className="text-xs text-[#1e3a8a] font-bold mt-0.5">Senior Scientific Advisor &amp; Research Mentor</p>
-                      <div className="mt-3 pt-3 border-t border-slate-100 text-xs text-slate-600 space-y-1 text-center w-full">
-                        <div><strong>Qualification:</strong> Ph.D. in Chemistry (NIT Karnataka)</div>
-                        <div><strong>Postdoc:</strong> POSTECH, South Korea</div>
-                        <div><strong>Expertise:</strong> DFT, Molecular Docking, MD Simulations</div>
+                    <div className="bg-white border border-slate-200/90 rounded-xl p-6 text-center flex flex-col items-center justify-between h-full shadow-2xs hover:shadow-md transition-shadow">
+                      <div className="flex flex-col items-center w-full">
+                        <div className="w-24 h-24 sm:w-28 sm:h-28 rounded-full bg-gradient-to-tr from-blue-100 to-indigo-100 border-2 border-[#1e3a8a]/30 mb-4 overflow-hidden flex items-center justify-center text-[#1e3a8a] font-times text-2xl font-bold shrink-0 shadow-2xs">
+                          MB
+                        </div>
+                        <h4 className="text-base sm:text-lg font-bold text-slate-900 font-times">Mahalakshmi Suresha Biradar</h4>
+                        <p className="text-xs text-[#1e3a8a] font-bold mt-0.5">Expert CADD Research and Publication</p>
+                        <div className="mt-3 pt-3 border-t border-slate-100 text-xs text-slate-600 space-y-1 text-center w-full">
+                          <div><strong>Qualification:</strong> M.Pharm (Medicinal/Pharmaceutical Chemistry)</div>
+                          <div><strong>Specialization:</strong> CADD Workflows, Q1/Q2 Manuscript Publication Mentorship</div>
+                        </div>
                       </div>
                     </div>
 
-                    {/* Member 5: Mrs. Lalitha Bai */}
-                    <div className="bg-white border border-slate-200/90 rounded-xl p-6 text-center flex flex-col items-center h-full shadow-2xs hover:shadow-md transition-shadow">
-                      <div className="w-24 h-24 sm:w-28 sm:h-28 rounded-full bg-[#dbeafe] border-2 border-[#1e3a8a]/30 mb-4 overflow-hidden flex items-center justify-center text-[#1e3a8a] font-times text-2xl font-bold shrink-0">
-                        LB
-                      </div>
-                      <h4 className="text-base sm:text-lg font-bold text-slate-900 font-times">Mrs. Lalitha Bai</h4>
-                      <p className="text-xs text-[#1e3a8a] font-bold mt-0.5">Director &amp; Chief Financial Officer (CFO)</p>
-                      <div className="mt-3 pt-3 border-t border-slate-100 text-xs text-slate-600 space-y-1 text-center w-full">
-                        <div><strong>Qualification:</strong> BBM</div>
-                        <div><strong>Focus:</strong> Research Grants, Workshop Coordination, Institutional Partnerships</div>
-                      </div>
-                    </div>
-
-                    {/* Member 6: It may be You */}
+                    {/* Member 4: It may be You */}
                     <div
                       onClick={() => {
                         setActiveTab('contact');
@@ -517,6 +491,21 @@ export default function App() {
         logoUrl={customLogoUrl}
         onLogoChange={handleSafeLogoChange}
       />
+
+      {/* 6. Floating WhatsApp Instant Connect Widget */}
+      <a
+        href="https://wa.me/917827943097?text=Hello%20Med-Silico%20Lab%2C%20I%20am%20interested%20in%20your%20computational%20research%20services"
+        target="_blank"
+        rel="noopener noreferrer"
+        aria-label="Chat with us on WhatsApp"
+        title="Chat on WhatsApp (+91 7827943097)"
+        className="fixed bottom-6 right-6 z-50 bg-[#25D366] hover:bg-[#20ba59] text-white p-3.5 rounded-full shadow-lg hover:shadow-2xl transition-all duration-300 flex items-center gap-2 group cursor-pointer hover:scale-105"
+      >
+        <svg className="w-6 h-6 fill-current shrink-0" viewBox="0 0 24 24">
+          <path d="M.057 24l1.687-6.163c-1.041-1.804-1.588-3.849-1.587-5.946.003-6.556 5.338-11.891 11.893-11.891 3.181.001 6.167 1.24 8.413 3.488 2.245 2.248 3.481 5.236 3.48 8.414-.003 6.557-5.338 11.892-11.893 11.892-1.99-.001-3.951-.5-5.688-1.448l-6.305 1.654zm6.597-3.807c1.676.995 3.276 1.591 5.392 1.592 5.448 0 9.886-4.434 9.889-9.885.002-5.462-4.415-9.89-9.881-9.892-5.452 0-9.887 4.434-9.889 9.884-.001 2.225.651 3.891 1.746 5.634l-.999 3.648 3.742-.981zm11.387-5.464c-.074-.124-.272-.198-.57-.347-.297-.149-1.758-.868-2.031-.967-.272-.099-.47-.149-.669.149-.198.297-.768.967-.941 1.165-.173.198-.347.223-.644.074-.297-.149-1.255-.462-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.297-.347.446-.521.151-.172.2-.296.3-.495.099-.198.05-.372-.025-.521-.075-.148-.669-1.611-.916-2.206-.242-.579-.487-.501-.669-.51l-.57-.01c-.198 0-.52.074-.792.372s-1.04 1.016-1.04 2.479 1.065 2.876 1.213 3.074c.149.198 2.095 3.2 5.076 4.487.709.306 1.263.489 1.694.626.712.226 1.36.194 1.872.118.571-.085 1.758-.719 2.006-1.413.248-.695.248-1.29.173-1.414z" />
+        </svg>
+        <span className="hidden sm:inline font-times text-xs font-bold tracking-wide pr-1">WhatsApp Us</span>
+      </a>
     </div>
   );
 }

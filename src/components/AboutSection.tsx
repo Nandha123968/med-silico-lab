@@ -93,12 +93,6 @@ export const AboutSection: React.FC<AboutSectionProps> = ({
         
         {/* Section Header */}
         <div className="text-center max-w-4xl mx-auto mb-12 sm:mb-16">
-          <div className="inline-flex items-center gap-2 px-3.5 py-1.5 rounded-full bg-blue-50 border border-blue-200 text-[#1e3a8a] text-xs sm:text-sm font-semibold uppercase tracking-wider mb-3">
-            <span>MED-SILICO LAB</span>
-            <span>&bull;</span>
-            <span>EST. 2026</span>
-          </div>
-          
           <div className="text-xs sm:text-sm text-slate-600 font-times tracking-wide uppercase font-semibold mb-2">
             Computational Drug Discovery | Pharmaceutical Research | Scientific Education
           </div>
@@ -420,74 +414,53 @@ export const AboutSection: React.FC<AboutSectionProps> = ({
             </p>
           </div>
 
-          <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6 sm:gap-8 max-w-6xl mx-auto font-times">
+          <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-6 max-w-7xl mx-auto font-times">
             {/* 1. Shankar Thapa */}
-            <div className="bg-white border border-slate-200 rounded-xl p-6 text-center flex flex-col items-center h-full shadow-2xs hover:shadow-md transition-shadow">
-              <div className="w-24 h-24 sm:w-28 sm:h-28 rounded-full bg-gradient-to-tr from-blue-100 to-indigo-100 border-2 border-[#1e3a8a]/30 mb-4 overflow-hidden flex items-center justify-center text-[#1e3a8a] font-times text-2xl font-bold shrink-0 shadow-2xs">
-                ST
-              </div>
-              <h4 className="text-base sm:text-lg font-bold text-slate-900 font-times">Shankar Thapa</h4>
-              <p className="text-xs text-[#1e3a8a] font-bold mt-0.5">Founder, @ Med-Silico Lab</p>
-              <div className="mt-3 pt-3 border-t border-slate-100 text-xs text-slate-600 space-y-1 text-center w-full">
-                <div><strong>Qualification:</strong> M.Pharm (Medicinal Chemistry)</div>
-                <div><strong>Specialization:</strong> In Silico Drug Design &amp; Molecular Modeling</div>
+            <div className="bg-white border border-slate-200 rounded-xl p-6 text-center flex flex-col items-center justify-between h-full shadow-2xs hover:shadow-md transition-shadow">
+              <div className="flex flex-col items-center w-full">
+                <div className="w-24 h-24 sm:w-28 sm:h-28 rounded-full bg-gradient-to-tr from-blue-100 to-indigo-100 border-2 border-[#1e3a8a]/30 mb-4 overflow-hidden flex items-center justify-center text-[#1e3a8a] font-times text-2xl font-bold shrink-0 shadow-2xs">
+                  ST
+                </div>
+                <h4 className="text-base sm:text-lg font-bold text-slate-900 font-times">Shankar Thapa</h4>
+                <p className="text-xs text-[#1e3a8a] font-bold mt-0.5">Founder, @ Med-Silico Lab</p>
+                <div className="mt-3 pt-3 border-t border-slate-100 text-xs text-slate-600 space-y-1 text-center w-full">
+                  <div><strong>Qualification:</strong> M.Pharm (Medicinal Chemistry)</div>
+                  <div><strong>Specialization:</strong> In Silico Drug Design &amp; Molecular Modeling</div>
+                </div>
               </div>
             </div>
 
             {/* 2. Sadik Shaik */}
-            <div className="bg-white border border-slate-200 rounded-xl p-6 text-center flex flex-col items-center h-full shadow-2xs hover:shadow-md transition-shadow">
-              <div className="w-24 h-24 sm:w-28 sm:h-28 rounded-full bg-gradient-to-tr from-blue-100 to-indigo-100 border-2 border-[#1e3a8a]/30 mb-4 overflow-hidden flex items-center justify-center text-[#1e3a8a] font-times text-2xl font-bold shrink-0 shadow-2xs">
-                SS
-              </div>
-              <h4 className="text-base sm:text-lg font-bold text-slate-900 font-times">Sadik Shaik</h4>
-              <p className="text-xs text-[#1e3a8a] font-bold mt-0.5">Supervisor &amp; Consultant, Pharmacology Research</p>
-              <div className="mt-3 pt-3 border-t border-slate-100 text-xs text-slate-600 space-y-1 text-center w-full">
-                <div><strong>Qualification:</strong> PhD (Pharmacology)</div>
-                <div><strong>Specialization:</strong> Pharmacological Screening &amp; In Vivo/In Silico Correlation</div>
+            <div className="bg-white border border-slate-200 rounded-xl p-6 text-center flex flex-col items-center justify-between h-full shadow-2xs hover:shadow-md transition-shadow">
+              <div className="flex flex-col items-center w-full">
+                <div className="w-24 h-24 sm:w-28 sm:h-28 rounded-full bg-gradient-to-tr from-blue-100 to-indigo-100 border-2 border-[#1e3a8a]/30 mb-4 overflow-hidden flex items-center justify-center text-[#1e3a8a] font-times text-2xl font-bold shrink-0 shadow-2xs">
+                  SS
+                </div>
+                <h4 className="text-base sm:text-lg font-bold text-slate-900 font-times">Sadik Shaik</h4>
+                <p className="text-xs text-[#1e3a8a] font-bold mt-0.5">Supervisor &amp; Consultant, Pharmacology Research</p>
+                <div className="mt-3 pt-3 border-t border-slate-100 text-xs text-slate-600 space-y-1 text-center w-full">
+                  <div><strong>Qualification:</strong> PhD (Pharmacology)</div>
+                  <div><strong>Specialization:</strong> Pharmacological Screening &amp; In Vivo/In Silico Correlation</div>
+                </div>
               </div>
             </div>
 
             {/* 3. Mahalakshmi Suresha Biradar */}
-            <div className="bg-white border border-slate-200 rounded-xl p-6 text-center flex flex-col items-center h-full shadow-2xs hover:shadow-md transition-shadow">
-              <div className="w-24 h-24 sm:w-28 sm:h-28 rounded-full bg-gradient-to-tr from-blue-100 to-indigo-100 border-2 border-[#1e3a8a]/30 mb-4 overflow-hidden flex items-center justify-center text-[#1e3a8a] font-times text-2xl font-bold shrink-0 shadow-2xs">
-                MB
-              </div>
-              <h4 className="text-base sm:text-lg font-bold text-slate-900 font-times">Mahalakshmi Suresha Biradar</h4>
-              <p className="text-xs text-[#1e3a8a] font-bold mt-0.5">Expert CADD Research and Publication</p>
-              <div className="mt-3 pt-3 border-t border-slate-100 text-xs text-slate-600 space-y-1 text-center w-full">
-                <div><strong>Qualification:</strong> M.Pharm (Medicinal/Pharmaceutical Chemistry)</div>
-                <div><strong>Specialization:</strong> CADD Workflows, Q1/Q2 Manuscript Publication Mentorship</div>
-              </div>
-            </div>
-
-            {/* 4. Dr. Shivakumar */}
-            <div className="bg-white border border-slate-200 rounded-xl p-6 text-center flex flex-col items-center h-full shadow-2xs hover:shadow-md transition-shadow">
-              <div className="w-24 h-24 sm:w-28 sm:h-28 rounded-full bg-[#dbeafe] border-2 border-[#1e3a8a]/30 mb-4 overflow-hidden flex items-center justify-center text-[#1e3a8a] font-times text-2xl font-bold shrink-0">
-                RS
-              </div>
-              <h4 className="text-base sm:text-lg font-bold text-slate-900 font-times">Dr. R. Shivakumar</h4>
-              <p className="text-xs text-[#1e3a8a] font-bold mt-0.5">Senior Scientific Advisor &amp; Research Mentor</p>
-              <div className="mt-3 pt-3 border-t border-slate-100 text-xs text-slate-600 space-y-1 text-center w-full">
-                <div><strong>Qualification:</strong> Ph.D. in Chemistry (NIT Karnataka)</div>
-                <div><strong>Postdoc:</strong> POSTECH, South Korea</div>
-                <div><strong>Expertise:</strong> DFT, Molecular Docking, MD Simulations</div>
+            <div className="bg-white border border-slate-200 rounded-xl p-6 text-center flex flex-col items-center justify-between h-full shadow-2xs hover:shadow-md transition-shadow">
+              <div className="flex flex-col items-center w-full">
+                <div className="w-24 h-24 sm:w-28 sm:h-28 rounded-full bg-gradient-to-tr from-blue-100 to-indigo-100 border-2 border-[#1e3a8a]/30 mb-4 overflow-hidden flex items-center justify-center text-[#1e3a8a] font-times text-2xl font-bold shrink-0 shadow-2xs">
+                  MB
+                </div>
+                <h4 className="text-base sm:text-lg font-bold text-slate-900 font-times">Mahalakshmi Suresha Biradar</h4>
+                <p className="text-xs text-[#1e3a8a] font-bold mt-0.5">Expert CADD Research and Publication</p>
+                <div className="mt-3 pt-3 border-t border-slate-100 text-xs text-slate-600 space-y-1 text-center w-full">
+                  <div><strong>Qualification:</strong> M.Pharm (Medicinal/Pharmaceutical Chemistry)</div>
+                  <div><strong>Specialization:</strong> CADD Workflows, Q1/Q2 Manuscript Publication Mentorship</div>
+                </div>
               </div>
             </div>
 
-            {/* 5. Mrs. Lalitha Bai */}
-            <div className="bg-white border border-slate-200 rounded-xl p-6 text-center flex flex-col items-center h-full shadow-2xs hover:shadow-md transition-shadow">
-              <div className="w-24 h-24 sm:w-28 sm:h-28 rounded-full bg-[#dbeafe] border-2 border-[#1e3a8a]/30 mb-4 overflow-hidden flex items-center justify-center text-[#1e3a8a] font-times text-2xl font-bold shrink-0">
-                LB
-              </div>
-              <h4 className="text-base sm:text-lg font-bold text-slate-900 font-times">Mrs. Lalitha Bai</h4>
-              <p className="text-xs text-[#1e3a8a] font-bold mt-0.5">Director &amp; Chief Financial Officer (CFO)</p>
-              <div className="mt-3 pt-3 border-t border-slate-100 text-xs text-slate-600 space-y-1 text-center w-full">
-                <div><strong>Qualification:</strong> BBM</div>
-                <div><strong>Focus:</strong> Research Grants, Workshop Coordination, Institutional Partnerships</div>
-              </div>
-            </div>
-
-            {/* 6. "It May Be You" Recruitment Card */}
+            {/* 4. "It May Be You" Recruitment Card */}
             <div className="bg-[#dbeafe] text-slate-900 rounded-xl p-6 text-center flex flex-col items-center justify-between border border-blue-200 h-full shadow-2xs hover:shadow-md transition-shadow">
               <div className="flex flex-col items-center">
                 <div className="w-20 h-20 sm:w-24 sm:h-24 rounded-full bg-white border-2 border-dashed border-[#1e3a8a]/40 mb-3 flex items-center justify-center text-[#1e3a8a] font-times text-3xl font-light">

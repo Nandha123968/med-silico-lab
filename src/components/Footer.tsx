@@ -1,6 +1,6 @@
 import React from 'react';
 import { NavTab } from './Navbar';
-import { Mail, Phone, MapPin, ArrowUp, Code2, ShieldCheck, GraduationCap } from 'lucide-react';
+import { Mail, Phone, MapPin, ArrowUp, Code2, ShieldCheck, GraduationCap, Youtube } from 'lucide-react';
 import { sanitizeUrl } from '../utils/security';
 import defaultLogo from '../assets/images/medsilico_logo.png';
 
@@ -59,22 +59,35 @@ export const Footer: React.FC<FooterProps> = ({
                 target="_blank"
                 rel="noopener noreferrer"
                 aria-label="LinkedIn"
+                title="LinkedIn"
                 className="w-7 h-7 rounded bg-slate-900 text-white hover:bg-[#1e3a8a] flex items-center justify-center text-xs font-bold transition font-times"
               >
                 in
+              </a>
+              <a
+                href="https://www.youtube.com/watch?v=TQJgJB1-6ms&t=9s"
+                target="_blank"
+                rel="noopener noreferrer"
+                aria-label="YouTube Channel"
+                title="Watch on YouTube"
+                className="w-7 h-7 rounded-full bg-[#FF0000] text-white hover:bg-red-700 flex items-center justify-center transition shadow-2xs cursor-pointer"
+              >
+                <Youtube className="w-3.5 h-3.5 fill-current" />
               </a>
               <a
                 href="https://wa.me/917827943097"
                 target="_blank"
                 rel="noopener noreferrer"
                 aria-label="WhatsApp"
-                className="w-7 h-7 rounded-full border border-slate-900 text-slate-900 hover:bg-[#1e3a8a] hover:text-white hover:border-[#1e3a8a] flex items-center justify-center transition"
+                title="Chat on WhatsApp (+91 7827943097)"
+                className="w-7 h-7 rounded-full bg-[#25D366] text-white hover:bg-[#20ba59] flex items-center justify-center transition shadow-2xs cursor-pointer"
               >
                 <Phone className="w-3.5 h-3.5" />
               </a>
               <a
                 href="mailto:contact@medsilicolab.com"
                 aria-label="Email"
+                title="Email Us"
                 className="w-7 h-7 rounded-full border border-slate-900 text-slate-900 hover:bg-[#1e3a8a] hover:text-white hover:border-[#1e3a8a] flex items-center justify-center transition"
               >
                 <Mail className="w-3.5 h-3.5" />
@@ -84,19 +97,6 @@ export const Footer: React.FC<FooterProps> = ({
             <p className="font-times text-slate-700 text-xs sm:text-sm leading-relaxed max-w-md">
               Med-Silico Lab is an academic research consulting platform specializing in Molecular Docking, GPU Molecular Dynamics Simulations (GROMACS), 2D/3D QSAR, In Silico Vaccine Design, and Q1/Q2 SCI Manuscript Publication Guidance.
             </p>
-
-            {onOpenWpExport && (
-              <div className="pt-1">
-                <button
-                  type="button"
-                  onClick={onOpenWpExport}
-                  className="inline-flex items-center gap-2 px-3.5 py-2 rounded-md bg-white border border-slate-300 hover:border-[#1e3a8a] text-slate-800 hover:text-[#1e3a8a] text-xs font-times transition cursor-pointer shadow-2xs"
-                >
-                  <Code2 className="w-3.5 h-3.5 text-[#1e3a8a] shrink-0" />
-                  <span>Export WordPress Theme Files (.zip)</span>
-                </button>
-              </div>
-            )}
           </div>
 
           {/* Column 2: Quick Links matching Page 3 of Reference PDF */}

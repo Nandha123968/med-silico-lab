@@ -70,8 +70,8 @@ export const Navbar: React.FC<NavbarProps> = ({
               <div className="text-xl sm:text-2xl lg:text-[26px] font-bold tracking-tight text-slate-900 hover:text-[#1e3a8a] transition font-times leading-tight truncate">
                 {brandName}
               </div>
-              <div className="text-xs sm:text-sm lg:text-[14px] font-times italic tracking-wide text-[#1e3a8a] font-medium block leading-tight mt-0.5">
-                Bridging Medicinal Chemistry &amp; Computational Science &bull; <span className="font-bold text-[#1e3a8a] not-italic">EST. 2026</span>
+              <div className="text-xs sm:text-sm lg:text-[14px] font-times italic tracking-wide text-[#1e3a8a] font-medium block leading-tight mt-0.5 truncate">
+                Bridging Medicinal Chemistry &amp; Computational Science
               </div>
             </div>
           </button>

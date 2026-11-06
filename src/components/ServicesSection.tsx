@@ -76,15 +76,6 @@ export const ServicesSection: React.FC<ServicesSectionProps> = ({
                 <Calculator className="w-4 h-4 text-[#1e3a8a] shrink-0" />
                 <span>{showEstimator ? 'Hide Cost Estimator' : 'Instant Fee Estimator'}</span>
               </button>
-
-              {onOpenWpExport && (
-                <button
-                  onClick={onOpenWpExport}
-                  className="inline-flex items-center justify-center gap-2 px-4 py-2 rounded-md text-sm font-times bg-white border border-blue-300 text-slate-800 hover:bg-blue-50 transition cursor-pointer"
-                >
-                  <span>WordPress Theme (.zip)</span>
-                </button>
-              )}
             </div>
           </div>
 
