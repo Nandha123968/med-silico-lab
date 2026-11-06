@@ -1,6 +1,7 @@
-﻿import React, { useState } from 'react';
+import React, { useState } from 'react';
 import { Menu, X, ArrowUpRight } from 'lucide-react';
 import { sanitizeUrl } from '../utils/security';
+import defaultLogo from '../assets/images/medsilico_logo.png';
 
 export type NavTab =
   | 'home'
@@ -60,13 +61,11 @@ export const Navbar: React.FC<NavbarProps> = ({
             className="flex items-center gap-2.5 sm:gap-3 text-left focus:outline-none focus-visible:ring-2 focus-visible:ring-[#1e3a8a] rounded cursor-pointer min-w-0 shrink-0"
             aria-label="Med-Silico Lab Home"
           >
-            {safeLogoUrl ? (
-              <img src={safeLogoUrl} alt={brandName} className="h-9 sm:h-12 w-auto object-contain max-w-[130px] sm:max-w-[160px]" />
-            ) : (
-              <div className="w-9 h-9 sm:w-11 sm:h-11 rounded-lg bg-gradient-to-br from-[#1e3a8a] via-[#2563eb] to-[#1e3a8a] text-white flex items-center justify-center font-times font-bold text-xs sm:text-base shadow-xs border border-[#1e3a8a]/40 shrink-0">
-                <span>MS</span>
-              </div>
-            )}
+            <img
+              src={safeLogoUrl || defaultLogo}
+              alt={brandName}
+              className="h-10 sm:h-12 w-auto object-contain shrink-0 transition-transform duration-200 hover:scale-105"
+            />
             <div className="min-w-0">
               <div className="text-base sm:text-xl font-bold tracking-tight text-slate-900 hover:text-[#1e3a8a] transition font-times leading-tight truncate">
                 {brandName}

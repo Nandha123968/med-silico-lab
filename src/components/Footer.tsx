@@ -1,7 +1,8 @@
-﻿import React from 'react';
+import React from 'react';
 import { NavTab } from './Navbar';
 import { Mail, Phone, MapPin, ArrowUp, Code2, ShieldCheck, GraduationCap } from 'lucide-react';
 import { sanitizeUrl } from '../utils/security';
+import defaultLogo from '../assets/images/medsilico_logo.png';
 
 interface FooterProps {
   onSelectTab: (tab: NavTab) => void;
@@ -35,18 +36,16 @@ export const Footer: React.FC<FooterProps> = ({
           {/* Column 1: Academic Emblem & Brand Info matching Page 3 of Reference PDF */}
           <div className="sm:col-span-2 lg:col-span-5 space-y-4 font-times">
             <div className="bg-white p-5 rounded-xl border border-slate-200/90 shadow-2xs inline-flex flex-col items-center text-center max-w-[260px] w-full">
-              {safeLogoUrl ? (
-                <img src={safeLogoUrl} alt={brandName} className="h-16 w-auto object-contain mb-2" />
-              ) : (
-                <div className="w-14 h-14 rounded-full bg-[#1e3a8a] text-white flex items-center justify-center mb-2 shadow-xs border-2 border-amber-400">
-                  <GraduationCap className="w-7 h-7" />
-                </div>
-              )}
+              <img
+                src={safeLogoUrl || defaultLogo}
+                alt={brandName}
+                className="h-16 w-auto object-contain mb-2"
+              />
               <div className="text-base font-bold text-[#1e3a5f] tracking-wide uppercase font-times">
                 {brandName}
               </div>
               <div className="text-[11px] text-slate-600 font-times mt-0.5">
-                EST. &bull; 2024
+                EST. &bull; 2025
               </div>
               <div className="mt-2 px-3 py-0.5 bg-rose-600 text-white text-[10px] font-bold uppercase tracking-wider rounded-xs font-times">
                 Your Research Companion

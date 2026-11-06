@@ -21,13 +21,14 @@ import { DEFAULT_WP_CONFIG, WordPressThemeConfig } from './utils/wpThemeGenerato
 import { sanitizeUrl } from './utils/security';
 import { ArrowRight, Star, Archive, Disc, Calendar, CheckCircle2, BarChart3, Puzzle, User } from 'lucide-react';
 import labImg from './assets/images/computational_lab_workstation_1793813247708.jpg';
+import medsilicoLogo from './assets/images/medsilico_logo.png';
 
 export default function App() {
   const [activeTab, setActiveTab] = useState<NavTab>('home');
   const [selectedService, setSelectedService] = useState<ServiceItem | null>(null);
   const [isWpModalOpen, setIsWpModalOpen] = useState(false);
   const [wpConfig, setWpConfig] = useState<WordPressThemeConfig>(DEFAULT_WP_CONFIG);
-  const [customLogoUrl, setCustomLogoUrl] = useState<string>('');
+  const [customLogoUrl, setCustomLogoUrl] = useState<string>(medsilicoLogo);
   const [consultationServiceId, setConsultationServiceId] = useState<string>('molecular-docking');
 
   const handleOpenConsultation = (serviceId?: string) => {
