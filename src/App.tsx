@@ -70,11 +70,19 @@ export default function App() {
               <div className="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8">
                 <div className="grid grid-cols-1 lg:grid-cols-12 gap-8 items-center">
                   <div className="lg:col-span-8">
-                    <h2 className="text-2xl sm:text-3xl font-normal text-slate-900 tracking-tight mb-4 font-times">
-                      About Us
+                    <div className="inline-flex items-center gap-2 px-3 py-1 rounded-full bg-blue-50 border border-blue-200 text-[#1e3a8a] text-xs font-semibold uppercase tracking-wider mb-3">
+                      <span>MED-SILICO LAB</span>
+                      <span>&bull;</span>
+                      <span>EST. 2026</span>
+                    </div>
+                    <h2 className="text-2xl sm:text-3xl font-bold text-slate-900 tracking-tight mb-2 font-times">
+                      About Med-Silico Lab
                     </h2>
+                    <p className="font-times italic text-[#1e3a8a] text-base sm:text-lg mb-4 font-medium">
+                      &ldquo;Transforming Pharmaceutical Research Through Computational Innovation.&rdquo;
+                    </p>
                     <p className="font-times text-slate-800 text-sm sm:text-[15.5px] leading-relaxed mb-6">
-                      Med-Silico Lab is dedicated to advancing scientific research through the seamless integration of theoretical knowledge and practical computational expertise. With a vision to democratize access to research opportunities, we provide high-quality in silico scientific training, molecular docking, GPU-accelerated molecular dynamics (GROMACS), QSAR, and publication mentorship to students, researchers, and professionals worldwide, regardless of location or resources. Through comprehensive hands-on workshops and real-world project mentorship, we ensure participants not only grasp core biophysical concepts but also develop the skills to apply them effectively in addressing complex scientific challenges.
+                      Med-Silico Lab is a scientific and educational platform dedicated to advancing pharmaceutical research through computational approaches, medicinal chemistry, and modern drug discovery technologies. We aim to bridge the gap between conventional pharmaceutical sciences and emerging computational technologies by providing practical research guidance, scientific training, and computational drug discovery resources to students, research scholars, academicians, and pharmaceutical researchers worldwide.
                     </p>
                     <button
                       onClick={() => {
@@ -83,7 +91,7 @@ export default function App() {
                       }}
                       className="px-6 py-2.5 bg-[#1e3a8a] hover:bg-[#1e40af] text-white text-sm font-times rounded-md transition cursor-pointer inline-flex items-center justify-center gap-2 shadow-2xs"
                     >
-                      <span>Learn More</span>
+                      <span>Explore Vision, Mission &amp; Research</span>
                     </button>
                   </div>
 
@@ -180,57 +188,107 @@ export default function App() {
 
                 {/* Team Members Section matching Page 1 & 2 of Reference PDF */}
                 <div className="mt-14 sm:mt-16 pt-4">
-                  <h3 className="text-2xl sm:text-3xl font-normal text-slate-900 mb-10 text-center font-times">
-                    Team Members
-                  </h3>
+                  <div className="text-center max-w-2xl mx-auto mb-10 sm:mb-12">
+                    <h3 className="text-2xl sm:text-3xl font-bold text-slate-900 font-times">
+                      Team Members
+                    </h3>
+                    <p className="font-times italic text-slate-600 text-xs sm:text-sm mt-1">
+                      Guided by computational chemists, pharmacology researchers, and academic educators
+                    </p>
+                  </div>
 
-                  <div className="grid grid-cols-1 sm:grid-cols-3 gap-8 max-w-4xl mx-auto text-center font-times">
-                    {/* Member 1: Dr. Shivakumar */}
-                    <div className="flex flex-col items-center">
-                      <div className="w-32 h-32 sm:w-36 sm:h-36 rounded-full bg-gradient-to-b from-[#dbeafe] to-[#d7bfe2] border-2 border-[#1e3a8a]/25 mb-4 flex items-center justify-center text-[#1e3a8a] font-times text-3xl font-bold shadow-xs">
+                  <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6 sm:gap-8 max-w-6xl mx-auto text-center font-times">
+                    {/* Member 1: Shankar Thapa */}
+                    <div className="bg-white border border-slate-200/90 rounded-xl p-6 text-center flex flex-col items-center h-full shadow-2xs hover:shadow-md transition-shadow">
+                      <div className="w-24 h-24 sm:w-28 sm:h-28 rounded-full bg-gradient-to-tr from-blue-100 to-indigo-100 border-2 border-[#1e3a8a]/30 mb-4 overflow-hidden flex items-center justify-center text-[#1e3a8a] font-times text-2xl font-bold shrink-0 shadow-2xs">
+                        ST
+                      </div>
+                      <h4 className="text-base sm:text-lg font-bold text-slate-900 font-times">Shankar Thapa</h4>
+                      <p className="text-xs text-[#1e3a8a] font-bold mt-0.5">Founder, @ Med-Silico Lab</p>
+                      <div className="mt-3 pt-3 border-t border-slate-100 text-xs text-slate-600 space-y-1 text-center w-full">
+                        <div><strong>Qualification:</strong> M.Pharm (Medicinal Chemistry)</div>
+                        <div><strong>Specialization:</strong> In Silico Drug Design &amp; Molecular Modeling</div>
+                      </div>
+                    </div>
+
+                    {/* Member 2: Sadik Shaik */}
+                    <div className="bg-white border border-slate-200/90 rounded-xl p-6 text-center flex flex-col items-center h-full shadow-2xs hover:shadow-md transition-shadow">
+                      <div className="w-24 h-24 sm:w-28 sm:h-28 rounded-full bg-gradient-to-tr from-blue-100 to-indigo-100 border-2 border-[#1e3a8a]/30 mb-4 overflow-hidden flex items-center justify-center text-[#1e3a8a] font-times text-2xl font-bold shrink-0 shadow-2xs">
+                        SS
+                      </div>
+                      <h4 className="text-base sm:text-lg font-bold text-slate-900 font-times">Sadik Shaik</h4>
+                      <p className="text-xs text-[#1e3a8a] font-bold mt-0.5">Supervisor &amp; Consultant, Pharmacology Research</p>
+                      <div className="mt-3 pt-3 border-t border-slate-100 text-xs text-slate-600 space-y-1 text-center w-full">
+                        <div><strong>Qualification:</strong> PhD (Pharmacology)</div>
+                        <div><strong>Specialization:</strong> Pharmacological Screening &amp; In Vivo/In Silico Correlation</div>
+                      </div>
+                    </div>
+
+                    {/* Member 3: Mahalakshmi Suresha Biradar */}
+                    <div className="bg-white border border-slate-200/90 rounded-xl p-6 text-center flex flex-col items-center h-full shadow-2xs hover:shadow-md transition-shadow">
+                      <div className="w-24 h-24 sm:w-28 sm:h-28 rounded-full bg-gradient-to-tr from-blue-100 to-indigo-100 border-2 border-[#1e3a8a]/30 mb-4 overflow-hidden flex items-center justify-center text-[#1e3a8a] font-times text-2xl font-bold shrink-0 shadow-2xs">
+                        MB
+                      </div>
+                      <h4 className="text-base sm:text-lg font-bold text-slate-900 font-times">Mahalakshmi Suresha Biradar</h4>
+                      <p className="text-xs text-[#1e3a8a] font-bold mt-0.5">Expert CADD Research and Publication</p>
+                      <div className="mt-3 pt-3 border-t border-slate-100 text-xs text-slate-600 space-y-1 text-center w-full">
+                        <div><strong>Qualification:</strong> M.Pharm (Medicinal/Pharmaceutical Chemistry)</div>
+                        <div><strong>Specialization:</strong> CADD Workflows, Q1/Q2 Manuscript Publication Mentorship</div>
+                      </div>
+                    </div>
+
+                    {/* Member 4: Dr. Shivakumar */}
+                    <div className="bg-white border border-slate-200/90 rounded-xl p-6 text-center flex flex-col items-center h-full shadow-2xs hover:shadow-md transition-shadow">
+                      <div className="w-24 h-24 sm:w-28 sm:h-28 rounded-full bg-[#dbeafe] border-2 border-[#1e3a8a]/30 mb-4 overflow-hidden flex items-center justify-center text-[#1e3a8a] font-times text-2xl font-bold shrink-0">
                         RS
                       </div>
-                      <h4 className="text-base sm:text-lg font-normal text-slate-900 font-times">Dr. Shivakumar</h4>
-                      <p className="text-xs sm:text-sm text-slate-600 mt-1 font-times">
-                        Founder, Director &amp; Educator @ Med-Silico Lab
-                      </p>
-                      <p className="text-xs text-slate-600 mt-2 leading-relaxed max-w-xs font-times">
-                        Qualification: Ph.D. in Chemistry from National Institute of Technology (NIT) Karnataka<br />
-                        Postdoc from Pohang University of Science and Technology (POSTECH), South Korea
-                      </p>
+                      <h4 className="text-base sm:text-lg font-bold text-slate-900 font-times">Dr. R. Shivakumar</h4>
+                      <p className="text-xs text-[#1e3a8a] font-bold mt-0.5">Senior Scientific Advisor &amp; Research Mentor</p>
+                      <div className="mt-3 pt-3 border-t border-slate-100 text-xs text-slate-600 space-y-1 text-center w-full">
+                        <div><strong>Qualification:</strong> Ph.D. in Chemistry (NIT Karnataka)</div>
+                        <div><strong>Postdoc:</strong> POSTECH, South Korea</div>
+                        <div><strong>Expertise:</strong> DFT, Molecular Docking, MD Simulations</div>
+                      </div>
                     </div>
 
-                    {/* Member 2: Mrs. Lalitha Bai */}
-                    <div className="flex flex-col items-center">
-                      <div className="w-32 h-32 sm:w-36 sm:h-36 rounded-full bg-gradient-to-b from-[#dbeafe] to-[#d7bfe2] border-2 border-[#1e3a8a]/25 mb-4 flex items-center justify-center text-[#1e3a8a] font-times text-3xl font-bold shadow-xs">
+                    {/* Member 5: Mrs. Lalitha Bai */}
+                    <div className="bg-white border border-slate-200/90 rounded-xl p-6 text-center flex flex-col items-center h-full shadow-2xs hover:shadow-md transition-shadow">
+                      <div className="w-24 h-24 sm:w-28 sm:h-28 rounded-full bg-[#dbeafe] border-2 border-[#1e3a8a]/30 mb-4 overflow-hidden flex items-center justify-center text-[#1e3a8a] font-times text-2xl font-bold shrink-0">
                         LB
                       </div>
-                      <h4 className="text-base sm:text-lg font-normal text-slate-900 font-times">Mrs. Lalitha Bai</h4>
-                      <p className="text-xs sm:text-sm text-slate-600 mt-1 font-times">
-                        Director &amp; Chief Financial Officer (CFO) @ Med-Silico Lab
-                      </p>
-                      <p className="text-xs text-slate-600 mt-2 leading-relaxed font-times">
-                        Qualification: BBM
-                      </p>
+                      <h4 className="text-base sm:text-lg font-bold text-slate-900 font-times">Mrs. Lalitha Bai</h4>
+                      <p className="text-xs text-[#1e3a8a] font-bold mt-0.5">Director &amp; Chief Financial Officer (CFO)</p>
+                      <div className="mt-3 pt-3 border-t border-slate-100 text-xs text-slate-600 space-y-1 text-center w-full">
+                        <div><strong>Qualification:</strong> BBM</div>
+                        <div><strong>Focus:</strong> Research Grants, Workshop Coordination, Institutional Partnerships</div>
+                      </div>
                     </div>
 
-                    {/* Member 3: It may be You */}
+                    {/* Member 6: It may be You */}
                     <div
                       onClick={() => {
                         setActiveTab('contact');
                         window.scrollTo({ top: 0, behavior: 'smooth' });
                       }}
-                      className="flex flex-col items-center cursor-pointer group"
+                      className="bg-[#dbeafe] text-slate-900 rounded-xl p-6 text-center flex flex-col items-center justify-between border border-blue-200 h-full shadow-2xs hover:shadow-md transition-shadow cursor-pointer"
                     >
-                      <div className="w-32 h-32 sm:w-36 sm:h-36 rounded-full bg-slate-200 group-hover:bg-[#dbeafe] transition mb-4 flex items-center justify-center text-slate-500 group-hover:text-[#1e3a8a] shadow-xs">
-                        <User className="w-16 h-16" />
+                      <div className="flex flex-col items-center">
+                        <div className="w-20 h-20 sm:w-24 sm:h-24 rounded-full bg-white border-2 border-dashed border-[#1e3a8a]/40 mb-3 flex items-center justify-center text-[#1e3a8a] font-times text-3xl font-light">
+                          +
+                        </div>
+                        <h4 className="text-base sm:text-lg font-bold text-slate-900 font-times">
+                          It May Be You!
+                        </h4>
+                        <p className="text-xs text-[#1e3a8a] font-bold mt-1">
+                          Join Us !
+                        </p>
+                        <p className="text-xs text-slate-600 mt-2 font-times italic">
+                          Inviting Ph.D. researchers and industry computational chemists for hybrid workshop sessions.
+                        </p>
                       </div>
-                      <h4 className="text-base sm:text-lg font-normal text-slate-900 group-hover:text-[#1e3a8a] font-times">
-                        It may be You
-                      </h4>
-                      <p className="text-xs sm:text-sm text-slate-600 mt-1 font-times underline-offset-4 group-hover:underline">
-                        Join Us !
-                      </p>
+                      <span className="mt-5 inline-block py-2 px-5 bg-[#1e3a8a] text-white text-xs sm:text-sm font-medium rounded-md font-times">
+                        Apply Now
+                      </span>
                     </div>
                   </div>
                 </div>

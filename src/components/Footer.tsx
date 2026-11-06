@@ -45,10 +45,10 @@ export const Footer: React.FC<FooterProps> = ({
                 {brandName}
               </div>
               <div className="text-[11px] text-slate-600 font-times mt-0.5">
-                EST. &bull; 2026
+                EST. 2026 &bull; Computational Drug Discovery &bull; Pharmaceutical Research &bull; Scientific Education
               </div>
-              <div className="mt-2 px-3 py-0.5 bg-rose-600 text-white text-[10px] font-bold uppercase tracking-wider rounded-xs font-times">
-                Your Research Companion
+              <div className="mt-2 px-3 py-1 bg-[#1e3a8a] text-white text-[10px] font-bold uppercase tracking-wider rounded-xs font-times">
+                Transforming Pharmaceutical Research Through Computational Innovation
               </div>
             </div>
 

@@ -44,10 +44,27 @@ export const Hero: React.FC<HeroProps> = ({
       {/* Hero Content */}
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-12 sm:py-16 md:py-20 lg:py-24 relative z-10 w-full">
         <div className="max-w-3xl">
+          {/* Institutional Pillars Badge */}
+          <div className="inline-flex flex-wrap items-center gap-2 px-3.5 py-1.5 rounded-full bg-blue-950/80 border border-blue-400/40 text-blue-200 text-xs sm:text-sm font-times mb-4 backdrop-blur-xs">
+            <span className="font-bold text-white tracking-wider">MED-SILICO LAB</span>
+            <span className="text-blue-400">&bull;</span>
+            <span className="text-blue-300 font-semibold">EST. 2026</span>
+            <span className="hidden sm:inline text-blue-400">|</span>
+            <span className="hidden sm:inline text-blue-100 italic">Computational Drug Discovery &bull; Pharmaceutical Research &bull; Scientific Education</span>
+          </div>
+
           {/* Main Headline in Times New Roman matching PDF */}
-          <h1 className="text-2xl sm:text-4xl lg:text-[44px] font-bold italic tracking-tight text-white mb-5 sm:mb-6 leading-[1.2] sm:leading-[1.18] font-times drop-shadow-[0_2px_12px_rgba(0,0,0,0.9)]">
+          <h1 className="text-2xl sm:text-4xl lg:text-[44px] font-bold italic tracking-tight text-white mb-3 sm:mb-4 leading-[1.2] sm:leading-[1.18] font-times drop-shadow-[0_2px_12px_rgba(0,0,0,0.9)]">
             Transform Your Scientific Career with Hands-On In Silico Techniques &amp; Publication Consulting
           </h1>
+
+          {/* Institutional Tagline & Bridge */}
+          <p className="font-times italic text-base sm:text-xl text-blue-200 font-semibold mb-3 drop-shadow-[0_1px_6px_rgba(0,0,0,0.8)]">
+            &ldquo;Transforming Pharmaceutical Research Through Computational Innovation.&rdquo;
+          </p>
+          <div className="text-xs sm:text-sm font-times text-blue-300 italic mb-5">
+            Bridging Medicinal Chemistry and Computational Science.
+          </div>
 
           {/* Subtitle / Body Copy in Times New Roman */}
           <p className="font-times text-sm sm:text-base lg:text-lg text-blue-50 leading-relaxed mb-7 sm:mb-8 max-w-2xl drop-shadow-[0_1px_6px_rgba(0,0,0,0.8)]">
