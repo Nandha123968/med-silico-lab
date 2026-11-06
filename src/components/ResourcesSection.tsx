@@ -76,17 +76,17 @@ export const ResourcesSection: React.FC = () => {
                 target="_blank"
                 rel="noopener noreferrer"
                 title={`Visit official ${tool.name} website`}
-                className="bg-white rounded-lg border border-slate-200/90 shadow-2xs hover:shadow-md hover:border-[#1e3a8a] transition-all duration-200 p-3 sm:p-4 flex flex-col items-center justify-between text-center group cursor-pointer h-full min-h-[130px] sm:min-h-[145px]"
+                className="bg-white rounded-xl border border-slate-200/90 shadow-2xs hover:shadow-md hover:border-[#1e3a8a] transition-all duration-200 p-3 sm:p-3.5 flex flex-col items-center justify-between text-center group cursor-pointer h-full min-h-[136px] sm:min-h-[150px]"
               >
-                <div className="w-full flex-1 flex items-center justify-center p-1">
+                <div className="w-full h-16 sm:h-18 flex items-center justify-center p-1 overflow-hidden">
                   <img
                     src={tool.logo}
                     alt={`${tool.name} logo`}
-                    className="max-h-12 sm:max-h-14 max-w-[110px] w-auto h-auto object-contain transition-transform duration-200 group-hover:scale-105"
+                    className="max-h-12 sm:max-h-14 max-w-[85%] w-auto h-auto object-contain object-center drop-shadow-2xs transition-transform duration-200 group-hover:scale-105"
                     loading="lazy"
                   />
                 </div>
-                <div className="w-full pt-2 border-t border-slate-100 mt-2">
+                <div className="w-full pt-2 border-t border-slate-100 mt-1">
                   <span className="text-xs sm:text-[13px] font-times text-slate-800 font-medium leading-tight group-hover:text-[#1e3a8a] transition-colors line-clamp-1 block">
                     {tool.name}
                   </span>
@@ -146,12 +146,12 @@ export const ResourcesSection: React.FC = () => {
                 className="bg-white rounded-lg border border-slate-200 shadow-xs hover:shadow-md transition-shadow overflow-hidden flex flex-col justify-between"
               >
                 <div>
-                  {/* Visual Header Image */}
-                  <div className="w-full h-48 sm:h-56 bg-slate-100 overflow-hidden border-b border-slate-200">
+                  {/* Visual Header Image with 16:10 aspect ratio and 0% clipping */}
+                  <div className="w-full aspect-[16/10] bg-slate-900 overflow-hidden border-b border-slate-200">
                     <img
                       src={manual.image}
                       alt={manual.titleStrip}
-                      className="w-full h-full object-cover object-center"
+                      className="w-full h-full object-cover object-center transition-transform duration-300 hover:scale-[1.02]"
                       loading="lazy"
                     />
                   </div>
