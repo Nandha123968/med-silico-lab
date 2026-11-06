@@ -22,6 +22,8 @@ import { sanitizeUrl } from './utils/security';
 import { ArrowRight, Star, Archive, Disc, Calendar, CheckCircle2, BarChart3, Puzzle, User } from 'lucide-react';
 import labImg from './assets/images/computational_lab_workstation_1793813247708.jpg';
 import medsilicoLogo from './assets/images/medsilico_logo.png';
+import sadikShaikImg from './assets/images/team/sadik_shaik.jpg';
+import mahalakshmiBiradarImg from './assets/images/team/mahalakshmi_biradar.jpg';
 
 export default function App() {
   const [activeTab, setActiveTab] = useState<NavTab>('home');
@@ -211,8 +213,12 @@ export default function App() {
                     {/* Member 2: Sadik Shaik */}
                     <div className="bg-white border border-slate-200/90 rounded-xl p-6 text-center flex flex-col items-center justify-between h-full shadow-2xs hover:shadow-md transition-shadow">
                       <div className="flex flex-col items-center w-full">
-                        <div className="w-24 h-24 sm:w-28 sm:h-28 rounded-full bg-gradient-to-tr from-blue-100 to-indigo-100 border-2 border-[#1e3a8a]/30 mb-4 overflow-hidden flex items-center justify-center text-[#1e3a8a] font-times text-2xl font-bold shrink-0 shadow-2xs">
-                          SS
+                        <div className="w-24 h-24 sm:w-28 sm:h-28 rounded-full border-2 border-[#1e3a8a]/40 mb-4 overflow-hidden flex items-center justify-center shrink-0 shadow-xs bg-slate-100">
+                          <img
+                            src={sadikShaikImg}
+                            alt="Sadik Shaik, PhD"
+                            className="w-full h-full object-cover object-top"
+                          />
                         </div>
                         <h4 className="text-base sm:text-lg font-bold text-slate-900 font-times">Sadik Shaik</h4>
                         <p className="text-xs text-[#1e3a8a] font-bold mt-0.5">Supervisor &amp; Consultant, Pharmacology Research</p>
@@ -226,8 +232,12 @@ export default function App() {
                     {/* Member 3: Mahalakshmi Suresha Biradar */}
                     <div className="bg-white border border-slate-200/90 rounded-xl p-6 text-center flex flex-col items-center justify-between h-full shadow-2xs hover:shadow-md transition-shadow">
                       <div className="flex flex-col items-center w-full">
-                        <div className="w-24 h-24 sm:w-28 sm:h-28 rounded-full bg-gradient-to-tr from-blue-100 to-indigo-100 border-2 border-[#1e3a8a]/30 mb-4 overflow-hidden flex items-center justify-center text-[#1e3a8a] font-times text-2xl font-bold shrink-0 shadow-2xs">
-                          MB
+                        <div className="w-24 h-24 sm:w-28 sm:h-28 rounded-full border-2 border-[#1e3a8a]/40 mb-4 overflow-hidden flex items-center justify-center shrink-0 shadow-xs bg-slate-100">
+                          <img
+                            src={mahalakshmiBiradarImg}
+                            alt="Mahalakshmi Suresha Biradar, M.Pharm"
+                            className="w-full h-full object-cover object-top"
+                          />
                         </div>
                         <h4 className="text-base sm:text-lg font-bold text-slate-900 font-times">Mahalakshmi Suresha Biradar</h4>
                         <p className="text-xs text-[#1e3a8a] font-bold mt-0.5">Expert CADD Research and Publication</p>
