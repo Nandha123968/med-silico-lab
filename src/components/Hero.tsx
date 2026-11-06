@@ -18,9 +18,9 @@ export const Hero: React.FC<HeroProps> = ({
   onViewWorkshops,
 }) => {
   return (
-    <div className="relative bg-[#020617] text-white overflow-hidden border-b border-blue-950/60 min-h-[460px] sm:min-h-[520px] lg:min-h-[560px] flex items-center font-times">
-      {/* Dynamic Cloudinary background animation video with static fallback */}
-      <div className="absolute inset-0 z-0 pointer-events-none overflow-hidden">
+    <div className="relative bg-[#020617] text-white overflow-hidden border-b border-blue-950/60 min-h-[520px] sm:min-h-[600px] lg:min-h-[660px] flex items-center font-times">
+      {/* Dynamic Cloudinary background animation video with full fit and static fallback */}
+      <div className="absolute inset-0 z-0 pointer-events-none overflow-hidden flex items-center justify-center">
         <video
           autoPlay
           loop
@@ -28,7 +28,7 @@ export const Hero: React.FC<HeroProps> = ({
           playsInline
           poster={heroImg}
           preload="auto"
-          className="w-full h-full object-cover object-center opacity-80 scale-105"
+          className="w-full h-full object-contain object-center opacity-90"
         >
           <source src={CLOUDINARY_HERO_VIDEO_URL} type="video/mp4" />
           <img
@@ -37,8 +37,8 @@ export const Hero: React.FC<HeroProps> = ({
             className="w-full h-full object-cover object-center opacity-40"
           />
         </video>
-        {/* Soft overlay ensuring high video visibility (80%) while keeping text 100% readable */}
-        <div className="absolute inset-0 bg-gradient-to-r from-[#020617]/80 via-[#020617]/40 to-transparent" />
+        {/* Soft gradient vignette ensuring full video fit visibility while keeping left text 100% readable */}
+        <div className="absolute inset-0 bg-gradient-to-r from-[#020617] via-[#020617]/65 to-transparent pointer-events-none" />
       </div>
 
       {/* Hero Content */}

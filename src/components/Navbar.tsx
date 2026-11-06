@@ -51,26 +51,26 @@ export const Navbar: React.FC<NavbarProps> = ({
   };
 
   return (
-    <header className="bg-white/98 backdrop-blur-md border-b border-slate-200/80 sticky top-0 z-40 shadow-2xs w-full font-times">
+    <header className="bg-white/98 backdrop-blur-md border-b border-slate-200/80 sticky top-0 z-40 shadow-xs w-full font-times">
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-        <div className="flex items-center justify-between gap-2 sm:gap-3 lg:gap-4 h-16 sm:h-20">
+        <div className="flex items-center justify-between gap-2 sm:gap-4 h-22 sm:h-26 lg:h-28">
 
           {/* Zone 1: Brand title & academic shield insignia */}
           <button
             onClick={() => handleLinkClick('home')}
-            className="flex items-center gap-2.5 sm:gap-3 text-left focus:outline-none focus-visible:ring-2 focus-visible:ring-[#1e3a8a] rounded cursor-pointer min-w-0 shrink-0"
+            className="flex items-center gap-3 sm:gap-4 text-left focus:outline-none focus-visible:ring-2 focus-visible:ring-[#1e3a8a] rounded-lg p-1 cursor-pointer min-w-0 shrink-0"
             aria-label="Med-Silico Lab Home"
           >
             <img
               src={safeLogoUrl || defaultLogo}
               alt={brandName}
-              className="h-10 sm:h-12 w-auto object-contain shrink-0 transition-transform duration-200 hover:scale-105"
+              className="h-16 sm:h-20 lg:h-[86px] w-auto object-contain shrink-0 drop-shadow-sm transition-transform duration-200 hover:scale-105"
             />
             <div className="min-w-0">
-              <div className="text-base sm:text-xl font-bold tracking-tight text-slate-900 hover:text-[#1e3a8a] transition font-times leading-tight truncate">
+              <div className="text-xl sm:text-2xl lg:text-[26px] font-bold tracking-tight text-slate-900 hover:text-[#1e3a8a] transition font-times leading-tight truncate">
                 {brandName}
               </div>
-              <div className="text-[10px] sm:text-xs font-times italic tracking-wide text-[#1e3a8a] font-medium block leading-tight truncate max-w-[180px] sm:max-w-none">
+              <div className="text-xs sm:text-sm lg:text-[15px] font-times italic tracking-wide text-[#1e3a8a] font-medium block leading-tight truncate max-w-[220px] sm:max-w-none mt-0.5">
                 Your Research Companion
               </div>
             </div>

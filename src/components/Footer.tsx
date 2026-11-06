@@ -35,11 +35,11 @@ export const Footer: React.FC<FooterProps> = ({
           
           {/* Column 1: Academic Emblem & Brand Info matching Page 3 of Reference PDF */}
           <div className="sm:col-span-2 lg:col-span-5 space-y-4 font-times">
-            <div className="bg-white p-5 rounded-xl border border-slate-200/90 shadow-2xs inline-flex flex-col items-center text-center max-w-[260px] w-full">
+            <div className="bg-white p-6 rounded-2xl border border-slate-200/90 shadow-xs inline-flex flex-col items-center text-center max-w-[300px] w-full">
               <img
                 src={safeLogoUrl || defaultLogo}
                 alt={brandName}
-                className="h-16 w-auto object-contain mb-2"
+                className="h-28 sm:h-32 w-auto object-contain mb-3 drop-shadow-xs transition-transform duration-200 hover:scale-105"
               />
               <div className="text-base font-bold text-[#1e3a5f] tracking-wide uppercase font-times">
                 {brandName}
