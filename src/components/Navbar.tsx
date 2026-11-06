@@ -53,24 +53,24 @@ export const Navbar: React.FC<NavbarProps> = ({
   return (
     <header className="bg-white/98 backdrop-blur-md border-b border-slate-200/80 sticky top-0 z-40 shadow-xs w-full font-times">
       <div className="max-w-[1440px] mx-auto px-3 sm:px-6 lg:px-6 xl:px-8">
-        <div className="flex items-center justify-between gap-2 sm:gap-4 h-20 sm:h-24 lg:h-26 xl:h-28">
+        <div className="flex items-center justify-between gap-2 sm:gap-4 lg:gap-6 h-20 sm:h-22 lg:h-24">
 
           {/* Zone 1: Brand title & academic shield insignia */}
           <button
             onClick={() => handleLinkClick('home')}
-            className="flex items-center gap-2 sm:gap-3 xl:gap-3.5 text-left focus:outline-none focus-visible:ring-2 focus-visible:ring-[#1e3a8a] rounded-lg p-1 cursor-pointer shrink-0"
+            className="flex items-center gap-2.5 sm:gap-3 text-left focus:outline-none focus-visible:ring-2 focus-visible:ring-[#1e3a8a] rounded-lg p-1 cursor-pointer shrink-0 z-10"
             aria-label="Med-Silico Lab Home"
           >
             <img
               src={safeLogoUrl || defaultLogo}
               alt={brandName}
-              className="h-13 sm:h-16 lg:h-[68px] xl:h-[76px] w-auto object-contain shrink-0 drop-shadow-sm transition-transform duration-200 hover:scale-105"
+              className="h-12 sm:h-14 lg:h-16 w-auto object-contain shrink-0 drop-shadow-sm transition-transform duration-200 hover:scale-105"
             />
-            <div className="min-w-0">
-              <div className="text-base sm:text-xl lg:text-lg xl:text-2xl font-bold tracking-tight text-slate-900 hover:text-[#1e3a8a] transition font-times leading-tight truncate">
+            <div className="shrink-0 min-w-0">
+              <div className="text-base sm:text-lg xl:text-xl font-bold tracking-tight text-slate-900 hover:text-[#1e3a8a] transition font-times leading-tight whitespace-nowrap">
                 {brandName}
               </div>
-              <div className="text-[10px] sm:text-xs lg:text-[11px] xl:text-[12.5px] font-times italic tracking-tight text-[#1e3a8a] font-medium block leading-tight mt-0.5 truncate max-w-[180px] sm:max-w-none">
+              <div className="text-[10px] sm:text-[11px] xl:text-xs font-times italic tracking-tight text-[#1e3a8a] font-medium block leading-tight mt-0.5 whitespace-nowrap">
                 Bridging Medicinal Chemistry &amp; Computational Science
               </div>
             </div>
@@ -79,25 +79,24 @@ export const Navbar: React.FC<NavbarProps> = ({
           {/* Zone 2: Navigation Links - Enlarged & Crisp Font for Desktop & Laptops */}
           <nav
             aria-label="Primary Navigation"
-            className="hidden lg:flex items-center justify-center flex-1 min-w-0 gap-1 xl:gap-2 2xl:gap-3.5 text-[14px] xl:text-[16px] 2xl:text-[17.5px] text-slate-800 font-times px-1"
+            className="hidden lg:flex items-center justify-center gap-1 xl:gap-2.5 2xl:gap-3.5 text-[14px] xl:text-[15.5px] 2xl:text-[16.5px] text-slate-800 font-times px-2 shrink-0"
           >
             {navLinks.map((link) => (
               <button
                 key={link.id}
                 onClick={() => handleLinkClick(link.id)}
-                className={`transition-colors whitespace-nowrap shrink-0 px-1.5 xl:px-2.5 py-1.5 border-b-[2.5px] cursor-pointer font-times ${activeTab === link.id
+                className={`transition-colors whitespace-nowrap shrink-0 px-2 xl:px-2.5 py-1.5 border-b-[2.5px] cursor-pointer font-times ${activeTab === link.id
                   ? 'border-[#1e3a8a] text-[#1e3a8a] font-bold'
                   : 'border-transparent text-slate-700 hover:text-[#1e3a8a] hover:border-blue-300 font-medium'
                   }`}
               >
-                <span className="hidden 2xl:inline">{link.label}</span>
-                <span className="2xl:hidden">{link.shortLabel || link.label}</span>
+                <span>{link.shortLabel || link.label}</span>
               </button>
             ))}
           </nav>
 
           {/* Zone 3: Consultation Quote Action & Mobile/Tablet Menu Toggle */}
-          <div className="flex items-center gap-2 shrink-0">
+          <div className="flex items-center gap-2 shrink-0 z-10">
             <button
               onClick={onOpenConsultation}
               className="hidden sm:inline-flex items-center gap-1.5 px-3 xl:px-4 py-2 text-xs xl:text-sm font-bold text-white bg-[#1e3a8a] hover:bg-[#1e40af] rounded-md shadow-xs transition cursor-pointer whitespace-nowrap shrink-0 font-times"
