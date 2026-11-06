@@ -19,7 +19,7 @@ export const Hero: React.FC<HeroProps> = ({
 }) => {
   return (
     <div className="relative bg-[#020617] text-white overflow-hidden border-b border-blue-950/60 min-h-[calc(100vh-5.5rem)] sm:min-h-[calc(100vh-6.5rem)] lg:min-h-[calc(100vh-7rem)] flex items-center font-times">
-      {/* Dynamic Cloudinary background animation video full screen with 85% opacity */}
+      {/* Dynamic Cloudinary background animation video full screen with 90% opacity */}
       <div className="absolute inset-0 z-0 pointer-events-none overflow-hidden">
         <video
           autoPlay
@@ -28,19 +28,19 @@ export const Hero: React.FC<HeroProps> = ({
           playsInline
           poster={heroImg}
           preload="auto"
-          className="w-full h-full object-cover object-[center_28%] opacity-85 scale-[1.08] origin-top"
+          className="w-full h-full object-cover object-[center_38%] opacity-90 scale-[1.04] origin-center"
         >
           <source src={CLOUDINARY_HERO_VIDEO_URL} type="video/mp4" />
           <img
             src={heroImg}
             alt="Biomolecular docking background"
-            className="w-full h-full object-cover object-[center_28%] opacity-40 scale-[1.08] origin-top"
+            className="w-full h-full object-cover object-[center_38%] opacity-45 scale-[1.04] origin-center"
           />
         </video>
-        {/* Soft gradient vignette letting 85% video vibrancy shine across the screen */}
-        <div className="absolute inset-0 bg-gradient-to-r from-[#020617]/85 via-[#020617]/40 to-transparent pointer-events-none" />
-        {/* Bottom gradient fade ensuring bottom video date is completely masked under all aspect ratios */}
-        <div className="absolute inset-x-0 bottom-0 h-20 bg-gradient-to-t from-[#020617] via-[#020617]/60 to-transparent pointer-events-none" />
+        {/* Soft gradient vignette letting 90% video vibrancy shine across the screen */}
+        <div className="absolute inset-0 bg-gradient-to-r from-[#020617]/85 via-[#020617]/35 to-transparent pointer-events-none" />
+        {/* Subtle bottom gradient keeping bottom edge clean while letting MEDSILICO shine through */}
+        <div className="absolute inset-x-0 bottom-0 h-8 sm:h-10 bg-gradient-to-t from-[#020617] to-transparent pointer-events-none" />
       </div>
 
       {/* Hero Content - Clean balanced layout matching reference screenshot */}

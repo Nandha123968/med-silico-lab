@@ -159,7 +159,7 @@ export const ContactSection: React.FC<ContactSectionProps> = ({
     const text = `MED-SILICO LAB - CALL FOR APPLICATIONS
 =====================================================
 Advertisement No.: MSL/AI/2026/08
-Dated: 18-08-2025
+Dated: 18-08-2026
 
 INVITATION FOR SCIENTIFIC WORKSHOP FACILITATORS & RESOURCE PERSONS (HYBRID MODE)
 
@@ -216,7 +216,7 @@ Send credentials directly to: contact@medsilicolab.com
 
           <div className="text-xs font-times text-slate-500 mt-4 space-y-0.5">
             <div>Advertisement No.: MSL/AI/2026/08</div>
-            <div>Dated: 18-08-2025</div>
+            <div>Dated: 18-08-2026</div>
           </div>
 
           <p className="font-times italic text-xs text-slate-600 mt-3 max-w-xl mx-auto">

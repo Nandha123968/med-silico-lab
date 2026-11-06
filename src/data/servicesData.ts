@@ -645,7 +645,7 @@ export const WORKSHOPS_DATA: WorkshopItem[] = [
   {
     id: 'ws-recent-cadd',
     title: 'Comprehensive Three-Week Certificate Course on Computer-Aided Drug Design (CADD)',
-    dateStr: '5th May - 23rd May 2025',
+    dateStr: '5th May - 23rd May 2026',
     duration: '21 Days',
     timings: '6:30 PM - 8:30 PM IST',
     mode: 'Intensive Boot Camp',
@@ -667,7 +667,7 @@ export const WORKSHOPS_DATA: WorkshopItem[] = [
   {
     id: 'ws-recent-qsar',
     title: 'Advanced Training on 2D & 3D QSAR with CoMFA & CoMSIA Modeling',
-    dateStr: '4th to 13th August 2025',
+    dateStr: '4th to 13th August 2026',
     duration: '10 Days',
     timings: '6:30 PM - 8:30 PM IST',
     mode: 'Online Hands-on Workshop',
