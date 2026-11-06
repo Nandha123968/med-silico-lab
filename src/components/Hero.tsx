@@ -2,6 +2,10 @@ import React from 'react';
 import { ArrowRight, Microscope, Database, FileCheck, ShieldCheck } from 'lucide-react';
 import heroImg from '../assets/images/hero_biomolecular_docking_1793813246445.jpg';
 
+const CLOUDINARY_HERO_VIDEO_URL =
+  import.meta.env.VITE_CLOUDINARY_VIDEO_URL ||
+  'https://res.cloudinary.com/zcvc3fdh/video/upload/v1793949446/justmed_video_no_gemini_logo.mp4';
+
 interface HeroProps {
   onExploreServices: () => void;
   onOpenConsultation: () => void;
@@ -15,15 +19,25 @@ export const Hero: React.FC<HeroProps> = ({
 }) => {
   return (
     <div className="relative bg-[#020617] text-white overflow-hidden border-b border-blue-950/60 min-h-[460px] sm:min-h-[520px] lg:min-h-[560px] flex items-center font-times">
-      {/* Static navy blue ambient backdrop with hero image */}
-      <div className="absolute inset-0 z-0 pointer-events-none">
-        <img
-          src={heroImg}
-          alt="Biomolecular docking background"
-          className="w-full h-full object-cover object-center opacity-20 mix-blend-luminosity"
-          referrerPolicy="no-referrer"
-        />
-        <div className="absolute inset-0 bg-gradient-to-br from-[#020617] via-[#0c1a40] to-[#1e3a8a]/70" />
+      {/* Dynamic Cloudinary background animation video with static fallback */}
+      <div className="absolute inset-0 z-0 pointer-events-none overflow-hidden">
+        <video
+          autoPlay
+          loop
+          muted
+          playsInline
+          poster={heroImg}
+          preload="auto"
+          className="w-full h-full object-cover object-center opacity-45 mix-blend-screen scale-105"
+        >
+          <source src={CLOUDINARY_HERO_VIDEO_URL} type="video/mp4" />
+          <img
+            src={heroImg}
+            alt="Biomolecular docking background"
+            className="w-full h-full object-cover object-center opacity-25 mix-blend-luminosity"
+          />
+        </video>
+        <div className="absolute inset-0 bg-gradient-to-r from-[#020617] via-[#020617]/85 to-[#0c1a40]/60" />
       </div>
 
       {/* Hero Content */}
