@@ -199,7 +199,7 @@ export default function App() {
                     {/* Member 1: Shankar Thapa */}
                     <div className="bg-white border border-slate-200/90 rounded-xl p-6 text-center flex flex-col items-center justify-between h-full shadow-2xs hover:shadow-md transition-shadow">
                       <div className="flex flex-col items-center w-full">
-                        <div className="w-24 h-24 sm:w-28 sm:h-28 rounded-full border-2 border-[#1e3a8a]/40 mb-4 overflow-hidden flex items-center justify-center shrink-0 shadow-xs bg-slate-100">
+                        <div className="w-32 h-32 sm:w-36 sm:h-36 rounded-full border-2 border-[#1e3a8a]/40 mb-4 overflow-hidden flex items-center justify-center shrink-0 shadow-xs bg-slate-100">
                           <img
                             src={shankarThapaImg}
                             alt="Shankar Thapa, M.Pharm"
@@ -218,7 +218,7 @@ export default function App() {
                     {/* Member 2: Sadik Shaik */}
                     <div className="bg-white border border-slate-200/90 rounded-xl p-6 text-center flex flex-col items-center justify-between h-full shadow-2xs hover:shadow-md transition-shadow">
                       <div className="flex flex-col items-center w-full">
-                        <div className="w-24 h-24 sm:w-28 sm:h-28 rounded-full border-2 border-[#1e3a8a]/40 mb-4 overflow-hidden flex items-center justify-center shrink-0 shadow-xs bg-slate-100">
+                        <div className="w-32 h-32 sm:w-36 sm:h-36 rounded-full border-2 border-[#1e3a8a]/40 mb-4 overflow-hidden flex items-center justify-center shrink-0 shadow-xs bg-slate-100">
                           <img
                             src={sadikShaikImg}
                             alt="Sadik Shaik, PhD"
@@ -237,7 +237,7 @@ export default function App() {
                     {/* Member 3: Mahalakshmi Suresha Biradar */}
                     <div className="bg-white border border-slate-200/90 rounded-xl p-6 text-center flex flex-col items-center justify-between h-full shadow-2xs hover:shadow-md transition-shadow">
                       <div className="flex flex-col items-center w-full">
-                        <div className="w-24 h-24 sm:w-28 sm:h-28 rounded-full border-2 border-[#1e3a8a]/40 mb-4 overflow-hidden flex items-center justify-center shrink-0 shadow-xs bg-slate-100">
+                        <div className="w-32 h-32 sm:w-36 sm:h-36 rounded-full border-2 border-[#1e3a8a]/40 mb-4 overflow-hidden flex items-center justify-center shrink-0 shadow-xs bg-slate-100">
                           <img
                             src={mahalakshmiBiradarImg}
                             alt="Mahalakshmi Suresha Biradar, M.Pharm"
@@ -262,7 +262,7 @@ export default function App() {
                       className="bg-[#dbeafe] text-slate-900 rounded-xl p-6 text-center flex flex-col items-center justify-between border border-blue-200 h-full shadow-2xs hover:shadow-md transition-shadow cursor-pointer"
                     >
                       <div className="flex flex-col items-center">
-                        <div className="w-20 h-20 sm:w-24 sm:h-24 rounded-full bg-white border-2 border-dashed border-[#1e3a8a]/40 mb-3 flex items-center justify-center text-[#1e3a8a] font-times text-3xl font-light">
+                        <div className="w-32 h-32 sm:w-36 sm:h-36 rounded-full bg-white border-2 border-dashed border-[#1e3a8a]/40 mb-4 flex items-center justify-center text-[#1e3a8a] font-times text-4xl font-light">
                           +
                         </div>
                         <h4 className="text-base sm:text-lg font-bold text-slate-900 font-times">
