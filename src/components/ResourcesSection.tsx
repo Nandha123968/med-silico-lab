@@ -113,8 +113,8 @@ export const ResourcesSection: React.FC = () => {
             </div>
           </div>
 
-          {/* Software Grid matching the 6-7 column PDF layout */}
-          <div className="grid grid-cols-2 sm:grid-cols-3 md:grid-cols-4 lg:grid-cols-6 xl:grid-cols-7 gap-3 sm:gap-4">
+          {/* Software Grid matching the 6-7 column PDF layout with enlarged high-DPI logos */}
+          <div className="grid grid-cols-2 sm:grid-cols-3 md:grid-cols-4 lg:grid-cols-6 xl:grid-cols-7 gap-3.5 sm:gap-4.5">
             {filteredSoftware.map((tool) => (
               <a
                 key={tool.id}
@@ -122,18 +122,18 @@ export const ResourcesSection: React.FC = () => {
                 target="_blank"
                 rel="noopener noreferrer"
                 title={`Visit official ${tool.name} website`}
-                className="bg-white rounded-xl border border-slate-200/90 shadow-2xs hover:shadow-md hover:border-[#1e3a8a] transition-all duration-200 p-3 sm:p-3.5 flex flex-col items-center justify-between text-center group cursor-pointer h-full min-h-[136px] sm:min-h-[150px]"
+                className="bg-white rounded-xl border border-slate-200/90 shadow-2xs hover:shadow-md hover:border-[#1e3a8a] transition-all duration-200 p-3 sm:p-4 flex flex-col items-center justify-between text-center group cursor-pointer h-full min-h-[158px] sm:min-h-[176px]"
               >
-                <div className="w-full h-16 sm:h-18 flex items-center justify-center p-1 overflow-hidden">
+                <div className="w-full h-22 sm:h-26 flex items-center justify-center p-1 overflow-hidden">
                   <img
                     src={tool.logo}
                     alt={`${tool.name} logo`}
-                    className="max-h-12 sm:max-h-14 max-w-[85%] w-auto h-auto object-contain object-center drop-shadow-2xs transition-transform duration-200 group-hover:scale-105"
+                    className="max-h-18 sm:max-h-22 max-w-[94%] w-auto h-auto object-contain object-center drop-shadow-xs transition-transform duration-200 group-hover:scale-110"
                     loading="lazy"
                   />
                 </div>
-                <div className="w-full pt-2 border-t border-slate-100 mt-1">
-                  <span className="text-xs sm:text-[13px] font-times text-slate-800 font-medium leading-tight group-hover:text-[#1e3a8a] transition-colors line-clamp-1 block">
+                <div className="w-full pt-2.5 border-t border-slate-100 mt-1">
+                  <span className="text-xs sm:text-[13.5px] font-times text-slate-800 font-semibold leading-tight group-hover:text-[#1e3a8a] transition-colors line-clamp-1 block">
                     {tool.name}
                   </span>
                 </div>
