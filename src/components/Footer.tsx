@@ -183,19 +183,27 @@ export const Footer: React.FC<FooterProps> = ({
             </ul>
           </div>
 
-          {/* Column 3: Registered Office & Contact */}
+          {/* Column 3: Registered Offices & Contact */}
           <div className="sm:col-span-1 lg:col-span-4 font-times">
             <h4 className="text-sm font-times font-normal text-slate-900 mb-4">
-              Registered Office
+              Registered Offices &amp; Contact
             </h4>
             <div className="space-y-3 text-xs sm:text-sm text-slate-700 font-times">
               <div className="flex items-start gap-2.5">
                 <MapPin className="w-4 h-4 text-[#1e3a8a] shrink-0 mt-0.5" />
-                <span className="font-times text-slate-700 leading-relaxed">
-                  Med-Silico Lab, 261, Roppa, Pavagada-561202, Tumkur, Karnataka, India.
-                </span>
+                <div className="font-times text-slate-700 leading-relaxed text-xs">
+                  <span className="font-bold text-[#1e3a8a] block text-[11px] uppercase tracking-wider">Head Office:</span>
+                  Pahalamanpur-10, Ghodaghodi Municipality, Kailali, Nepal.
+                </div>
               </div>
-              <div className="flex items-center gap-2.5">
+              <div className="flex items-start gap-2.5">
+                <MapPin className="w-4 h-4 text-[#1e3a8a] shrink-0 mt-0.5" />
+                <div className="font-times text-slate-700 leading-relaxed text-xs">
+                  <span className="font-bold text-[#1e3a8a] block text-[11px] uppercase tracking-wider">Branch Office:</span>
+                  Veerabhadreshwara Nagar Main Rd, Herohalli, Sunkadakatte, Bengaluru, Karnataka 560091, India.
+                </div>
+              </div>
+              <div className="flex items-center gap-2.5 pt-1">
                 <Phone className="w-4 h-4 text-[#1e3a8a] shrink-0" />
                 <a href="tel:+917827943097" className="font-times text-slate-700 hover:text-[#1e3a8a] transition underline">+91 7827943097</a>
               </div>
