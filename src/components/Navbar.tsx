@@ -52,34 +52,34 @@ export const Navbar: React.FC<NavbarProps> = ({
 
   return (
     <header className="bg-white/98 backdrop-blur-md border-b border-slate-200/80 sticky top-0 z-40 shadow-xs w-full font-times">
-      <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+      <div className="max-w-[1400px] mx-auto px-3 sm:px-6 lg:px-8">
         <div className="flex items-center justify-between gap-2 sm:gap-4 h-22 sm:h-26 lg:h-28">
 
           {/* Zone 1: Brand title & academic shield insignia */}
           <button
             onClick={() => handleLinkClick('home')}
-            className="flex items-center gap-3 sm:gap-4 text-left focus:outline-none focus-visible:ring-2 focus-visible:ring-[#1e3a8a] rounded-lg p-1 cursor-pointer min-w-0 shrink-0"
+            className="flex items-center gap-2.5 sm:gap-3.5 text-left focus:outline-none focus-visible:ring-2 focus-visible:ring-[#1e3a8a] rounded-lg p-1 cursor-pointer shrink-0"
             aria-label="Med-Silico Lab Home"
           >
             <img
               src={safeLogoUrl || defaultLogo}
               alt={brandName}
-              className="h-16 sm:h-20 lg:h-[86px] w-auto object-contain shrink-0 drop-shadow-sm transition-transform duration-200 hover:scale-105"
+              className="h-14 sm:h-18 lg:h-[76px] w-auto object-contain shrink-0 drop-shadow-sm transition-transform duration-200 hover:scale-105"
             />
             <div className="min-w-0">
-              <div className="text-xl sm:text-2xl lg:text-[26px] font-bold tracking-tight text-slate-900 hover:text-[#1e3a8a] transition font-times leading-tight truncate">
+              <div className="text-lg sm:text-xl xl:text-2xl font-bold tracking-tight text-slate-900 hover:text-[#1e3a8a] transition font-times leading-tight truncate">
                 {brandName}
               </div>
-              <div className="text-xs sm:text-sm lg:text-[14px] font-times italic tracking-wide text-[#1e3a8a] font-medium block leading-tight mt-0.5 truncate">
+              <div className="text-[11px] sm:text-xs xl:text-[13px] font-times italic tracking-tight text-[#1e3a8a] font-medium block leading-tight mt-0.5 truncate max-w-[210px] xl:max-w-none">
                 Bridging Medicinal Chemistry &amp; Computational Science
               </div>
             </div>
           </button>
 
-          {/* Zone 2: Navigation Links (Times New Roman matching reference PDF) */}
+          {/* Zone 2: Navigation Links */}
           <nav
             aria-label="Primary Navigation"
-            className="hidden lg:flex items-center justify-center gap-1 xl:gap-2.5 2xl:gap-4 text-xs xl:text-sm 2xl:text-[15px] text-slate-800 font-times min-w-0"
+            className="hidden lg:flex items-center justify-center flex-1 min-w-0 gap-0.5 xl:gap-1.5 2xl:gap-3 text-xs xl:text-[13px] 2xl:text-[14.5px] text-slate-800 font-times px-1"
           >
             {navLinks.map((link) => (
               <button
@@ -97,12 +97,13 @@ export const Navbar: React.FC<NavbarProps> = ({
           </nav>
 
           {/* Zone 3: Consultation Quote Action & Mobile/Tablet Menu Toggle */}
-          <div className="flex items-center gap-2 sm:gap-2.5 shrink-0">
+          <div className="flex items-center gap-2 shrink-0">
             <button
               onClick={onOpenConsultation}
-              className="hidden sm:inline-flex items-center gap-1.5 px-3.5 xl:px-4 py-2 text-xs xl:text-sm font-semibold text-white bg-[#1e3a8a] hover:bg-[#1e40af] rounded-md shadow-xs transition cursor-pointer whitespace-nowrap shrink-0 font-times"
+              className="hidden sm:inline-flex items-center gap-1.5 px-3 xl:px-4 py-2 text-xs xl:text-sm font-semibold text-white bg-[#1e3a8a] hover:bg-[#1e40af] rounded-md shadow-xs transition cursor-pointer whitespace-nowrap shrink-0 font-times"
             >
-              <span>Consultation Quote</span>
+              <span className="hidden xl:inline">Consultation Quote</span>
+              <span className="xl:hidden">Get Quote</span>
               <ArrowUpRight className="w-3.5 h-3.5" />
             </button>
 
