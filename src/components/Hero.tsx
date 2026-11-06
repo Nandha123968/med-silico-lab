@@ -28,28 +28,29 @@ export const Hero: React.FC<HeroProps> = ({
           playsInline
           poster={heroImg}
           preload="auto"
-          className="w-full h-full object-cover object-center opacity-45 mix-blend-screen scale-105"
+          className="w-full h-full object-cover object-center opacity-80 scale-105"
         >
           <source src={CLOUDINARY_HERO_VIDEO_URL} type="video/mp4" />
           <img
             src={heroImg}
             alt="Biomolecular docking background"
-            className="w-full h-full object-cover object-center opacity-25 mix-blend-luminosity"
+            className="w-full h-full object-cover object-center opacity-40"
           />
         </video>
-        <div className="absolute inset-0 bg-gradient-to-r from-[#020617] via-[#020617]/85 to-[#0c1a40]/60" />
+        {/* Soft overlay ensuring high video visibility (80%) while keeping text 100% readable */}
+        <div className="absolute inset-0 bg-gradient-to-r from-[#020617]/80 via-[#020617]/40 to-transparent" />
       </div>
 
       {/* Hero Content */}
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-12 sm:py-16 md:py-20 lg:py-24 relative z-10 w-full">
         <div className="max-w-3xl">
           {/* Main Headline in Times New Roman matching PDF */}
-          <h1 className="text-2xl sm:text-4xl lg:text-[44px] font-bold italic tracking-tight text-white mb-5 sm:mb-6 leading-[1.2] sm:leading-[1.18] font-times">
+          <h1 className="text-2xl sm:text-4xl lg:text-[44px] font-bold italic tracking-tight text-white mb-5 sm:mb-6 leading-[1.2] sm:leading-[1.18] font-times drop-shadow-[0_2px_12px_rgba(0,0,0,0.9)]">
             Transform Your Scientific Career with Hands-On In Silico Techniques &amp; Publication Consulting
           </h1>
 
           {/* Subtitle / Body Copy in Times New Roman */}
-          <p className="font-times text-sm sm:text-base lg:text-lg text-blue-100/95 leading-relaxed mb-7 sm:mb-8 max-w-2xl">
+          <p className="font-times text-sm sm:text-base lg:text-lg text-blue-50 leading-relaxed mb-7 sm:mb-8 max-w-2xl drop-shadow-[0_1px_6px_rgba(0,0,0,0.8)]">
             Gain hands-on computational expertise in Molecular Docking, MD Simulations, QSAR, and ADME/Toxicity modeling with expert-led training, flexible scheduling, and verified SCI publication mentorship for career excellence.
           </p>
 
