@@ -253,7 +253,7 @@ Send credentials directly to: contact@medsilicolab.com
             <div className="font-times text-xs sm:text-sm text-slate-700 font-medium leading-relaxed space-y-2.5 w-full">
               <div className="text-center">
                 <span className="inline-block px-2 py-0.5 bg-blue-50 text-[#1e3a8a] text-[10px] font-bold uppercase tracking-wider rounded-xs mb-1">
-                  Branch Office
+                  Head Office
                 </span>
                 <p className="font-times text-xs sm:text-sm text-slate-700">
                   Veerabhadreshwara Nagar Main Rd, Herohalli,<br />
@@ -262,7 +262,7 @@ Send credentials directly to: contact@medsilicolab.com
               </div>
               <div className="pt-2 border-t border-slate-100 text-center">
                 <span className="inline-block px-2 py-0.5 bg-slate-100 text-slate-700 text-[10px] font-bold uppercase tracking-wider rounded-xs mb-1">
-                  Head Office
+                  Branch Office
                 </span>
                 <p className="font-times text-xs sm:text-sm text-slate-700">
                   Pahalamanpur-10, Ghodaghodi Municipality,<br />

@@ -192,14 +192,14 @@ export const Footer: React.FC<FooterProps> = ({
               <div className="flex items-start gap-2.5">
                 <MapPin className="w-4 h-4 text-[#1e3a8a] shrink-0 mt-0.5" />
                 <div className="font-times text-slate-700 leading-relaxed text-xs">
-                  <span className="font-bold text-[#1e3a8a] block text-[11px] uppercase tracking-wider">Branch Office:</span>
+                  <span className="font-bold text-[#1e3a8a] block text-[11px] uppercase tracking-wider">Head Office:</span>
                   Veerabhadreshwara Nagar Main Rd, Herohalli, Sunkadakatte, Bengaluru, Karnataka 560091, India.
                 </div>
               </div>
               <div className="flex items-start gap-2.5">
                 <MapPin className="w-4 h-4 text-[#1e3a8a] shrink-0 mt-0.5" />
                 <div className="font-times text-slate-700 leading-relaxed text-xs">
-                  <span className="font-bold text-[#1e3a8a] block text-[11px] uppercase tracking-wider">Head Office:</span>
+                  <span className="font-bold text-[#1e3a8a] block text-[11px] uppercase tracking-wider">Branch Office:</span>
                   Pahalamanpur-10, Ghodaghodi Municipality, Kailali, Nepal.
                 </div>
               </div>
