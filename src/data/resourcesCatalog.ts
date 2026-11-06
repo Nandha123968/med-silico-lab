@@ -1,5 +1,6 @@
 // Software logos
 import quantumEspressoLogo from '../assets/images/software_logos/quantum_espresso.png';
+import gaussianLogo from '../assets/images/software_logos/gaussian.png';
 import vestaLogo from '../assets/images/software_logos/vesta.png';
 import gromacsLogo from '../assets/images/software_logos/gromacs.png';
 import originproLogo from '../assets/images/software_logos/originpro.png';
@@ -15,6 +16,8 @@ import autodockLogo from '../assets/images/software_logos/autodock.png';
 import autodockVinaLogo from '../assets/images/software_logos/autodock_vina.png';
 import ucsfChimeraLogo from '../assets/images/software_logos/ucsf_chimera.png';
 import pyrxLogo from '../assets/images/software_logos/pyrx.png';
+import dockamonLogo from '../assets/images/software_logos/dockamon.png';
+import mzdockLogo from '../assets/images/software_logos/mzdock.png';
 import avogadroLogo from '../assets/images/software_logos/avogadro.png';
 import imagejLogo from '../assets/images/software_logos/imagej.png';
 import vmdLogo from '../assets/images/software_logos/vmd.png';
@@ -38,6 +41,24 @@ import spectragryphLogo from '../assets/images/software_logos/spectragryph.png';
 import clusproLogo from '../assets/images/software_logos/cluspro.png';
 import swissModelLogo from '../assets/images/software_logos/swiss_model.png';
 import swissadmeLogo from '../assets/images/software_logos/swissadme.png';
+import admetlabLogo from '../assets/images/software_logos/admetlab.png';
+import protoxLogo from '../assets/images/software_logos/protox.png';
+import stoptoxLogo from '../assets/images/software_logos/stoptox.png';
+import qsarianLogo from '../assets/images/software_logos/qsarian.png';
+import padelLogo from '../assets/images/software_logos/padel.png';
+import ranqsarLogo from '../assets/images/software_logos/ranqsar.png';
+import dtcQsarLogo from '../assets/images/software_logos/dtc_qsar.png';
+import chemmasterLogo from '../assets/images/software_logos/chemmaster.png';
+import qsar3dLogo from '../assets/images/software_logos/3d_qsar.png';
+import pharmitLogo from '../assets/images/software_logos/pharmit.png';
+import zincpharmerLogo from '../assets/images/software_logos/zincpharmer.png';
+import cytoscapeLogo from '../assets/images/software_logos/cytoscape.png';
+import stringDbLogo from '../assets/images/software_logos/string_db.png';
+import genecardsLogo from '../assets/images/software_logos/genecards.png';
+import nmrdbLogo from '../assets/images/software_logos/nmrdb.png';
+import halalFtirLogo from '../assets/images/software_logos/halal_ftir.png';
+import irSolutionLogo from '../assets/images/software_logos/ir_solution.png';
+import metlabLogo from '../assets/images/software_logos/metlab.png';
 import ortep3Logo from '../assets/images/software_logos/ortep3.png';
 import mercuryLogo from '../assets/images/software_logos/mercury.png';
 import olex2Logo from '../assets/images/software_logos/olex2.png';
@@ -59,63 +80,64 @@ export interface SoftwareToolItem {
 }
 
 export const FULL_SOFTWARE_CATALOG: SoftwareToolItem[] = [
-  // Row 1
-  { id: 'quantum-espresso', name: 'Quantum Espresso', logo: quantumEspressoLogo, url: 'https://www.quantum-espresso.org/' },
-  { id: 'vesta', name: 'VESTA', logo: vestaLogo, url: 'https://jp-minerals.org/vesta/en/' },
-  { id: 'gromacs', name: 'GROMACS', logo: gromacsLogo, url: 'https://www.gromacs.org/' },
-  { id: 'originpro', name: 'OriginPro', logo: originproLogo, url: 'https://www.originlab.com/' },
-  { id: 'topspin', name: 'TopSpin', logo: topspinLogo, url: 'https://www.bruker.com/en/products-and-solutions/mr/nmr-software/topspin.html' },
-  { id: 'orca', name: 'ORCA', logo: orcaLogo, url: 'https://www.orcasoftware.de/' },
+  // 1. Molecular Docking Tools
+  { id: 'autodock-vina', name: 'AutoDock Vina', logo: autodockVinaLogo, url: 'https://vina.scripps.edu/', category: 'Molecular Docking' },
+  { id: 'pyrx', name: 'PyRx', logo: pyrxLogo, url: 'https://pyrx.sourceforge.io/', category: 'Molecular Docking' },
+  { id: 'dockamon-pro', name: 'Dockamon Pro', logo: dockamonLogo, url: 'https://dockamon.com/', category: 'Molecular Docking' },
+  { id: 'mzdock', name: 'MzDock', logo: mzdockLogo, url: 'https://mzdock.rpbs.univ-paris-diderot.fr/', category: 'Molecular Docking' },
 
-  // Row 2
-  { id: 'mnova', name: 'MNova', logo: mnovaLogo, url: 'https://mestrelab.com/software/mnova/' },
-  { id: 'pymol', name: 'PyMOL', logo: pymolLogo, url: 'https://pymol.org/' },
-  { id: 'burai', name: 'BURAI', logo: buraiLogo, url: 'https://nisweb.nis-ei.eng.hokudai.ac.jp/~kuno/burai/' },
-  { id: 'mendeley', name: 'Mendeley', logo: mendeleyLogo, url: 'https://www.mendeley.com/' },
-  { id: 'open-babel', name: 'Open Babel', logo: openBabelLogo, url: 'https://openbabel.org/' },
-  { id: 'mgl-tools', name: 'MGL Tools', logo: mglToolsLogo, url: 'https://ccsb.scripps.edu/mgltools/' },
-  { id: 'autodock', name: 'AutoDock', logo: autodockLogo, url: 'https://autodock.scripps.edu/' },
+  // 2. ADME & Toxicity Prediction Tools
+  { id: 'swissadme', name: 'SwissADMET', logo: swissadmeLogo, url: 'http://www.swissadme.ch/', category: 'ADME Prediction' },
+  { id: 'admetlab', name: 'ADMETLab 3.0', logo: admetlabLogo, url: 'https://admetlab3.scbdd.com/', category: 'ADME Prediction' },
+  { id: 'protox-ii', name: 'ProTox II', logo: protoxLogo, url: 'https://tox-new.charite.de/protox_II/', category: 'Toxicity Prediction' },
+  { id: 'stoptox', name: 'StopToX', logo: stoptoxLogo, url: 'https://stoptox.mml.unc.edu/', category: 'Toxicity Prediction' },
 
-  // Row 3
-  { id: 'autodock-vina', name: 'AutoDock Vina', logo: autodockVinaLogo, url: 'https://vina.scripps.edu/' },
-  { id: 'ucsf-chimera', name: 'UCSF Chimera', logo: ucsfChimeraLogo, url: 'https://www.cgl.ucsf.edu/chimera/' },
-  { id: 'pyrx', name: 'PyRx', logo: pyrxLogo, url: 'https://pyrx.sourceforge.io/' },
-  { id: 'avogadro', name: 'Avogadro', logo: avogadroLogo, url: 'https://avogadro.cc/' },
-  { id: 'imagej', name: 'Image J', logo: imagejLogo, url: 'https://imagej.net/' },
-  { id: 'vmd', name: 'VMD', logo: vmdLogo, url: 'https://www.ks.uiuc.edu/Research/vmd/' },
-  { id: 'namd', name: 'NAMD', logo: namdLogo, url: 'https://www.ks.uiuc.edu/Research/namd/' },
+  // 3. 2D & 3D/4D QSAR Tools
+  { id: 'qsarian', name: 'QSARIAN', logo: qsarianLogo, url: 'https://qsarian.com/', category: 'QSAR Study' },
+  { id: 'padel', name: 'PaDEL', logo: padelLogo, url: 'https://www.yapcwsoft.com/dd/padeldescriptor/', category: 'QSAR Study' },
+  { id: 'ranqsar', name: 'RANQSAR', logo: ranqsarLogo, url: 'https://sites.google.com/site/ranqsar/', category: 'QSAR Study' },
+  { id: 'dtc-qsar', name: 'DTC-QSAR', logo: dtcQsarLogo, url: 'https://dtc-lab.net/', category: 'QSAR Study' },
+  { id: 'chem-master', name: 'Chem-Master', logo: chemmasterLogo, url: 'https://chemmaster.ch/', category: '3D/4D QSAR' },
+  { id: '3d-qsar', name: '3D-QSAR', logo: qsar3dLogo, url: 'http://open3dqsar.sourceforge.net/', category: '3D/4D QSAR' },
 
-  // Row 4
-  { id: 'gsas-ii', name: 'GSAS-II', logo: gsasIiLogo, url: 'https://subversion.xray.aps.anl.gov/trac/pyGSAS' },
-  { id: 'fullprof', name: 'FullProf', logo: fullprofLogo, url: 'https://www.ill.eu/sites/fullprof/' },
-  { id: 'jana', name: 'JANA', logo: janaLogo, url: 'http://jana.fzu.cz/' },
-  { id: 'cp2k', name: 'CP2K', logo: cp2kLogo, url: 'https://www.cp2k.org/' },
-  { id: 'chemsketch', name: 'ChemSketch', logo: chemsketchLogo, url: 'https://www.acdlabs.com/products/chemsketch/' },
-  { id: 'lammps', name: 'LAMMPS', logo: lammpsLogo, url: 'https://www.lammps.org/' },
-  { id: 'abinit', name: 'ABINIT', logo: abinitLogo, url: 'https://www.abinit.org/' },
+  // 4. Pharmacophore Modeling Tools
+  { id: 'pharmit', name: 'Pharmit', logo: pharmitLogo, url: 'https://pharmit.csb.pitt.edu/', category: 'Pharmacophore Modeling' },
+  { id: 'zincpharmer', name: 'ZINCPharmer', logo: zincpharmerLogo, url: 'http://zincpharmer.csb.pitt.edu/', category: 'Pharmacophore Modeling' },
 
-  // Row 5
-  { id: 'gamess', name: 'GAMESS', logo: gamessLogo, url: 'https://www.msg.chem.iastate.edu/gamess/' },
-  { id: 'openchrome', name: 'OpenChrome', logo: openchromeLogo, url: 'https://openchrom.net/' },
-  { id: 'modeller', name: 'MODELLER', logo: modellerLogo, url: 'https://salilab.org/modeller/' },
-  { id: 'zotero', name: 'Zotero', logo: zoteroLogo, url: 'https://www.zotero.org/' },
-  { id: 'blender', name: 'Blender', logo: blenderLogo, url: 'https://www.blender.org/' },
-  { id: 'inkscape', name: 'Inkscape', logo: inkscapeLogo, url: 'https://inkscape.org/' },
-  { id: 'labplot', name: 'LabPlot', logo: labplotLogo, url: 'https://labplot.kde.org/' },
+  // 5. Network Pharmacology Tools
+  { id: 'cytoscape', name: 'CytoScape', logo: cytoscapeLogo, url: 'https://cytoscape.org/', category: 'Network Pharmacology' },
+  { id: 'string-12', name: 'STRING 12.0', logo: stringDbLogo, url: 'https://string-db.org/', category: 'Network Pharmacology' },
+  { id: 'genecards', name: 'GeneCards', logo: genecardsLogo, url: 'https://www.genecards.org/', category: 'Network Pharmacology' },
 
-  // Row 6
-  { id: 'molview', name: 'MolView', logo: molviewLogo, url: 'https://molview.org/' },
-  { id: 'spectragryph', name: 'Spectragryph', logo: spectragryphLogo, url: 'https://www.effemm2.de/spectragryph/' },
-  { id: 'cluspro', name: 'ClusPro', logo: clusproLogo, url: 'https://cluspro.bu.edu/' },
-  { id: 'swiss-model', name: 'SWISS-MODEL', logo: swissModelLogo, url: 'https://swissmodel.expasy.org/' },
-  { id: 'swissadme', name: 'SwissADME', logo: swissadmeLogo, url: 'http://www.swissadme.ch/' },
-  { id: 'ortep-3', name: 'ORTEP-3', logo: ortep3Logo, url: 'https://www.chem.gla.ac.uk/~louis/software/ortep3/' },
+  // 6. Spectral & Analytical Characterization (NMR, FT-IR, LC-MS)
+  { id: 'mestreonova', name: 'MestReoNova', logo: mnovaLogo, url: 'https://mestrelab.com/software/mnova/', category: 'NMR / LC-MS' },
+  { id: 'nmrdb', name: 'NMRDB', logo: nmrdbLogo, url: 'https://www.nmrdb.org/', category: 'NMR Characterization' },
+  { id: 'halal-ftir', name: 'Halal FT-IR', logo: halalFtirLogo, url: 'https://ftir.halalchem.org/', category: 'FT-IR Characterization' },
+  { id: 'ir-solution', name: 'IR Solution', logo: irSolutionLogo, url: 'https://www.shimadzu.com/an/service-support/software/irsolution.html', category: 'FT-IR Characterization' },
+  { id: 'metlab', name: 'MetLab', logo: metlabLogo, url: 'https://www.metaboanalyst.ca/', category: 'LC-MS Analysis' },
 
-  // Row 7 (Page 2)
-  { id: 'mercury', name: 'Mercury', logo: mercuryLogo, url: 'https://www.ccdc.cam.ac.uk/solutions/software/mercury/' },
-  { id: 'olex2', name: 'Olex2', logo: olex2Logo, url: 'https://www.olexsys.org/olex2/' },
-  { id: 'shelxle', name: 'ShelXle', logo: shelxleLogo, url: 'https://shelxle.org/' },
-  { id: 'biovia-discovery-studio', name: 'Biovia Discovery Studio', logo: bioviaDiscoveryStudioLogo, url: 'https://www.3ds.com/products/biovia/discovery-studio' },
+  // 7. Quantum Chemistry & DFT Calculation
+  { id: 'quantum-espresso', name: 'Quantum ESPRESSO', logo: quantumEspressoLogo, url: 'https://www.quantum-espresso.org/', category: 'DFT Calculation' },
+  { id: 'dft-gaussian', name: 'DFT Gaussian', logo: gaussianLogo, url: 'https://gaussian.com/', category: 'DFT Calculation' },
+
+  // 8. Molecular Dynamics & Visualization Suite
+  { id: 'gromacs', name: 'GROMACS', logo: gromacsLogo, url: 'https://www.gromacs.org/', category: 'MD Simulations' },
+  { id: 'pymol', name: 'PyMOL', logo: pymolLogo, url: 'https://pymol.org/', category: 'Molecular Modeling' },
+  { id: 'vmd', name: 'VMD', logo: vmdLogo, url: 'https://www.ks.uiuc.edu/Research/vmd/', category: 'Visualization' },
+  { id: 'ucsf-chimera', name: 'UCSF Chimera', logo: ucsfChimeraLogo, url: 'https://www.cgl.ucsf.edu/chimera/', category: 'Molecular Modeling' },
+  { id: 'vesta', name: 'VESTA', logo: vestaLogo, url: 'https://jp-minerals.org/vesta/en/', category: 'Crystallography' },
+  { id: 'orca', name: 'ORCA', logo: orcaLogo, url: 'https://www.orcasoftware.de/', category: 'Quantum Chemistry' },
+  { id: 'originpro', name: 'OriginPro', logo: originproLogo, url: 'https://www.originlab.com/', category: 'Data Analysis' },
+  { id: 'topspin', name: 'TopSpin', logo: topspinLogo, url: 'https://www.bruker.com/en/products-and-solutions/mr/nmr-software/topspin.html', category: 'NMR Spectroscopy' },
+  { id: 'chemsketch', name: 'ChemSketch', logo: chemsketchLogo, url: 'https://www.acdlabs.com/products/chemsketch/', category: 'Chemical Drawing' },
+  { id: 'open-babel', name: 'Open Babel', logo: openBabelLogo, url: 'https://openbabel.org/', category: 'Cheminformatics' },
+  { id: 'avogadro', name: 'Avogadro', logo: avogadroLogo, url: 'https://avogadro.cc/', category: 'Molecular Modeling' },
+  { id: 'mercury', name: 'Mercury', logo: mercuryLogo, url: 'https://www.ccdc.cam.ac.uk/solutions/software/mercury/', category: 'Crystallography' },
+  { id: 'olex2', name: 'Olex2', logo: olex2Logo, url: 'https://www.olexsys.org/olex2/', category: 'Crystallography' },
+  { id: 'shelxle', name: 'ShelXle', logo: shelxleLogo, url: 'https://shelxle.org/', category: 'Crystallography' },
+  { id: 'biovia-discovery-studio', name: 'Biovia Discovery Studio', logo: bioviaDiscoveryStudioLogo, url: 'https://www.3ds.com/products/biovia/discovery-studio', category: 'CADD Modeling' },
+  { id: 'zotero', name: 'Zotero', logo: zoteroLogo, url: 'https://www.zotero.org/', category: 'Reference Management' },
+  { id: 'mendeley', name: 'Mendeley', logo: mendeleyLogo, url: 'https://www.mendeley.com/', category: 'Reference Management' },
 ];
 
 export interface DatabaseItem {
@@ -126,25 +148,25 @@ export interface DatabaseItem {
 }
 
 export const FULL_DATABASES_LIST: DatabaseItem[] = [
-  // Row 1
-  { id: 'csd', name: 'CSD', fullName: 'Cambridge Structural Database', url: 'https://www.ccdc.cam.ac.uk/structures/' },
-  { id: 'icsd', name: 'ICSD', fullName: 'Inorganic Crystal Structure Database', url: 'https://icsd.fiz-karlsruhe.de/' },
-  { id: 'icdd', name: 'ICDD', fullName: 'International Centre for Diffraction Data', url: 'https://www.icdd.com/' },
-  { id: '2d-hub', name: '2D-Hub', fullName: '2D Materials Repository & Hub', url: 'https://www.2dmatpedia.org/' },
-  { id: 'materials-project', name: 'Materials Project', fullName: 'Materials Project Database', url: 'https://materialsproject.org/' },
+  // Primary Databases directly supporting In Silico Services
   { id: 'pdb', name: 'PDB', fullName: 'RCSB Protein Data Bank', url: 'https://www.rcsb.org/' },
   { id: 'pubchem', name: 'PubChem', fullName: 'NCBI Open Chemistry Database', url: 'https://pubchem.ncbi.nlm.nih.gov/' },
   { id: 'uniprot', name: 'UniProt', fullName: 'Universal Protein Resource', url: 'https://www.uniprot.org/' },
-  { id: 'sdbs', name: 'SDBS', fullName: 'Spectral Database for Organic Compounds', url: 'https://sdbs.db.aist.go.jp/' },
-
-  // Row 2
-  { id: 'rruff', name: 'RRUFF', fullName: 'RRUFF Mineral & Raman Database', url: 'https://rruff.info/' },
+  { id: 'string-db', name: 'STRING 12.0', fullName: 'Protein-Protein Interaction Networks', url: 'https://string-db.org/' },
+  { id: 'genecards', name: 'GeneCards', fullName: 'Human Genes, Targets & Disease Database', url: 'https://www.genecards.org/' },
+  { id: 'nmrdb', name: 'NMRDB', fullName: 'NMR Spectral Prediction & Reference Database', url: 'https://www.nmrdb.org/' },
+  { id: 'admetlab', name: 'ADMETlab 3.0', fullName: 'Systematic ADMET Informatics Platform', url: 'https://admetlab3.scbdd.com/' },
+  { id: 'protox-db', name: 'ProTox II', fullName: 'Charité Toxicological Prediction Database', url: 'https://tox-new.charite.de/protox_II/' },
+  { id: 'chembl', name: 'ChEMBL', fullName: 'EMBL-EBI Bioactive Drug Discovery Database', url: 'https://www.ebi.ac.uk/chembl/' },
+  { id: 'drugbank', name: 'DrugBank', fullName: 'Comprehensive Clinical Drug & Target Database', url: 'https://go.drugbank.com/' },
+  { id: 'zinc20', name: 'ZINC20', fullName: 'Commercially Available Virtual Screening Database', url: 'https://zinc20.docking.org/' },
+  { id: 'swisstarget', name: 'SwissTarget', fullName: 'SwissTargetPrediction Bioactive Ligand Database', url: 'http://www.swisstargetprediction.ch/' },
+  { id: 'csd', name: 'CSD', fullName: 'Cambridge Structural Database (CCDC)', url: 'https://www.ccdc.cam.ac.uk/structures/' },
+  { id: 'sdbs', name: 'SDBS', fullName: 'Spectral Database for Organic Compounds (NMR/IR/MS)', url: 'https://sdbs.db.aist.go.jp/' },
+  { id: 'icsd', name: 'ICSD', fullName: 'Inorganic Crystal Structure Database', url: 'https://icsd.fiz-karlsruhe.de/' },
+  { id: 'materials-project', name: 'Materials Project', fullName: 'Open Quantum Mechanical DFT Database', url: 'https://materialsproject.org/' },
   { id: 'bmrb', name: 'BMRB', fullName: 'Biological Magnetic Resonance Data Bank', url: 'https://bmrb.io/' },
-  { id: 'massbank', name: 'MassBank', fullName: 'High Resolution Mass Spectral Database', url: 'https://massbank.eu/' },
-  { id: 'hmdb', name: 'HMDB', fullName: 'Human Metabolome Database', url: 'https://hmdb.ca/' },
-  { id: 'gnps', name: 'GNPS', fullName: 'Global Natural Products Social Molecular Networking', url: 'https://gnps.ucsd.edu/' },
-  { id: 'photochemcad', name: 'PhotochemCAD', fullName: 'Photochemical & Spectral Database', url: 'https://photochemcad.com/' },
-  { id: 'pride', name: 'PRIDE', fullName: 'PRIDE Proteomics Identifications Database', url: 'https://www.ebi.ac.uk/pride/' },
+  { id: 'hmdb', name: 'HMDB', fullName: 'Human Metabolome Database for LC-MS', url: 'https://hmdb.ca/' },
 ];
 
 export interface StudyManualItem {

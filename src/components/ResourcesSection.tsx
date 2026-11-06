@@ -11,13 +11,41 @@ import { sanitizeText } from '../utils/security';
 
 export const ResourcesSection: React.FC = () => {
   const [searchQuery, setSearchQuery] = useState('');
+  const [selectedCategory, setSelectedCategory] = useState<string>('all');
   const [selectedGuide, setSelectedGuide] = useState<StudyManualItem | null>(null);
 
   const safeQuery = sanitizeText(searchQuery, 80).toLowerCase().trim();
 
-  const filteredSoftware = FULL_SOFTWARE_CATALOG.filter(
-    (s) => !safeQuery || s.name.toLowerCase().includes(safeQuery)
-  );
+  const CATEGORIES = [
+    { id: 'all', label: 'All Packages' },
+    { id: 'docking', label: 'Molecular Docking', match: 'Molecular Docking' },
+    { id: 'adme', label: 'ADME & Toxicity', match: ['ADME Prediction', 'Toxicity Prediction'] },
+    { id: 'qsar', label: 'QSAR & Pharmacophore', match: ['QSAR Study', '3D/4D QSAR', 'Pharmacophore Modeling'] },
+    { id: 'network', label: 'Network Pharmacology', match: 'Network Pharmacology' },
+    { id: 'analytical', label: 'NMR, FT-IR & LC-MS', match: ['NMR Characterization', 'FT-IR Characterization', 'LC-MS Analysis', 'NMR / LC-MS', 'NMR Spectroscopy'] },
+    { id: 'dft', label: 'DFT & Quantum', match: ['DFT Calculation', 'Quantum Chemistry'] },
+    { id: 'md', label: 'MD & Modeling', match: ['MD Simulations', 'Molecular Modeling', 'Visualization', 'Crystallography'] },
+  ];
+
+  const filteredSoftware = FULL_SOFTWARE_CATALOG.filter((tool) => {
+    // 1. Text Search Filter
+    const matchesQuery =
+      !safeQuery ||
+      tool.name.toLowerCase().includes(safeQuery) ||
+      (tool.category && tool.category.toLowerCase().includes(safeQuery));
+
+    if (!matchesQuery) return false;
+
+    // 2. Category Filter
+    if (selectedCategory === 'all') return true;
+    const catObj = CATEGORIES.find((c) => c.id === selectedCategory);
+    if (!catObj || !catObj.match) return true;
+
+    if (Array.isArray(catObj.match)) {
+      return catObj.match.some((m) => tool.category?.toLowerCase().includes(m.toLowerCase()));
+    }
+    return tool.category?.toLowerCase().includes(catObj.match.toLowerCase());
+  });
 
   return (
     <section id="resources" className="bg-white font-times text-slate-900 border-b border-slate-200">
@@ -42,11 +70,29 @@ export const ResourcesSection: React.FC = () => {
 
         {/* 2. SOFTWARE SECTION */}
         <div className="mb-16 sm:mb-20">
-          <div className="text-center mb-8 sm:mb-10">
+          <div className="text-center mb-6 sm:mb-8">
             <h2 className="text-2xl sm:text-3xl lg:text-4xl font-normal uppercase text-[#1e3a8a] tracking-wider font-times">
               SOFTWARE
             </h2>
             <div className="w-16 h-0.5 bg-[#1e3a8a] mx-auto mt-2" />
+          </div>
+
+          {/* Quick Domain Category Filter Pills */}
+          <div className="flex flex-wrap items-center justify-center gap-1.5 sm:gap-2 mb-6 max-w-4xl mx-auto">
+            {CATEGORIES.map((cat) => (
+              <button
+                key={cat.id}
+                type="button"
+                onClick={() => setSelectedCategory(cat.id)}
+                className={`px-3 py-1.5 rounded-full text-xs font-times font-medium transition cursor-pointer ${
+                  selectedCategory === cat.id
+                    ? 'bg-[#1e3a8a] text-white shadow-xs'
+                    : 'bg-slate-100 text-slate-700 hover:bg-blue-50 hover:text-[#1e3a8a]'
+                }`}
+              >
+                {cat.label}
+              </button>
+            ))}
           </div>
 
           {/* Quick Filter Bar */}

@@ -45,7 +45,7 @@ export const Footer: React.FC<FooterProps> = ({
                 {brandName}
               </div>
               <div className="text-[11px] text-slate-600 font-times mt-0.5">
-                EST. &bull; 2025
+                EST. &bull; 2026
               </div>
               <div className="mt-2 px-3 py-0.5 bg-rose-600 text-white text-[10px] font-bold uppercase tracking-wider rounded-xs font-times">
                 Your Research Companion

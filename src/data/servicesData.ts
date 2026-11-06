@@ -24,7 +24,7 @@ export const ORDERED_SERVICES: ServiceItem[] = [
       'Target protein preparation (PDB refinement, water stripping, hydrogen atom addition, Kollman charges)',
       'Ligand 3D conformation energy minimization (MMFF94/OPLS force fields)',
       'Grid box definition (active site pocket coordinates and grid spacing)',
-      'Rigid and flexible docking runs with genetic algorithms (AutoDock Vina, Glide, Gold)',
+      'Rigid and flexible docking runs with genetic algorithms (AutoDock Vina, PyRx, Dockamon Pro, MzDock)',
       'Pose clustering, RMSD cluster analysis, and 2D/3D interaction mapping'
     ],
     deliverables: [
@@ -33,7 +33,7 @@ export const ORDERED_SERVICES: ServiceItem[] = [
       'High-resolution publication-quality 2D/3D interaction diagrams (PyMOL/Discovery Studio)',
       'Detailed tabular analysis of hydrogen bonds, Pi-Pi stacking, and hydrophobic contacts'
     ],
-    toolsUsed: ['AutoDock Vina', 'Discovery Studio', 'PyMOL', 'AutoDockTools', 'Chimera'],
+    toolsUsed: ['AutoDock Vina', 'PyRx', 'Dockamon Pro', 'MzDock'],
     sampleMetrics: [
       { label: 'Binding Score', value: '-9.4 kcal/mol' },
       { label: 'H-Bonds Identified', value: '4 key bonds' },
@@ -61,7 +61,7 @@ export const ORDERED_SERVICES: ServiceItem[] = [
       'BOILED-Egg graphic diagram for BBB and GI permeation',
       'Comprehensive summary report tailored for journal manuscript submission'
     ],
-    toolsUsed: ['SwissADME', 'pkCSM', 'PreADMET', 'Molinspiration'],
+    toolsUsed: ['SwissADMET', 'ADMETLab 3.0'],
     sampleMetrics: [
       { label: 'GI Absorption', value: 'High (>90%)' },
       { label: 'BBB Permeant', value: 'Non-permeant (Safe)' },
@@ -75,20 +75,20 @@ export const ORDERED_SERVICES: ServiceItem[] = [
     title: 'Toxicity Prediction',
     tagline: 'Computational toxicology, mutagenicity, & organ-specific safety profiling',
     category: 'in-silico',
-    description: 'In silico safety assessment assessing acute oral toxicity (LD50), organ toxicity (hepatotoxicity, nephrotoxicity), and toxicological endpoints (Ames mutagenicity, carcinogenicity, cardiotoxicity / hERG inhibition).',
+    description: 'In silico safety assessment evaluating acute oral toxicity (LD50), organ toxicity (hepatotoxicity, nephrotoxicity), and toxicological endpoints (Ames mutagenicity, carcinogenicity, cardiotoxicity / hERG inhibition).',
     methodology: [
       'Quantitative structural alert screening for toxicophores',
-      'ProTox-III toxicological class prediction (Class I to VI) and LD50 in mg/kg',
+      'ProTox II toxicological class prediction (Class I to VI) and LD50 in mg/kg',
+      'StopToX automated acute and organ-specific endpoint evaluation',
       'Organ toxicity modeling: Hepatotoxicity, Immunotoxicity, Mutagenicity, Cytotoxicity',
-      'Nuclear receptor signaling pathway disruption screening (AhR, AR, ER, PPAR-gamma)',
-      'Stress response pathway activation checks (ATAD5, ARE, HSE, MMP, p53)'
+      'Nuclear receptor signaling pathway disruption screening (AhR, AR, ER, PPAR-gamma)'
     ],
     deliverables: [
       'Toxicity classification certificate & summary sheet',
       'Organ toxicity risk matrix with probability confidence scores',
       'Toxicological safety compliance report formatted for publication'
     ],
-    toolsUsed: ['ProTox-III', 'pkCSM Tox', 'ToxTree', 'OSIRIS Property Explorer'],
+    toolsUsed: ['ProTox II', 'StopToX'],
     sampleMetrics: [
       { label: 'Predicted LD50', value: '2500 mg/kg (Class V)' },
       { label: 'Ames Mutagenicity', value: 'Non-mutagenic' },
@@ -97,36 +97,8 @@ export const ORDERED_SERVICES: ServiceItem[] = [
     iconName: 'ShieldAlert'
   },
   {
-    id: 'md-simulations',
-    orderNumber: '04',
-    title: 'MD Simulations',
-    tagline: 'Atomic-scale nanosecond-to-microsecond molecular dynamics & trajectory analysis',
-    category: 'in-silico',
-    description: 'High-performance GPU-accelerated molecular dynamics simulations of apo-proteins and protein-ligand complexes in explicit solvent, assessing thermodynamic stability, conformational transitions, and MM-PBSA binding energies.',
-    methodology: [
-      'System preparation: CHARMM36m / AMBER14SB force field assignment and ligand topology (CGenFF / GAFF2)',
-      'Solvation in TIP3P water box with neutralizing Na+/Cl- counter-ions at 0.15 M physiological strength',
-      'Steepest descent energy minimization followed by NVT and NPT equilibration (300 K, 1 bar)',
-      'Production run: 50 ns to 500 ns with 2 fs time step using LINCS/SHAKE algorithm on NVIDIA GPUs',
-      'Post-simulation trajectory analysis: RMSD, RMSF, Radius of Gyration (Rg), SASA, PCA, and MM-PBSA/GBSA binding free energy calculation'
-    ],
-    deliverables: [
-      'Raw trajectory files (.xtc, .trr) and coordinate files (.gro, .pdb)',
-      'High-resolution publication plots: Backbone RMSD, Residue RMSF, Rg, SASA, H-bond persistence',
-      'MM-PBSA / MM-GBSA energy decomposition table (van der Waals, electrostatic, polar, non-polar)',
-      'Simulation movie animation (.mp4 / .gif) and complete Materials & Methods draft'
-    ],
-    toolsUsed: ['GROMACS 2024', 'NAMD', 'VMD', 'Grace/XMGrace', 'gmx_MMPBSA'],
-    sampleMetrics: [
-      { label: 'Mean RMSD', value: '0.18 ± 0.02 nm' },
-      { label: 'Trajectory Length', value: '100 ns Standard' },
-      { label: 'MM-PBSA ΔG', value: '-38.4 kcal/mol' }
-    ],
-    iconName: 'Cpu'
-  },
-  {
     id: 'qsar-study',
-    orderNumber: '05',
+    orderNumber: '04',
     title: 'QSAR Study',
     tagline: '2D Quantitative Structure-Activity Relationship modeling & descriptor correlation',
     category: 'in-silico',
@@ -136,15 +108,15 @@ export const ORDERED_SERVICES: ServiceItem[] = [
       'High-dimensional descriptor calculation (PaDEL, Mordred: 1D & 2D descriptors)',
       'Feature selection: Objective & subjective reduction, genetic algorithms (GA), stepwise forward-backward',
       'Model construction using Multiple Linear Regression (MLR) and Partial Least Squares (PLS)',
-      'Rigorous internal and external validation: $R^2$, adjusted $R^2$, cross-validated $Q^2$, Tropsha criteria, Y-randomization'
+      'Rigorous internal and external validation: R^2, cross-validated Q^2, Tropsha criteria, Y-randomization'
     ],
     deliverables: [
       'Linear regression model mathematical equation with regression coefficients',
-      'Validation metrics matrix table ($R^2 > 0.8$, $Q^2 > 0.6$, $cR^2_p > 0.5$)',
+      'Validation metrics matrix table (R^2 > 0.8, Q^2 > 0.6, cR^2_p > 0.5)',
       'Williams plot depicting the Applicability Domain (AD) and leverage warnings',
       'OECD Principle-compliant validation report for high-impact journal submission'
     ],
-    toolsUsed: ['PaDEL-Descriptor', 'Mordred', 'Q-SARINS', 'R / Python Scikit-learn'],
+    toolsUsed: ['QSARIAN', 'PaDEL', 'RANQSAR', 'DTC-QSAR'],
     sampleMetrics: [
       { label: 'Regression R²', value: '0.884' },
       { label: 'Cross-validated Q²', value: '0.742' },
@@ -154,25 +126,25 @@ export const ORDERED_SERVICES: ServiceItem[] = [
   },
   {
     id: '3d-qsar',
-    orderNumber: '06',
-    title: '3D QSAR',
-    tagline: 'CoMFA & CoMSIA spatial field contour analysis for lead optimization',
+    orderNumber: '05',
+    title: '3D/4D QSAR',
+    tagline: 'Spatial field contour analysis, pharmacophore alignment, & lead optimization',
     category: 'in-silico',
-    description: 'Three-dimensional field-based QSAR mapping steric (Lennard-Jones) and electrostatic (Coulombic) interaction energies to identify structural regions requiring bulk or polar modification.',
+    description: 'Three-dimensional and four-dimensional field-based QSAR mapping steric (Lennard-Jones) and electrostatic (Coulombic) interaction energies to identify structural regions requiring bulk or polar modification.',
     methodology: [
       'Conformational search and bioactive conformer identification',
       'Template-based and receptor-guided molecular alignment in 3D grid lattice',
-      'CoMFA (Comparative Molecular Field Analysis) steric & electrostatic potential generation',
-      'CoMSIA (Comparative Molecular Similarity Indices Analysis) hydrophobic and H-bond donor/acceptor fields',
+      'Comparative Molecular Field Analysis steric & electrostatic potential generation',
+      'Hydrophobic and H-bond donor/acceptor field index calculation',
       'Partial Least Squares (PLS) analysis with Leave-One-Out (LOO) cross-validation and 3D contour generation'
     ],
     deliverables: [
       '3D isocontour maps highlighting favorable & unfavorable steric/electrostatic zones',
-      'PLS statistical validation parameters ($q^2$, $r^2$, standard error of estimate, F-statistic)',
+      'PLS statistical validation parameters (q^2, r^2, standard error of estimate, F-statistic)',
       'Lead compound optimization roadmap for organic/medicinal chemistry synthesis',
-      'Color-coded PyMOL 3D sessions (.pse) with aligned molecule overlay'
+      'Color-coded 3D sessions with aligned molecule overlay'
     ],
-    toolsUsed: ['Open3DQSAR', 'Sybyl CoMFA', 'Discovery Studio', 'PyMOL'],
+    toolsUsed: ['Dockamon Pro', 'Chem-Master', '3D-QSAR'],
     sampleMetrics: [
       { label: 'CoMFA q²', value: '0.689' },
       { label: 'CoMSIA r²', value: '0.912' },
@@ -182,17 +154,17 @@ export const ORDERED_SERVICES: ServiceItem[] = [
   },
   {
     id: 'pharmacophore-modeling',
-    orderNumber: '07',
+    orderNumber: '06',
     title: 'Pharmacophore Modeling',
     tagline: 'Ligand-based & structure-based spatial chemical feature hypothesis',
     category: 'in-silico',
     description: 'Identification of 3D spatial arrangements of essential chemical features (H-bond donors/acceptors, hydrophobic centers, aromatic rings, positive/negative ionizable groups) vital for target receptor inhibition.',
     methodology: [
-      'Ligand-based hypothesis generation using HypoGen / HipHop algorithms from active training sets',
+      'Ligand-based hypothesis generation from active training sets',
       'Structure-based pharmacophore extraction directly from target receptor binding cavities',
       'Feature mapping with distance and angle constraints',
-      'Pharmacophore model validation via decoy set screening, Güner-Henry (GH) scoring, and ROC analysis',
-      'Virtual screening of commercial databases (ZINC, Maybridge, ChemBridge) against validated hypothesis'
+      'Pharmacophore model validation via decoy set screening and ROC analysis',
+      'Virtual screening of commercial databases against validated hypothesis'
     ],
     deliverables: [
       '3D pharmacophore hypothesis coordinates and spatial feature spheres',
@@ -200,7 +172,7 @@ export const ORDERED_SERVICES: ServiceItem[] = [
       'Hit list of screened drug-like leads ranked by fit score',
       'Interactive 3D pharmacophore visualization files'
     ],
-    toolsUsed: ['LigandScout', 'Discovery Studio', 'Phase (Schrödinger)', 'Pharmit'],
+    toolsUsed: ['Dockamon Pro', 'Pharmit', 'ZINCPharmer'],
     sampleMetrics: [
       { label: 'AUC / ROC Score', value: '0.93' },
       { label: 'GH Quality Score', value: '0.78' },
@@ -209,30 +181,196 @@ export const ORDERED_SERVICES: ServiceItem[] = [
     iconName: 'Layers'
   },
   {
-    id: 'in-silico-vaccine-design',
+    id: 'network-pharmacology',
+    orderNumber: '07',
+    title: 'Network Pharmacology',
+    tagline: 'Target identification, PPI interactome networks, & disease-pathway mapping',
+    category: 'in-silico',
+    description: 'Systematic network-based exploration connecting multi-component herbal/synthetic drug candidates to multi-target regulatory signaling pathways and clinical disease phenotypes.',
+    methodology: [
+      'Compound-target identification and validation via GeneCards, OMIM, and SwissTargetPrediction',
+      'Protein-Protein Interaction (PPI) network assembly using STRING 12.0 at high-confidence thresholds (score >= 0.7)',
+      'Topological network analysis in Cytoscape (Degree, Betweenness Centrality, Closeness Centrality)',
+      'Gene Ontology (GO) biological processes and KEGG pathway enrichment clustering',
+      'Compound-Target-Pathway-Disease (C-T-P-D) bipartite network layout visualization'
+    ],
+    deliverables: [
+      'Publication-grade Cytoscape network diagrams (.cys, .png 600 DPI)',
+      'Hub target ranking table based on CytoHubba / MCC topological algorithms',
+      'KEGG pathway enrichment bubble plots and GO classification charts',
+      'Detailed narrative report linking key therapeutic targets to pathophysiological mechanisms'
+    ],
+    toolsUsed: ['Cytoscape', 'STRING 12.0', 'GeneCards'],
+    sampleMetrics: [
+      { label: 'Hub Targets Identified', value: '10 Core Targets' },
+      { label: 'PPI Confidence', value: 'Score ≥ 0.70' },
+      { label: 'Enriched Pathways', value: 'Top 20 Signaling' }
+    ],
+    iconName: 'Network'
+  },
+  {
+    id: 'nmr-characterization',
     orderNumber: '08',
+    title: 'NMR Characterization',
+    tagline: '1H/13C NMR spectrum assignment, multiplet deconvolution, & structure elucidation',
+    category: 'in-silico',
+    description: 'Comprehensive computational NMR spectral processing, chemical shift assignment (1H, 13C, 2D COSY/HSQC/HMBC), multiplet peak deconvolution, and structural validation against predicted chemical environments.',
+    methodology: [
+      'Raw FID data processing, phase correction, baseline flattening, and solvent calibration',
+      '1D 1H and 13C chemical shift peak picking and integration',
+      'Multiplet analysis: coupling constant (J-coupling in Hz) extraction and splitting pattern assignment',
+      'Comparison with quantum mechanical / empirical database chemical shifts using NMRDB',
+      '2D correlation mapping (COSY, HSQC, HMBC, NOESY) to unambiguously confirm molecular connectivity'
+    ],
+    deliverables: [
+      'Fully labeled, publication-ready 1H and 13C NMR spectra (PDF/TIFF 600 DPI)',
+      'Comprehensive NMR tabular assignment table matching journal manuscript submission standards',
+      'Proton coupling constant (J in Hz) analysis table and proton integration breakdown',
+      'Processed MestReNova session files (.mnova) with assigned peak tables'
+    ],
+    toolsUsed: ['MestReNova', 'NMRDB'],
+    sampleMetrics: [
+      { label: 'Peak Assignment', value: '100% Unambiguous' },
+      { label: 'J-Coupling Precision', value: '± 0.1 Hz' },
+      { label: 'Formatting', value: 'ACS / RSC Standard' }
+    ],
+    iconName: 'Activity'
+  },
+  {
+    id: 'ftir-characterization',
+    orderNumber: '09',
+    title: 'FT-IR Characterization',
+    tagline: 'Vibrational spectroscopy, functional group identification, & spectral deconvolution',
+    category: 'in-silico',
+    description: 'Computational processing and vibrational band deconvolution of Fourier-Transform Infrared (FT-IR) spectra (4000 to 400 cm⁻¹), identifying diagnostic functional groups, hydrogen-bonding shifts, and compliance verification.',
+    methodology: [
+      'Raw absorbance/transmittance spectral smoothing, ATR correction, and baseline correction',
+      'Second-derivative peak search and Gaussian/Lorentzian curve deconvolution for overlapping bands',
+      'Diagnostic band assignment: O-H, N-H, C=O, C=C, C-H stretching, and fingerprint region analysis',
+      'Comparison against verified spectroscopic libraries and Halal FT-IR compliance databases',
+      'Multi-sample spectral overlay and principal component analysis (PCA) for batch comparability'
+    ],
+    deliverables: [
+      'High-resolution labeled FT-IR spectra with assigned vibrational wavenumbers (cm⁻¹)',
+      'Tabular summary of identified functional groups and corresponding vibrational modes',
+      'Spectral deconvolution profiles for hydrogen-bonded / carbonyl region clusters',
+      'Complete Materials & Methods and Results & Discussion draft formatted for publication'
+    ],
+    toolsUsed: ['Halal FT-IR', 'IR Solution'],
+    sampleMetrics: [
+      { label: 'Spectral Range', value: '4000 - 400 cm⁻¹' },
+      { label: 'Band Resolution', value: '2 cm⁻¹' },
+      { label: 'Functional Groups', value: 'Fully Assigned' }
+    ],
+    iconName: 'Cpu'
+  },
+  {
+    id: 'lcms-analysis',
+    orderNumber: '10',
+    title: 'LC-MS Analysis',
+    tagline: 'Chromatographic peak integration, mass spectral fragmentation, & metabolite profiling',
+    category: 'in-silico',
+    description: 'High-resolution Liquid Chromatography-Mass Spectrometry (LC-MS/MS) data deconvolution, retention time alignment, molecular ion identification ([M+H]⁺, [M-H]⁻), fragmentation pattern annotation, and metabolomic quantification.',
+    methodology: [
+      'Total Ion Chromatogram (TIC) and Extracted Ion Chromatogram (EIC) peak integration',
+      'High-resolution m/z accurate mass calculation and isotopic distribution matching (tolerance < 5 ppm)',
+      'MS/MS fragment ion annotation using in silico fragmentation libraries and MestReNova MS modules',
+      'Metabolomics profiling, multivariate PCA/OPLS-DA score plots, and volcano plot analysis via MetLab',
+      'Compound identification based on accurate mass, MS/MS fragmentation, and retention time library matching'
+    ],
+    deliverables: [
+      'TIC and EIC chromatographic profile figures annotated with retention times and compound names',
+      'High-resolution MS and MS/MS fragmentation spectra with chemical structure fragment assignments',
+      'Quantitative metabolite profiling spreadsheet with retention times, exact mass, and peak areas',
+      'Complete analytical chemistry summary dossier compliant with international publication criteria'
+    ],
+    toolsUsed: ['MestReNova', 'MetLab'],
+    sampleMetrics: [
+      { label: 'Mass Accuracy', value: '< 3 ppm error' },
+      { label: 'Peak Identification', value: 'MS/MS Verified' },
+      { label: 'Turnaround', value: '3-5 Days' }
+    ],
+    iconName: 'Dna'
+  },
+  {
+    id: 'dft-calculation',
+    orderNumber: '11',
+    title: 'DFT Calculation',
+    tagline: 'Quantum mechanical geometry optimization, HOMO-LUMO gap, & MEP electrostatic mapping',
+    category: 'in-silico',
+    description: 'First-principles Density Functional Theory (DFT) quantum chemical calculations evaluating ground-state equilibrium geometries, electronic structure, frontier molecular orbitals (HOMO/LUMO), global reactivity descriptors, and molecular electrostatic potential (MEP) surfaces.',
+    methodology: [
+      'Ground-state molecular geometry optimization using B3LYP, PBE0, or CAM-B3LYP functionals with 6-311++G(d,p) / def2-TZVP basis sets',
+      'Harmonic vibrational frequency analysis to verify true local minima without imaginary frequencies',
+      'Frontier molecular orbital computation: HOMO and LUMO energy levels, energy band gap (ΔE_gap = E_LUMO - E_HOMO)',
+      'Global chemical reactivity descriptors: Ionization potential (I), Electron affinity (A), Electronegativity (χ), Chemical hardness (η), Softness (S), Electrophilicity index (ω)',
+      'Molecular Electrostatic Potential (MEP) 3D surface mapping identifying electrophilic (blue) and nucleophilic (red) reactive sites'
+    ],
+    deliverables: [
+      'Optimized Cartesian coordinates (.xyz, .pdb) and convergence energy logs',
+      'Publication-grade 3D HOMO and LUMO orbital density plots (PyMOL/GaussView/Quantum ESPRESSO)',
+      'High-resolution 3D MEP electrostatic surface maps with color-scale potential bars',
+      'Comprehensive table of global reactivity descriptors and Mulliken / NBO atomic charges'
+    ],
+    toolsUsed: ['Quantum ESPRESSO', 'DFT Gaussian'],
+    sampleMetrics: [
+      { label: 'Functional / Basis', value: 'B3LYP / 6-311++G(d,p)' },
+      { label: 'HOMO-LUMO Gap', value: 'Calculated in eV' },
+      { label: 'MEP Potential', value: '-0.05 to +0.05 a.u.' }
+    ],
+    iconName: 'Atom'
+  },
+  {
+    id: 'md-simulations',
+    orderNumber: '12',
+    title: 'MD Simulations',
+    tagline: 'Atomic-scale nanosecond-to-microsecond molecular dynamics & trajectory analysis',
+    category: 'in-silico',
+    description: 'High-performance GPU-accelerated molecular dynamics simulations of apo-proteins and protein-ligand complexes in explicit solvent, assessing thermodynamic stability, conformational transitions, and MM-PBSA binding energies.',
+    methodology: [
+      'System preparation: CHARMM36m / AMBER14SB force field assignment and ligand topology',
+      'Solvation in TIP3P water box with neutralizing Na+/Cl- counter-ions at 0.15 M physiological strength',
+      'Steepest descent energy minimization followed by NVT and NPT equilibration (300 K, 1 bar)',
+      'Production run: 50 ns to 500 ns with 2 fs time step on NVIDIA GPUs',
+      'Post-simulation trajectory analysis: RMSD, RMSF, Radius of Gyration (Rg), SASA, and MM-PBSA binding free energy'
+    ],
+    deliverables: [
+      'Raw trajectory files (.xtc, .trr) and coordinate files (.gro, .pdb)',
+      'High-resolution publication plots: Backbone RMSD, Residue RMSF, Rg, SASA, H-bond persistence',
+      'MM-PBSA energy decomposition table (van der Waals, electrostatic, polar, non-polar)',
+      'Simulation movie animation (.mp4) and complete Materials & Methods draft'
+    ],
+    toolsUsed: ['GROMACS 2024', 'NAMD', 'VMD', 'Grace/XMGrace'],
+    sampleMetrics: [
+      { label: 'Mean RMSD', value: '0.18 ± 0.02 nm' },
+      { label: 'Trajectory Length', value: '100 ns Standard' },
+      { label: 'MM-PBSA ΔG', value: '-38.4 kcal/mol' }
+    ],
+    iconName: 'Cpu'
+  },
+  {
+    id: 'in-silico-vaccine-design',
+    orderNumber: '13',
     title: 'In Silico Vaccine Design',
     tagline: 'Reverse vaccinology, multi-epitope construct design, & immunoinformatics',
     category: 'in-silico',
     description: 'Computational design of multi-epitope subunit peptide vaccines against viral and bacterial pathogens, integrating cytotoxic T-cell, helper T-cell, and linear B-cell epitopes with adjuvant and linkers.',
     methodology: [
-      'Pathogen proteome retrieval and virulence/antigenicity screening (VaxiJen v2.0)',
-      'MHC-I (CTL) and MHC-II (HTL) epitope prediction via NetMHCpan and IEDB tools',
-      'B-cell epitope mapping (ABCpred, BepiPred-2.0) and allergenicity screening (AllerTOP v2.0)',
-      'Construct engineering: Joining selected epitopes with EAAAK, GPGP, AAY linkers and beta-defensin adjuvant',
-      'Physicochemical property profiling, 3D structure modeling (AlphaFold/ColabFold), refinement & validation (Ramachandran plot)',
-      'Molecular docking with immune receptors (TLR4/TLR2) followed by in silico immune simulation (C-ImmSim)'
+      'Pathogen proteome retrieval and virulence/antigenicity screening',
+      'MHC-I (CTL) and MHC-II (HTL) epitope prediction',
+      'B-cell epitope mapping and allergenicity screening',
+      'Construct engineering: Joining selected epitopes with linkers and adjuvant',
+      'Physicochemical property profiling and 3D structure modeling'
     ],
     deliverables: [
       'Engineered vaccine construct primary sequence and annotated schematic diagram',
       'Validated 3D model with >90% residues in Ramachandran favored regions',
       'TLR-receptor docking complex files and interaction energy tables',
-      'C-ImmSim in silico immune response graphs (IgG, IgM, Cytokines, Interferon-gamma titers)',
-      'Codon adaptation (CAI index > 0.85) and in silico restriction cloning into pET28a(+) vector'
+      'In silico immune response simulation graphs'
     ],
-    toolsUsed: ['IEDB', 'NetMHCpan', 'VaxiJen', 'AlphaFold', 'C-ImmSim', 'JCat', 'SnapGene'],
+    toolsUsed: ['IEDB', 'NetMHCpan', 'VaxiJen', 'AlphaFold'],
     sampleMetrics: [
-      { label: 'Antigenicity Score', value: '0.742 (VaxiJen)' },
+      { label: 'Antigenicity Score', value: '0.742' },
       { label: 'Ramachandran Favored', value: '94.2%' },
       { label: 'Codon CAI Value', value: '0.92' }
     ],
@@ -240,25 +378,24 @@ export const ORDERED_SERVICES: ServiceItem[] = [
   },
   {
     id: 'bioinformatics',
-    orderNumber: '09',
+    orderNumber: '14',
     title: 'Bioinformatics',
     tagline: 'Computational genomics, NGS data analysis, & evolutionary phylogenetics',
     category: 'in-silico',
     description: 'High-throughput bioinformatic pipelines covering next-generation sequencing (RNA-seq, whole-genome sequencing), metagenomics, phylogenetic reconstruction, and functional gene ontology enrichment.',
     methodology: [
-      'Raw read quality control (FastQC, Trimmomatic) and reference genome alignment (HISAT2, BWA-MEM)',
-      'Differential gene expression analysis (DESeq2, edgeR) with Volcano and MA plots',
-      'Gene Ontology (GO) and KEGG pathway enrichment analysis (clusterProfiler, DAVID)',
-      'Multiple sequence alignment (Clustal Omega, MUSCLE) and maximum likelihood phylogenetic tree reconstruction (IQ-TREE, MEGA)',
-      'Protein tertiary structure homology modeling and active site conservation scoring'
+      'Raw read quality control and reference genome alignment',
+      'Differential gene expression analysis with Volcano and MA plots',
+      'Gene Ontology (GO) and KEGG pathway enrichment analysis',
+      'Multiple sequence alignment and maximum likelihood phylogenetic tree reconstruction'
     ],
     deliverables: [
       'Comprehensive QC reports and trimmed sequence datasets',
       'Differentially expressed genes (DEG) tables with adjusted p-values and log2 fold changes',
       'Interactive pathway enrichment bubble charts and heatmap figures',
-      'Bootstrapped phylogenetic tree visualization files (.nwk, .treefile) ready for publication'
+      'Bootstrapped phylogenetic tree visualization files ready for publication'
     ],
-    toolsUsed: ['FastQC', 'DESeq2', 'MEGA 11', 'IQ-TREE', 'Bioconductor / R', 'Galaxy'],
+    toolsUsed: ['FastQC', 'DESeq2', 'MEGA 11', 'IQ-TREE'],
     sampleMetrics: [
       { label: 'Sequence Read Quality', value: 'Q30 > 92%' },
       { label: 'Significantly DEGs', value: '148 Genes' },
@@ -266,10 +403,9 @@ export const ORDERED_SERVICES: ServiceItem[] = [
     ],
     iconName: 'Network'
   },
-  // Academic & Publication Consulting Additions
   {
     id: 'manuscript-preparation',
-    orderNumber: '10',
+    orderNumber: '15',
     title: 'Manuscript Preparation Guidance',
     tagline: 'Scientific writing, high-resolution visual curation, & formatting for Q1/Q2 journals',
     category: 'academic-publishing',
@@ -277,16 +413,16 @@ export const ORDERED_SERVICES: ServiceItem[] = [
     methodology: [
       'Structuring according to IMRaD standards (Introduction, Methods, Results, and Discussion)',
       'Deep technical drafting of in silico methodology to guarantee experimental reproducibility',
-      'Scientific graphic design: 300+ DPI chemical structure drawing (ChemDraw) and Graphical Abstract design',
-      'Table organization, reference styling (EndNote, Mendeley, Zotero), and supplementary data compilation'
+      'Scientific graphic design: 300+ DPI chemical structure drawing and Graphical Abstract design',
+      'Table organization, reference styling, and supplementary data compilation'
     ],
     deliverables: [
       'Thoroughly edited manuscript document (.docx) with tracked changes and academic comments',
-      'Publication-grade 300 DPI figures, multi-panel charts, and graphical abstract (.tiff, .png, .ai)',
+      'Publication-grade 300 DPI figures, multi-panel charts, and graphical abstract',
       'Supplementary Information (SI) dossier formatted to journal guidelines',
       'Cover letter drafted for the Editor-in-Chief highlighting paper novelty and scope'
     ],
-    toolsUsed: ['ChemDraw', 'EndNote', 'Zotero', 'OriginPro', 'Adobe Illustrator'],
+    toolsUsed: ['ChemDraw', 'EndNote', 'Zotero', 'OriginPro'],
     sampleMetrics: [
       { label: 'Figure Resolution', value: '300-600 DPI' },
       { label: 'Average Turnaround', value: '5-7 Days' },
@@ -296,7 +432,7 @@ export const ORDERED_SERVICES: ServiceItem[] = [
   },
   {
     id: 'publication-guidance',
-    orderNumber: '11',
+    orderNumber: '16',
     title: 'Publication Guidance',
     tagline: 'End-to-end peer review navigation, rebuttal drafting, & editorial correspondence',
     category: 'academic-publishing',
@@ -322,7 +458,7 @@ export const ORDERED_SERVICES: ServiceItem[] = [
   },
   {
     id: 'plagiarism-checking',
-    orderNumber: '12',
+    orderNumber: '17',
     title: 'Plagiarism & AI Detection Checking & Paraphrasing',
     tagline: 'Official iThenticate / Turnitin similarity analysis & Turnitin AI detection audit (0% AI score)',
     category: 'academic-publishing',
@@ -336,7 +472,7 @@ export const ORDERED_SERVICES: ServiceItem[] = [
     ],
     deliverables: [
       'Original full-color highlighted similarity and Turnitin AI detection reports (PDF)',
-      'Ethically revised manuscript document with similarity index brought under 10% (single source <1%) and 0% AI detection',
+      'Ethically revised manuscript document with similarity index brought under 10% and 0% AI detection',
       'Academic integrity certificate for institutional thesis / dissertation and journal submission'
     ],
     toolsUsed: ['iThenticate', 'Turnitin Similarity', 'Turnitin AI Detection', 'Crossref'],
@@ -349,7 +485,7 @@ export const ORDERED_SERVICES: ServiceItem[] = [
   },
   {
     id: 'journal-selection',
-    orderNumber: '13',
+    orderNumber: '18',
     title: 'Journal Selection',
     tagline: 'Strategic matching with SCI, SCIE, Scopus, & PubMed indexed journals',
     category: 'academic-publishing',
@@ -357,19 +493,18 @@ export const ORDERED_SERVICES: ServiceItem[] = [
     methodology: [
       'Title, abstract, and keyword semantic matching across international scientific databases',
       'Verification of journal indexing in Web of Science Master Journal List, Clarivate JCR, and Scopus',
-      'Analysis of average time to first decision, acceptance rate, and publication turnaround',
-      'Screening against predatory publishers and hijacked journal warning lists (Beall\'s List / UGC-CARE)'
+      'Analysis of average time to first decision, acceptance rate, and publication turnaround'
     ],
     deliverables: [
-      'Curated shortlist of 3 to 5 indexed journals (Q1/Q2/Q3) with exact Impact Factors and CiteScores',
-      'Comparison matrix: Review speed, acceptance rate, Article Processing Charge (APC) details, and scope alignment',
-      'Submission roadmap with specific rationale explaining why your manuscript fits each selected journal'
+      'Personalized dossier of 3-5 high-probability target journals with exact Clarivate Impact Factors',
+      'Detailed comparison of editorial turnaround speeds, publication models, and APC fees',
+      'Author guidelines checklist custom-extracted for the top-priority journal recommendation'
     ],
-    toolsUsed: ['Clarivate JCR', 'Scopus SciVal', 'Elsevier JournalFinder', 'Springer Nature Suggester'],
+    toolsUsed: ['Clarivate Master Journal List', 'Scopus Preview', 'DOAJ', 'PubMed'],
     sampleMetrics: [
-      { label: 'Target Indexing', value: 'SCI / SCIE / Scopus' },
-      { label: 'Recommended Options', value: '3-5 Vetted Journals' },
-      { label: 'Predatory Check', value: '100% Verified Safe' }
+      { label: 'Target Indexing', value: 'SCI / Scopus Q1-Q2' },
+      { label: 'Acceptance Rate', value: 'Strategic Fit' },
+      { label: 'Matching Precision', value: '98% Alignment' }
     ],
     iconName: 'Search'
   }
