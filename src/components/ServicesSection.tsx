@@ -287,7 +287,7 @@ export const ServicesSection: React.FC<ServicesSectionProps> = ({
                 <div className="text-xs sm:text-sm text-blue-100 mb-1 font-times">70 % Off !!!</div>
                 <div className="text-2xl sm:text-3xl text-blue-200/90 line-through font-times">&#8377;75,000</div>
                 <div className="text-3xl sm:text-4xl font-normal text-white font-times mt-0.5 mb-5">
-                  &#8377;15,900 <span className="text-xs text-blue-100 font-normal">(incl. GST)</span>
+                  &#8377;10,000 <span className="text-xs text-blue-100 font-normal">(incl. GST)</span>
                 </div>
 
                 <div className="text-xs sm:text-sm font-semibold text-white mb-3 font-times">Includes</div>
@@ -361,7 +361,7 @@ export const ServicesSection: React.FC<ServicesSectionProps> = ({
                 <div className="text-xs sm:text-sm text-slate-600 mb-1 font-times">70 % Off !!!</div>
                 <div className="text-2xl sm:text-3xl text-slate-700 line-through font-times">$3000</div>
                 <div className="text-3xl sm:text-4xl font-normal text-slate-900 font-times mt-0.5 mb-5">
-                  $315 <span className="text-xs text-slate-500 font-normal">(incl. taxes)</span>
+                  $120 <span className="text-xs text-slate-500 font-normal">(incl. taxes)</span>
                 </div>
 
                 <div className="text-xs sm:text-sm font-semibold text-slate-800 mb-3 font-times">Includes</div>

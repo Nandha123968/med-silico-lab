@@ -168,7 +168,7 @@ export const AboutSection: React.FC<AboutSectionProps> = ({
             {/* Quick Metrics Bar */}
             <div className="grid grid-cols-2 gap-3 mt-4 font-times">
               <div className="p-3 bg-slate-50 border border-slate-200 rounded-lg text-center">
-                <div className="text-xl font-bold text-[#1e3a8a]">100ns+</div>
+                <div className="text-xl font-bold text-[#1e3a8a]">300ns+</div>
                 <div className="text-[11px] text-slate-600">GPU Trajectories</div>
               </div>
               <div className="p-3 bg-slate-50 border border-slate-200 rounded-lg text-center">
@@ -336,78 +336,6 @@ export const AboutSection: React.FC<AboutSectionProps> = ({
           </div>
         </div>
 
-        {/* Why Choose Us Grid */}
-        <div className="mb-16 sm:mb-20 bg-[#f8f9fa] p-6 sm:p-10 rounded-2xl border border-slate-100">
-          <div className="text-center max-w-2xl mx-auto mb-10 sm:mb-12">
-            <h3 className="text-2xl sm:text-3xl font-bold text-slate-900 font-times">Why Us</h3>
-            <p className="font-times italic text-slate-600 text-xs sm:text-sm mt-1">
-              Our fundamental commitments to research quality and scholar success
-            </p>
-          </div>
-
-          <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-5 sm:gap-6 font-times">
-            <div className="bg-white p-5 sm:p-6 rounded-xl border border-slate-100 shadow-2xs h-full">
-              <div className="w-11 h-11 rounded-lg bg-blue-100 text-[#1e3a8a] flex items-center justify-center mb-4">
-                <Cpu className="w-5 h-5" />
-              </div>
-              <h4 className="text-base font-bold text-slate-900 mb-2 font-times">Cutting-Edge Resources</h4>
-              <p className="text-xs sm:text-sm text-slate-600 leading-relaxed font-times">
-                Stay ahead with access to state-of-the-art computational tools, force fields, and GPU cluster workflows tailored to current scientific advancements.
-              </p>
-            </div>
-
-            <div className="bg-white p-5 sm:p-6 rounded-xl border border-slate-100 shadow-2xs h-full">
-              <div className="w-11 h-11 rounded-lg bg-blue-100 text-[#1e3a8a] flex items-center justify-center mb-4">
-                <Video className="w-5 h-5" />
-              </div>
-              <h4 className="text-base font-bold text-slate-900 mb-2 font-times">Session Recordings</h4>
-              <p className="text-xs sm:text-sm text-slate-600 leading-relaxed font-times">
-                Access full recorded sessions anytime, allowing you to revisit trajectory setups, command syntaxes, and reinforce your understanding at your own pace.
-              </p>
-            </div>
-
-            <div className="bg-white p-5 sm:p-6 rounded-xl border border-slate-100 shadow-2xs h-full">
-              <div className="w-11 h-11 rounded-lg bg-blue-100 text-[#1e3a8a] flex items-center justify-center mb-4">
-                <Clock className="w-5 h-5" />
-              </div>
-              <h4 className="text-base font-bold text-slate-900 mb-2 font-times">Flexible Scheduling</h4>
-              <p className="text-xs sm:text-sm text-slate-600 leading-relaxed font-times">
-                Benefit from evening and weekend timings designed to accommodate busy university curricula, research duties, and international time zones.
-              </p>
-            </div>
-
-            <div className="bg-white p-5 sm:p-6 rounded-xl border border-slate-100 shadow-2xs h-full">
-              <div className="w-11 h-11 rounded-lg bg-blue-100 text-[#1e3a8a] flex items-center justify-center mb-4">
-                <Award className="w-5 h-5" />
-              </div>
-              <h4 className="text-base font-bold text-slate-900 mb-2 font-times">Expert Instructors</h4>
-              <p className="text-xs sm:text-sm text-slate-600 leading-relaxed font-times">
-                Learn directly from Ph.D. holders, postdocs, and seasoned research scientists with extensive practical publications in international journals.
-              </p>
-            </div>
-
-            <div className="bg-white p-5 sm:p-6 rounded-xl border border-slate-100 shadow-2xs h-full">
-              <div className="w-11 h-11 rounded-lg bg-blue-100 text-[#1e3a8a] flex items-center justify-center mb-4">
-                <BookOpen className="w-5 h-5" />
-              </div>
-              <h4 className="text-base font-bold text-slate-900 mb-2 font-times">Comprehensive Curriculum</h4>
-              <p className="text-xs sm:text-sm text-slate-600 leading-relaxed font-times">
-                Our programs cover both theoretical thermodynamic principles and practical step-by-step in silico protocols applied to real therapeutic targets.
-              </p>
-            </div>
-
-            <div className="bg-white p-5 sm:p-6 rounded-xl border border-slate-100 shadow-2xs h-full">
-              <div className="w-11 h-11 rounded-lg bg-blue-100 text-[#1e3a8a] flex items-center justify-center mb-4">
-                <CheckCircle2 className="w-5 h-5" />
-              </div>
-              <h4 className="text-base font-bold text-slate-900 mb-2 font-times">Practical Training</h4>
-              <p className="text-xs sm:text-sm text-slate-600 leading-relaxed font-times">
-                Our hands-on training ensures you gain independent simulation competence to analyze trajectories, troubleshoot errors, and publish with pride.
-              </p>
-            </div>
-          </div>
-        </div>
-
         {/* Team Members & Facilitators Section */}
         <div>
           <div className="text-center max-w-2xl mx-auto mb-10 sm:mb-12">
@@ -417,7 +345,7 @@ export const AboutSection: React.FC<AboutSectionProps> = ({
             </p>
           </div>
 
-          <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-6 max-w-7xl mx-auto font-times">
+          <div className="grid grid-cols-1 md:grid-cols-3 gap-6 sm:gap-8 max-w-5xl mx-auto font-times text-center">
             {/* 1. Shankar Thapa */}
             <div className="bg-white border border-slate-200 rounded-xl p-6 text-center flex flex-col items-center justify-between h-full shadow-2xs hover:shadow-md transition-shadow">
               <div className="flex flex-col items-center w-full">
@@ -437,21 +365,21 @@ export const AboutSection: React.FC<AboutSectionProps> = ({
               </div>
             </div>
 
-            {/* 2. Sadik Shaik */}
+            {/* 2. Dr. Sadik Shaik */}
             <div className="bg-white border border-slate-200 rounded-xl p-6 text-center flex flex-col items-center justify-between h-full shadow-2xs hover:shadow-md transition-shadow">
               <div className="flex flex-col items-center w-full">
                 <div className="w-32 h-32 sm:w-36 sm:h-36 rounded-full border-2 border-[#1e3a8a]/40 mb-4 overflow-hidden flex items-center justify-center shrink-0 shadow-xs bg-slate-100">
                   <img
                     src={sadikShaikImg}
-                    alt="Sadik Shaik, PhD"
+                    alt="Dr. Sadik Shaik, PhD"
                     className="w-full h-full object-cover object-center"
                   />
                 </div>
-                <h4 className="text-base sm:text-lg font-bold text-slate-900 font-times">Sadik Shaik</h4>
+                <h4 className="text-base sm:text-lg font-bold text-slate-900 font-times">Dr. Sadik Shaik</h4>
                 <p className="text-xs text-[#1e3a8a] font-bold mt-0.5">Supervisor &amp; Consultant, Pharmacology Research</p>
                 <div className="mt-3 pt-3 border-t border-slate-100 text-xs text-slate-600 space-y-1 text-center w-full">
                   <div><strong>Qualification:</strong> PhD (Pharmacology)</div>
-                  <div><strong>Specialization:</strong> Pharmacological Screening &amp; In Vivo/In Silico Correlation</div>
+                  <div><strong>Specialization:</strong> Pharmacological Screening &amp; Experimental Validation</div>
                 </div>
               </div>
             </div>
@@ -473,26 +401,6 @@ export const AboutSection: React.FC<AboutSectionProps> = ({
                   <div><strong>Specialization:</strong> CADD Workflows, Q1/Q2 Manuscript Publication Mentorship</div>
                 </div>
               </div>
-            </div>
-
-            {/* 4. "It May Be You" Recruitment Card */}
-            <div className="bg-[#dbeafe] text-slate-900 rounded-xl p-6 text-center flex flex-col items-center justify-between border border-blue-200 h-full shadow-2xs hover:shadow-md transition-shadow">
-              <div className="flex flex-col items-center">
-                <div className="w-32 h-32 sm:w-36 sm:h-36 rounded-full bg-white border-2 border-dashed border-[#1e3a8a]/40 mb-4 flex items-center justify-center text-[#1e3a8a] font-times text-4xl font-light">
-                  +
-                </div>
-                <h4 className="text-base sm:text-lg font-bold text-slate-900 font-times">It May Be You!</h4>
-                <p className="text-xs text-[#1e3a8a] font-bold mt-1">Join Us !</p>
-                <p className="text-xs text-slate-600 mt-2 font-times italic">
-                  Inviting Ph.D. researchers and industry computational chemists for hybrid workshop sessions.
-                </p>
-              </div>
-              <button
-                onClick={onJoinTeam}
-                className="mt-6 w-full py-2.5 bg-[#1e3a8a] hover:bg-[#1e40af] text-white font-medium text-xs sm:text-sm rounded-md transition cursor-pointer font-times shadow-xs"
-              >
-                Apply Now
-              </button>
             </div>
           </div>
         </div>

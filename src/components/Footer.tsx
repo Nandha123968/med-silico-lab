@@ -165,15 +165,6 @@ export const Footer: React.FC<FooterProps> = ({
               <li>
                 <button
                   type="button"
-                  onClick={() => handleTabSelect('testimonials')}
-                  className="text-slate-700 hover:text-[#1e3a8a] transition cursor-pointer font-times"
-                >
-                  Testimonials
-                </button>
-              </li>
-              <li>
-                <button
-                  type="button"
                   onClick={() => handleTabSelect('contact')}
                   className="text-slate-700 hover:text-[#1e3a8a] transition cursor-pointer font-times"
                 >

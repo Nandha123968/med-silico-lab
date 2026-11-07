@@ -11,7 +11,6 @@ export type NavTab =
   | 'recent-workshops'
   | 'upcoming-workshops'
   | 'resources'
-  | 'testimonials'
   | 'contact';
 
 interface NavbarProps {
@@ -40,7 +39,6 @@ export const Navbar: React.FC<NavbarProps> = ({
     { id: 'upcoming-workshops', label: 'Upcoming Workshops', shortLabel: 'Upcoming' },
     { id: 'recent-workshops', label: 'Recent Workshops', shortLabel: 'Recent' },
     { id: 'resources', label: 'Resources' },
-    { id: 'testimonials', label: 'Testimonials' },
     { id: 'contact', label: 'Contact & Openings', shortLabel: 'Contact' },
   ];
 

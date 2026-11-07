@@ -11,15 +11,14 @@ import { ServiceDetailModal } from './components/ServiceDetailModal';
 import { AboutSection } from './components/AboutSection';
 import { WorkshopsSection } from './components/WorkshopsSection';
 import { ResourcesSection } from './components/ResourcesSection';
-import { TestimonialsSection } from './components/TestimonialsSection';
 import { ContactSection } from './components/ContactSection';
 import { WordPressExportModal } from './components/WordPressExportModal';
 import { AcademicPublicationPage } from './components/AcademicPublicationPage';
 import { Footer } from './components/Footer';
-import { ServiceItem, TESTIMONIALS_DATA } from './data/servicesData';
+import { ServiceItem } from './data/servicesData';
 import { DEFAULT_WP_CONFIG, WordPressThemeConfig } from './utils/wpThemeGenerator';
 import { sanitizeUrl } from './utils/security';
-import { ArrowRight, Star, Archive, Disc, Calendar, CheckCircle2, BarChart3, Puzzle, User } from 'lucide-react';
+import { ArrowRight } from 'lucide-react';
 import labImg from './assets/images/computational_lab_workstation_1793813247708.jpg';
 import medsilicoLogo from './assets/images/medsilico_logo.png';
 import shankarThapaImg from './assets/images/team/shankar_thapa.jpg';
@@ -96,7 +95,7 @@ export default function App() {
                   {/* Quick Highlight Stats Card in Times New Roman */}
                   <div className="lg:col-span-4 grid grid-cols-2 gap-3 sm:gap-4 font-times">
                     <div className="p-4 sm:p-5 rounded-2xl bg-[#faf7fc] border border-[#e5d5ee] text-center">
-                      <div className="text-2xl sm:text-3xl font-bold text-[#1e3a8a] font-times">100ns+</div>
+                      <div className="text-2xl sm:text-3xl font-bold text-[#1e3a8a] font-times">300ns+</div>
                       <div className="text-xs sm:text-sm text-slate-700 font-times mt-1">GROMACS GPU Trajectories</div>
                     </div>
                     <div className="p-4 sm:p-5 rounded-2xl bg-[#faf7fc] border border-[#e5d5ee] text-center">
@@ -114,77 +113,7 @@ export default function App() {
                   </div>
                 </div>
 
-                {/* Why Us 6 Feature Grid matching Page 1 of Reference PDF */}
-                <div className="mt-14 sm:mt-18">
-                  <div className="bg-[#f8f9fa] rounded-2xl p-6 sm:p-10 border border-slate-100">
-                    <h3 className="text-2xl sm:text-3xl font-normal text-slate-900 mb-8 text-center font-times">
-                      Why Us
-                    </h3>
-                    <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-5 sm:gap-6 font-times">
-                      <div className="p-6 bg-white rounded-lg border border-slate-100 shadow-2xs h-full">
-                        <div className="w-11 h-11 rounded-lg bg-blue-100 text-[#1e3a8a] flex items-center justify-center mb-4">
-                          <Archive className="w-5 h-5" />
-                        </div>
-                        <div className="font-normal text-base text-slate-900 mb-2 font-times">Cutting-Edge Resources</div>
-                        <p className="text-xs sm:text-sm text-slate-600 leading-relaxed font-times">
-                          Stay ahead with access to state-of-the-art tools, techniques, and resources tailored to current scientific advancements.
-                        </p>
-                      </div>
-
-                      <div className="p-6 bg-white rounded-lg border border-slate-100 shadow-2xs h-full">
-                        <div className="w-11 h-11 rounded-lg bg-blue-100 text-[#1e3a8a] flex items-center justify-center mb-4">
-                          <Disc className="w-5 h-5" />
-                        </div>
-                        <div className="font-normal text-base text-slate-900 mb-2 font-times">Session Recordings</div>
-                        <p className="text-xs sm:text-sm text-slate-600 leading-relaxed font-times">
-                          Access recorded sessions anytime, allowing you to revisit content and reinforce your understanding at your own pace.
-                        </p>
-                      </div>
-
-                      <div className="p-6 bg-white rounded-lg border border-slate-100 shadow-2xs h-full">
-                        <div className="w-11 h-11 rounded-lg bg-blue-100 text-[#1e3a8a] flex items-center justify-center mb-4">
-                          <Calendar className="w-5 h-5" />
-                        </div>
-                        <div className="font-normal text-base text-slate-900 mb-2 font-times">Flexible Scheduling</div>
-                        <p className="text-xs sm:text-sm text-slate-600 leading-relaxed font-times">
-                          Benefit from flexible timings designed to accommodate your busy schedule, making learning accessible and convenient.
-                        </p>
-                      </div>
-
-                      <div className="p-6 bg-white rounded-lg border border-slate-100 shadow-2xs h-full">
-                        <div className="w-11 h-11 rounded-lg bg-blue-100 text-[#1e3a8a] flex items-center justify-center mb-4">
-                          <CheckCircle2 className="w-5 h-5" />
-                        </div>
-                        <div className="font-normal text-base text-slate-900 mb-2 font-times">Expert Instructors</div>
-                        <p className="text-xs sm:text-sm text-slate-600 leading-relaxed font-times">
-                          Learn from subject experts and industry professionals with extensive knowledge and experience in various scientific disciplines.
-                        </p>
-                      </div>
-
-                      <div className="p-6 bg-white rounded-lg border border-slate-100 shadow-2xs h-full">
-                        <div className="w-11 h-11 rounded-lg bg-blue-100 text-[#1e3a8a] flex items-center justify-center mb-4">
-                          <BarChart3 className="w-5 h-5" />
-                        </div>
-                        <div className="font-normal text-base text-slate-900 mb-2 font-times">Comprehensive Curriculum</div>
-                        <p className="text-xs sm:text-sm text-slate-600 leading-relaxed font-times">
-                          Our extensive range of programs covers both theoretical concepts and practical applications in modern science.
-                        </p>
-                      </div>
-
-                      <div className="p-6 bg-white rounded-lg border border-slate-100 shadow-2xs h-full">
-                        <div className="w-11 h-11 rounded-lg bg-blue-100 text-[#1e3a8a] flex items-center justify-center mb-4">
-                          <Puzzle className="w-5 h-5" />
-                        </div>
-                        <div className="font-normal text-base text-slate-900 mb-2 font-times">Practical Training</div>
-                        <p className="text-xs sm:text-sm text-slate-600 leading-relaxed font-times">
-                          Our hands-on training approach ensures that you gain real-world experience to excel in your field.
-                        </p>
-                      </div>
-                    </div>
-                  </div>
-                </div>
-
-                {/* Team Members Section matching Page 1 & 2 of Reference PDF */}
+                {/* Team Members Section */}
                 <div className="mt-14 sm:mt-16 pt-4">
                   <div className="text-center max-w-2xl mx-auto mb-10 sm:mb-12">
                     <h3 className="text-2xl sm:text-3xl font-bold text-slate-900 font-times">
@@ -195,7 +124,7 @@ export default function App() {
                     </p>
                   </div>
 
-                  <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-6 max-w-7xl mx-auto text-center font-times">
+                  <div className="grid grid-cols-1 md:grid-cols-3 gap-6 sm:gap-8 max-w-5xl mx-auto text-center font-times">
                     {/* Member 1: Shankar Thapa */}
                     <div className="bg-white border border-slate-200/90 rounded-xl p-6 text-center flex flex-col items-center justify-between h-full shadow-2xs hover:shadow-md transition-shadow">
                       <div className="flex flex-col items-center w-full">
@@ -215,21 +144,21 @@ export default function App() {
                       </div>
                     </div>
 
-                    {/* Member 2: Sadik Shaik */}
+                    {/* Member 2: Dr. Sadik Shaik */}
                     <div className="bg-white border border-slate-200/90 rounded-xl p-6 text-center flex flex-col items-center justify-between h-full shadow-2xs hover:shadow-md transition-shadow">
                       <div className="flex flex-col items-center w-full">
                         <div className="w-32 h-32 sm:w-36 sm:h-36 rounded-full border-2 border-[#1e3a8a]/40 mb-4 overflow-hidden flex items-center justify-center shrink-0 shadow-xs bg-slate-100">
                           <img
                             src={sadikShaikImg}
-                            alt="Sadik Shaik, PhD"
+                            alt="Dr. Sadik Shaik, PhD"
                             className="w-full h-full object-cover object-center"
                           />
                         </div>
-                        <h4 className="text-base sm:text-lg font-bold text-slate-900 font-times">Sadik Shaik</h4>
+                        <h4 className="text-base sm:text-lg font-bold text-slate-900 font-times">Dr. Sadik Shaik</h4>
                         <p className="text-xs text-[#1e3a8a] font-bold mt-0.5">Supervisor &amp; Consultant, Pharmacology Research</p>
                         <div className="mt-3 pt-3 border-t border-slate-100 text-xs text-slate-600 space-y-1 text-center w-full">
                           <div><strong>Qualification:</strong> PhD (Pharmacology)</div>
-                          <div><strong>Specialization:</strong> Pharmacological Screening &amp; In Vivo/In Silico Correlation</div>
+                          <div><strong>Specialization:</strong> Pharmacological Screening &amp; Experimental Validation</div>
                         </div>
                       </div>
                     </div>
@@ -251,33 +180,6 @@ export default function App() {
                           <div><strong>Specialization:</strong> CADD Workflows, Q1/Q2 Manuscript Publication Mentorship</div>
                         </div>
                       </div>
-                    </div>
-
-                    {/* Member 4: It may be You */}
-                    <div
-                      onClick={() => {
-                        setActiveTab('contact');
-                        window.scrollTo({ top: 0, behavior: 'smooth' });
-                      }}
-                      className="bg-[#dbeafe] text-slate-900 rounded-xl p-6 text-center flex flex-col items-center justify-between border border-blue-200 h-full shadow-2xs hover:shadow-md transition-shadow cursor-pointer"
-                    >
-                      <div className="flex flex-col items-center">
-                        <div className="w-32 h-32 sm:w-36 sm:h-36 rounded-full bg-white border-2 border-dashed border-[#1e3a8a]/40 mb-4 flex items-center justify-center text-[#1e3a8a] font-times text-4xl font-light">
-                          +
-                        </div>
-                        <h4 className="text-base sm:text-lg font-bold text-slate-900 font-times">
-                          It May Be You!
-                        </h4>
-                        <p className="text-xs text-[#1e3a8a] font-bold mt-1">
-                          Join Us !
-                        </p>
-                        <p className="text-xs text-slate-600 mt-2 font-times italic">
-                          Inviting Ph.D. researchers and industry computational chemists for hybrid workshop sessions.
-                        </p>
-                      </div>
-                      <span className="mt-5 inline-block py-2 px-5 bg-[#1e3a8a] text-white text-xs sm:text-sm font-medium rounded-md font-times">
-                        Apply Now
-                      </span>
                     </div>
                   </div>
                 </div>
@@ -334,58 +236,6 @@ export default function App() {
                       <span>Call Desk: +91 7827943097</span>
                     </a>
                   </div>
-                </div>
-              </div>
-            </section>
-
-            {/* Testimonials Snippet on Home (Matching Page 3 of Reference PDF) */}
-            <section className="py-14 sm:py-20 bg-[#dbeafe] font-times">
-              <div className="max-w-5xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
-                <h3 className="text-2xl sm:text-3xl lg:text-4xl font-normal text-slate-900 font-times">
-                  Here is what our wonderful scholars say about us!
-                </h3>
-                <div className="mt-4 mb-8 sm:mb-10">
-                  <button
-                    onClick={() => {
-                      setActiveTab('testimonials');
-                      window.scrollTo({ top: 0, behavior: 'smooth' });
-                    }}
-                    className="px-5 py-2 bg-[#1e3a8a] hover:bg-[#1e40af] text-white text-sm font-times rounded-md shadow-xs cursor-pointer transition"
-                  >
-                    View All
-                  </button>
-                </div>
-
-                {/* Featured Quote Banner matching Page 3 of Reference PDF */}
-                <div className="bg-white rounded-lg p-6 sm:p-8 shadow-xs border border-blue-100 max-w-3xl mx-auto mb-8 text-center">
-                  <p className="text-sm sm:text-base text-slate-900 font-times leading-relaxed">
-                    &ldquo;It was a very good workshop on molecular dynamic simulation. Worth participation.&rdquo;
-                  </p>
-                  <div className="mt-3 text-xs sm:text-sm font-bold text-slate-900 font-times">
-                    &ndash; Dr. Manjunatha D. H.
-                  </div>
-                </div>
-
-                {/* Additional Scholar Reviews Grid */}
-                <div className="grid grid-cols-1 sm:grid-cols-3 gap-5 sm:gap-6 font-times text-left">
-                  {TESTIMONIALS_DATA.slice(0, 3).map((item, idx) => (
-                    <div key={idx} className="p-5 rounded-lg border border-blue-100 bg-white shadow-2xs flex flex-col justify-between h-full">
-                      <div>
-                        <div className="flex items-center gap-1 text-amber-500 mb-2">
-                          {[...Array(item.rating)].map((_, i) => (
-                            <Star key={i} className="w-3.5 h-3.5 fill-current" />
-                          ))}
-                        </div>
-                        <p className="text-xs sm:text-sm text-slate-800 italic leading-relaxed mb-4 font-times">
-                          &ldquo;{item.feedback}&rdquo;
-                        </p>
-                      </div>
-                      <div className="pt-3 border-t border-slate-100 text-xs font-times">
-                        <div className="font-bold text-slate-900">&ndash; {item.name}</div>
-                        <div className="text-[11px] text-slate-500 mt-0.5">{item.institution}</div>
-                      </div>
-                    </div>
-                  ))}
                 </div>
               </div>
             </section>
@@ -469,11 +319,6 @@ export default function App() {
         {/* VIEW: RESOURCES */}
         {activeTab === 'resources' && (
           <ResourcesSection />
-        )}
-
-        {/* VIEW: TESTIMONIALS */}
-        {activeTab === 'testimonials' && (
-          <TestimonialsSection />
         )}
 
         {/* VIEW: CONTACT & OPENINGS */}
