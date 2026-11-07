@@ -52,11 +52,11 @@ export const Footer: React.FC<FooterProps> = ({
             {/* Social / Quick Contact Icons under Emblem */}
             <div className="flex items-center gap-2.5 pl-1">
               <a
-                href="https://www.youtube.com/watch?v=TQJgJB1-6ms&t=9s"
+                href="https://youtube.com/@medsilico?si=Tup8-4mNuXcJJ9eA"
                 target="_blank"
                 rel="noopener noreferrer"
                 aria-label="YouTube Channel"
-                title="Watch on YouTube"
+                title="Watch on YouTube (@medsilico)"
                 className="w-8 h-8 rounded-full bg-[#FF0000] hover:bg-[#D90000] text-white flex items-center justify-center transition shadow-2xs hover:scale-105 cursor-pointer"
               >
                 <svg className="w-4 h-4 fill-white" viewBox="0 0 24 24">

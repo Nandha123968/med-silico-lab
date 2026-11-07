@@ -48,8 +48,8 @@ export const Navbar: React.FC<NavbarProps> = ({
 
   return (
     <header className="bg-white/98 backdrop-blur-md border-b border-slate-200/80 sticky top-0 z-40 shadow-xs w-full font-times">
-      <div className="max-w-[1440px] mx-auto px-3 sm:px-6 lg:px-6 xl:px-8">
-        <div className="flex items-center justify-between gap-4 lg:gap-8 h-20 sm:h-22 lg:h-24">
+      <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+        <div className="flex items-center justify-between gap-3 sm:gap-4 lg:gap-6 h-20 sm:h-22 lg:h-24">
 
           {/* Zone 1: Brand title & academic shield insignia */}
           <button
@@ -72,27 +72,27 @@ export const Navbar: React.FC<NavbarProps> = ({
             </div>
           </button>
 
-          {/* Zone 2 & 3: Navigation Links & Consultation Quote grouped closely together */}
-          <div className="flex items-center gap-3 xl:gap-5 ml-auto">
-            <nav
-              aria-label="Primary Navigation"
-              className="hidden lg:flex items-center gap-1 xl:gap-2.5 2xl:gap-3.5 text-[14px] xl:text-[15.5px] 2xl:text-[16.5px] text-slate-800 font-times px-1 shrink-0"
-            >
-              {navLinks.map((link) => (
-                <button
-                  key={link.id}
-                  onClick={() => handleLinkClick(link.id)}
-                  className={`transition-colors whitespace-nowrap shrink-0 px-2 xl:px-2.5 py-1.5 border-b-[2.5px] cursor-pointer font-times ${activeTab === link.id
-                    ? 'border-[#1e3a8a] text-[#1e3a8a] font-bold'
-                    : 'border-transparent text-slate-700 hover:text-[#1e3a8a] hover:border-blue-300 font-medium'
-                    }`}
-                >
-                  <span>{link.shortLabel || link.label}</span>
-                </button>
-              ))}
-            </nav>
+          {/* Zone 2: Navigation Links - Shifted towards the left with balanced layout */}
+          <nav
+            aria-label="Primary Navigation"
+            className="hidden lg:flex items-center justify-center flex-1 gap-1.5 xl:gap-3 2xl:gap-3.5 text-[14.5px] xl:text-[15.5px] 2xl:text-[16px] text-slate-800 font-times px-2"
+          >
+            {navLinks.map((link) => (
+              <button
+                key={link.id}
+                onClick={() => handleLinkClick(link.id)}
+                className={`transition-colors whitespace-nowrap shrink-0 px-2.5 xl:px-3 py-1.5 border-b-[2.5px] cursor-pointer font-times ${activeTab === link.id
+                  ? 'border-[#1e3a8a] text-[#1e3a8a] font-bold'
+                  : 'border-transparent text-slate-700 hover:text-[#1e3a8a] hover:border-blue-300 font-medium'
+                  }`}
+              >
+                <span>{link.shortLabel || link.label}</span>
+              </button>
+            ))}
+          </nav>
 
-            {/* Consultation Quote Action */}
+          {/* Zone 3: Consultation Quote Action & Mobile/Tablet Menu Toggle */}
+          <div className="flex items-center gap-2 shrink-0 z-10">
             <button
               onClick={onOpenConsultation}
               className="hidden sm:inline-flex items-center gap-1.5 px-3.5 xl:px-4 py-2 text-xs xl:text-sm font-bold text-white bg-[#1e3a8a] hover:bg-[#1e40af] rounded-md shadow-xs transition cursor-pointer whitespace-nowrap shrink-0 font-times"
