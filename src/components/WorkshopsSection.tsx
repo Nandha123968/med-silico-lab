@@ -1,4 +1,4 @@
-﻿import React, { useState } from 'react';
+import React, { useState } from 'react';
 import { Calendar, Clock, Download, CheckCircle, Video, UserCheck, X, AlertCircle } from 'lucide-react';
 import { WORKSHOPS_DATA, WorkshopItem } from '../data/servicesData';
 import vaccineImg from '../assets/images/insilico_vaccine_bioinformatics_1793813248004.jpg';
@@ -35,10 +35,7 @@ export const WorkshopsSection: React.FC<WorkshopsSectionProps> = ({
     designation: 'Research Scholar',
   });
 
-  const displayedWorkshops = WORKSHOPS_DATA.filter((w) => {
-    if (activeTab === 'upcoming') return w.isUpcoming;
-    return !w.isUpcoming;
-  });
+  const displayedWorkshops = WORKSHOPS_DATA.filter((w) => !w.isUpcoming);
 
   const handleDownloadBrochure = (workshop: WorkshopItem) => {
     const text = `MED-SILICO LAB - WORKSHOP SYLLABUS & BROCHURE
@@ -56,7 +53,7 @@ ${workshop.topics.map((t, i) => `${i + 1}. ${t}`).join('\n')}
 CERTIFICATION:
 Official Verified E-Certificate with Unique Verification ID and Institutional Seal from Med-Silico Lab.
 
-For enquiries: contact@medsilicolab.com | +91 7827943097
+For enquiries: contact@medsilicolab.com | +91 8310468262
 =====================================================`;
 
     const blob = new Blob([text], { type: 'text/plain;charset=utf-8' });
@@ -125,39 +122,11 @@ For enquiries: contact@medsilicolab.com | +91 7827943097
             Skill Development &amp; Practical Training
           </div>
           <h2 className="text-2xl sm:text-3xl lg:text-4xl font-normal text-slate-900 tracking-tight font-times">
-            {activeTab === 'upcoming' ? 'Upcoming Trainings & Workshops' : 'Recent Trainings & Workshops'}
+            Workshops &amp; Hands-On Training Sessions
           </h2>
           <p className="font-times italic text-slate-700 mt-2 text-sm sm:text-base">
-            {activeTab === 'upcoming'
-              ? 'Join live interactive virtual laboratories with dedicated GPU workstations and hands-on guidance.'
-              : 'Missed our live training sessions due to time constraints? You can still join and learn through our complete session recordings.'}
+            Missed our live training sessions due to time constraints? You can still join and learn through our complete session recordings and verified certification.
           </p>
-
-          {/* Toggle Tabs */}
-          <div className="inline-flex flex-wrap justify-center p-1 bg-white border border-blue-200 rounded-xl mt-6 font-times gap-1">
-            <button
-              type="button"
-              onClick={() => setActiveTab('upcoming')}
-              className={`px-4 py-2 text-xs sm:text-sm font-medium rounded-lg transition cursor-pointer ${
-                activeTab === 'upcoming'
-                  ? 'bg-[#1e3a8a] text-white shadow-xs font-semibold'
-                  : 'text-slate-700 hover:text-[#1e3a8a]'
-              }`}
-            >
-              Upcoming Workshops (2026)
-            </button>
-            <button
-              type="button"
-              onClick={() => setActiveTab('recent')}
-              className={`px-4 py-2 text-xs sm:text-sm font-medium rounded-lg transition cursor-pointer ${
-                activeTab === 'recent'
-                  ? 'bg-[#1e3a8a] text-white shadow-xs font-semibold'
-                  : 'text-slate-700 hover:text-[#1e3a8a]'
-              }`}
-            >
-              Recent Completed &amp; Recordings
-            </button>
-          </div>
         </div>
 
         {/* Workshop Cards Grid */}

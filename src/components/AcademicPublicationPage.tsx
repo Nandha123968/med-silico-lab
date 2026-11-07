@@ -175,7 +175,7 @@ export const AcademicPublicationPage: React.FC<AcademicPublicationPageProps> = (
               </div>
               <div className="flex items-center gap-2 bg-slate-50 text-slate-800 px-3.5 py-2 rounded-lg border border-slate-300">
                 <Phone className="w-3.5 h-3.5 text-[#1e3a8a] shrink-0" />
-                <span>Consultation Desk: <a href="tel:+917827943097" className="font-semibold underline hover:text-[#1e3a8a]">+91 7827943097</a></span>
+                <span>Consultation Desk: <a href="tel:+918310468262" className="font-semibold underline hover:text-[#1e3a8a]">+91 8310468262</a></span>
               </div>
             </div>
           </div>
@@ -191,7 +191,7 @@ export const AcademicPublicationPage: React.FC<AcademicPublicationPageProps> = (
               Our Dedicated Academic Consulting Services
             </h2>
             <p className="font-times text-xs sm:text-sm text-slate-600 mt-2">
-              From raw trajectory data and binding poses to final journal acceptance and rebuttal defense.
+              From raw trajectory data and binding poses to final journal acceptance and reviewer query support.
             </p>
           </div>
 
@@ -275,10 +275,10 @@ export const AcademicPublicationPage: React.FC<AcademicPublicationPageProps> = (
                   Publication Guidance &amp; Peer-Review Mentorship
                 </h3>
                 <p className="font-times italic text-xs text-indigo-800 mb-3">
-                  End-to-end peer review navigation, rebuttal drafting, &amp; editorial correspondence
+                  End-to-end peer review navigation, reviewer response guidance, &amp; editorial correspondence
                 </p>
                 <p className="font-times text-xs sm:text-sm text-slate-700 leading-relaxed mb-6">
-                  Comprehensive strategic mentorship navigating international peer-review cycles. From initial submission portal management and cover letter composition to point-by-point rebuttal drafting for demanding reviewers.
+                  Comprehensive strategic mentorship navigating international peer-review cycles. Assisting scholars with technical query deconstruction, supplementary simulation evidence, and academic response package structuring.
                 </p>
 
                 <div className="space-y-2 mb-6 font-times text-xs text-slate-700">
@@ -287,15 +287,15 @@ export const AcademicPublicationPage: React.FC<AcademicPublicationPageProps> = (
                   </div>
                   <div className="flex items-start gap-2">
                     <span className="text-indigo-700 font-bold shrink-0">1.</span>
-                    <span>Persuasive Cover Letter drafting highlighting empirical novelty, biological importance, and journal scope alignment.</span>
+                    <span>Persuasive Cover Letter structuring highlighting empirical novelty, biological importance, and journal scope alignment.</span>
                   </div>
                   <div className="flex items-start gap-2">
                     <span className="text-indigo-700 font-bold shrink-0">2.</span>
-                    <span>Deconstruction of Major/Minor revision reviewer queries into structured, evidence-based rebuttal points.</span>
+                    <span>Deconstruction of Major/Minor revision reviewer queries into structured, evidence-based scientific responses.</span>
                   </div>
                   <div className="flex items-start gap-2">
                     <span className="text-indigo-700 font-bold shrink-0">3.</span>
-                    <span>Execution of reviewer-requested supplementary simulations (extended 100ns MD, MM-GBSA rescoring, control docking).</span>
+                    <span>Execution of reviewer-requested supplementary simulations (extended MD simulations, MM-GBSA rescoring, control docking).</span>
                   </div>
                   <div className="flex items-start gap-2">
                     <span className="text-indigo-700 font-bold shrink-0">4.</span>
@@ -458,7 +458,7 @@ export const AcademicPublicationPage: React.FC<AcademicPublicationPageProps> = (
               Representative In Silico &amp; Biomedical Target Journals
             </h3>
             <p className="font-times text-xs sm:text-sm text-slate-600 mt-1">
-              Sample list of internationally indexed journals where our mentors assist scholars in formatting, submission, and rebuttal defense.
+              Sample list of internationally indexed journals where our mentors assist scholars in formatting, submission, and peer-review response support.
             </p>
           </div>
 
@@ -509,7 +509,7 @@ export const AcademicPublicationPage: React.FC<AcademicPublicationPageProps> = (
                   {[
                     { id: 'full-package', label: 'Full End-to-End Package' },
                     { id: 'manuscript', label: 'Manuscript Prep Only' },
-                    { id: 'publication', label: 'Publication & Rebuttal' },
+                    { id: 'publication', label: 'Publication & Peer Review' },
                     { id: 'plagiarism', label: 'Plagiarism & Paraphrase' },
                     { id: 'journal', label: 'Journal Selection Only' },
                   ].map((item) => (
@@ -641,14 +641,14 @@ export const AcademicPublicationPage: React.FC<AcademicPublicationPageProps> = (
                   </div>
                   <div className="flex items-start gap-2">
                     <CheckCircle className="w-3.5 h-3.5 text-blue-200 shrink-0 mt-0.5" />
-                    <span>Rebuttal letter strategy template included</span>
+                    <span>Reviewer response advisory &amp; data template included</span>
                   </div>
                 </div>
               </div>
 
               <div className="space-y-3 font-times">
                 <a
-                  href={`https://wa.me/917827943097?text=${encodeURIComponent(
+                  href={`https://wa.me/918310468262?text=${encodeURIComponent(
                     `Hello Med-Silico Lab, I am interested in the ${selectedPlan} service for approximately ${wordCount} words.`
                   )}`}
                   target="_blank"
@@ -656,7 +656,7 @@ export const AcademicPublicationPage: React.FC<AcademicPublicationPageProps> = (
                   className="w-full py-3 px-4 bg-emerald-600 hover:bg-emerald-500 text-white font-semibold text-xs uppercase tracking-wider rounded-lg transition flex items-center justify-center gap-2 font-times shadow-sm"
                 >
                   <Phone className="w-4 h-4 shrink-0" />
-                  <span>Instant WhatsApp (+91 7827943097)</span>
+                  <span>Instant WhatsApp (+91 8310468262)</span>
                 </a>
 
                 <button
@@ -700,7 +700,7 @@ export const AcademicPublicationPage: React.FC<AcademicPublicationPageProps> = (
                 Inquiry Successfully Transmitted!
               </h4>
               <p className="text-xs text-emerald-800 mt-1">
-                Our academic publication coordinator will review your manuscript scope and contact you via email or WhatsApp (+91 7827943097) shortly.
+                Our academic publication coordinator will review your manuscript scope and contact you via email or WhatsApp (+91 8310468262) shortly.
               </p>
             </div>
           ) : (
@@ -741,7 +741,7 @@ export const AcademicPublicationPage: React.FC<AcademicPublicationPageProps> = (
                     maxLength={24}
                     value={formData.phone}
                     onChange={(e) => setFormData({ ...formData, phone: e.target.value })}
-                    placeholder="e.g. +91 7827943097"
+                    placeholder="e.g. +91 8310468262"
                     className="w-full p-2.5 rounded-lg border border-slate-300 focus:outline-none focus:ring-2 focus:ring-blue-700 bg-slate-50 font-times"
                   />
                 </div>
@@ -753,7 +753,7 @@ export const AcademicPublicationPage: React.FC<AcademicPublicationPageProps> = (
                     className="w-full p-2.5 rounded-lg border border-slate-300 focus:outline-none focus:ring-2 focus:ring-blue-700 bg-slate-50 font-times"
                   >
                     <option value="Manuscript Preparation Guidance">Manuscript Preparation Guidance</option>
-                    <option value="Publication Guidance & Rebuttal">Publication Guidance &amp; Rebuttal</option>
+                    <option value="Publication Guidance & Peer-Review Support">Publication Guidance &amp; Peer-Review Support</option>
                     <option value="Plagiarism Checking & Paraphrasing">Plagiarism Checking &amp; Paraphrasing</option>
                     <option value="Strategic Journal Selection">Strategic Journal Selection</option>
                     <option value="Comprehensive Publication Package">Comprehensive Publication Package</option>
@@ -801,7 +801,7 @@ export const AcademicPublicationPage: React.FC<AcademicPublicationPageProps> = (
           <div className="mt-8 pt-6 border-t border-slate-100 flex flex-col sm:flex-row items-center justify-between text-xs font-times text-slate-600 gap-3">
             <div className="flex items-center gap-2">
               <Phone className="w-3.5 h-3.5 text-blue-800 shrink-0" />
-              <span>Call / WhatsApp: <a href="tel:+917827943097" className="font-bold text-slate-900 underline hover:text-blue-900">+91 7827943097</a></span>
+              <span>Call / WhatsApp: <a href="tel:+918310468262" className="font-bold text-slate-900 underline hover:text-blue-900">+91 8310468262</a></span>
             </div>
             <div className="flex items-center gap-2">
               <Mail className="w-3.5 h-3.5 text-blue-800 shrink-0" />

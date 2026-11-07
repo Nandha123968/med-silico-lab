@@ -256,8 +256,8 @@ Send credentials directly to: contact@medsilicolab.com
                   Head Office
                 </span>
                 <p className="font-times text-xs sm:text-sm text-slate-700">
-                  Veerabhadreshwara Nagar Main Rd, Herohalli,<br />
-                  Sunkadakatte, Bengaluru, Karnataka 560091, India
+                  Pahalamanpur-10, Ghodaghodi Municipality,<br />
+                  Kailali, Nepal
                 </p>
               </div>
               <div className="pt-2 border-t border-slate-100 text-center">
@@ -265,8 +265,8 @@ Send credentials directly to: contact@medsilicolab.com
                   Branch Office
                 </span>
                 <p className="font-times text-xs sm:text-sm text-slate-700">
-                  Pahalamanpur-10, Ghodaghodi Municipality,<br />
-                  Kailali, Nepal
+                  Veerabhadreshwara Nagar Main Rd, Herohalli,<br />
+                  Sunkadakatte, Bengaluru, Karnataka 560091, India
                 </p>
               </div>
             </div>
@@ -278,7 +278,7 @@ Send credentials directly to: contact@medsilicolab.com
             </div>
             <h4 className="text-xs font-times font-bold uppercase tracking-wider text-slate-400 mb-1">Call &amp; WhatsApp</h4>
             <p className="font-times text-xs sm:text-sm text-slate-700 font-medium">
-              <a href="tel:+917827943097" className="hover:text-[#1e3a8a] underline font-semibold">+91 7827943097</a><br />
+              <a href="tel:+918310468262" className="hover:text-[#1e3a8a] underline font-semibold">+91 8310468262</a><br />
               <span className="text-slate-500 font-normal font-times text-xs">Mon - Sat: 9:00 AM - 7:00 PM IST</span>
             </p>
           </div>
@@ -359,7 +359,7 @@ Send credentials directly to: contact@medsilicolab.com
                     value={formData.mobile}
                     onChange={(e) => setFormData({ ...formData, mobile: e.target.value })}
                     className="w-full px-3.5 py-2.5 border border-slate-300 rounded-lg text-slate-900 focus:outline-cyan-700 font-mono text-sm"
-                    placeholder="+91 7827943097"
+                    placeholder="+91 8310468262"
                   />
                 </div>
 

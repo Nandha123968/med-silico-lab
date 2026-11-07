@@ -64,7 +64,7 @@ export default function App() {
             <Hero
               onExploreServices={() => setActiveTab('services')}
               onOpenConsultation={() => handleOpenConsultation()}
-              onViewWorkshops={() => setActiveTab('upcoming-workshops')}
+              onViewWorkshops={() => setActiveTab('recent-workshops')}
             />
 
             {/* About Us, Why Us & Team Members Section (Matching Page 1 & 2 of Reference PDF) */}
@@ -230,10 +230,10 @@ export default function App() {
                       <ArrowRight className="w-4 h-4 shrink-0" />
                     </button>
                     <a
-                      href="tel:+917827943097"
+                      href="tel:+918310468262"
                       className="px-6 py-2.5 bg-[#faf7fc] hover:bg-[#dbeafe] text-[#1e3a8a] border border-blue-300 font-semibold text-xs sm:text-sm uppercase tracking-wider rounded-md transition text-center flex items-center justify-center gap-2 font-times"
                     >
-                      <span>Call Desk: +91 7827943097</span>
+                      <span>Call Desk: +91 8310468262</span>
                     </a>
                   </div>
                 </div>
@@ -285,7 +285,7 @@ export default function App() {
               setActiveTab('contact');
               window.scrollTo({ top: 300, behavior: 'smooth' });
             }}
-            onExploreWorkshops={() => setActiveTab('upcoming-workshops')}
+            onExploreWorkshops={() => setActiveTab('recent-workshops')}
           />
         )}
 
@@ -306,14 +306,9 @@ export default function App() {
           />
         )}
 
-        {/* VIEW: RECENT WORKSHOPS */}
+        {/* VIEW: WORKSHOPS */}
         {activeTab === 'recent-workshops' && (
-          <WorkshopsSection viewMode="recent" />
-        )}
-
-        {/* VIEW: UPCOMING WORKSHOPS */}
-        {activeTab === 'upcoming-workshops' && (
-          <WorkshopsSection viewMode="upcoming" />
+          <WorkshopsSection viewMode="all" />
         )}
 
         {/* VIEW: RESOURCES */}
@@ -354,11 +349,11 @@ export default function App() {
 
       {/* 6. Floating WhatsApp Instant Connect Widget */}
       <a
-        href="https://wa.me/917827943097?text=Hello%20Med-Silico%20Lab%2C%20I%20am%20interested%20in%20your%20computational%20research%20services"
+        href="https://wa.me/918310468262?text=Hello%20Med-Silico%20Lab%2C%20I%20am%20interested%20in%20your%20computational%20research%20services"
         target="_blank"
         rel="noopener noreferrer"
         aria-label="Chat with us on WhatsApp"
-        title="Chat on WhatsApp (+91 7827943097)"
+        title="Chat on WhatsApp (+91 8310468262)"
         className="fixed bottom-6 right-6 z-50 bg-[#25D366] hover:bg-[#20ba59] text-white p-3.5 rounded-full shadow-lg hover:shadow-2xl transition-all duration-300 flex items-center gap-2 group cursor-pointer hover:scale-105"
       >
         <svg className="w-6 h-6 fill-current shrink-0" viewBox="0 0 24 24">

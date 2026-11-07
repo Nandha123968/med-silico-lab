@@ -140,7 +140,7 @@ export const AboutSection: React.FC<AboutSectionProps> = ({
                 onClick={onExploreWorkshops}
                 className="px-6 py-2.5 bg-[#1e3a8a] hover:bg-[#1e40af] text-white font-medium text-sm rounded-md transition cursor-pointer text-center shadow-xs"
               >
-                View Upcoming Workshops
+                View Workshops
               </button>
               <button
                 onClick={onJoinTeam}

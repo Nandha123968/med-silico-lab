@@ -434,23 +434,23 @@ export const ORDERED_SERVICES: ServiceItem[] = [
     id: 'publication-guidance',
     orderNumber: '16',
     title: 'Publication Guidance',
-    tagline: 'End-to-end peer review navigation, rebuttal drafting, & editorial correspondence',
+    tagline: 'End-to-end peer review navigation, reviewer response guidance, & editorial correspondence',
     category: 'academic-publishing',
-    description: 'Comprehensive strategic mentorship navigating international peer-review cycles. From initial submission portal management to point-by-point rebuttal drafting for demanding reviewers.',
+    description: 'Comprehensive strategic mentorship navigating international peer-review cycles. Assisting scholars with technical query deconstruction, supplementary simulation evidence, and academic response package structuring.',
     methodology: [
       'Pre-submission technical audit checking compliance with journal specific author guidelines',
       'Analysis of editor decision letters (Major Revision, Minor Revision)',
-      'Point-by-point rebuttal letter formulation addressing reviewer critiques with experimental and in silico evidence',
+      'Scientific response formulation addressing reviewer critiques with experimental and in silico evidence',
       'Tracked changes integration and highlighted revised manuscript preparation'
     ],
     deliverables: [
-      'Polished Response-to-Reviewers document with persuasive, respectful academic rebuttals',
+      'Structured Response-to-Reviewers consultation document addressing scientific queries',
       'Revised manuscript highlighting all additions, modifications, and clarifications',
       'Editorial query correspondence assistance throughout the production proof cycle'
     ],
     toolsUsed: ['Grammarly Academic', 'Academic Editor Suite', 'Overleaf / LaTeX'],
     sampleMetrics: [
-      { label: 'Rebuttal Success Rate', value: '94%' },
+      { label: 'Revision Success Rate', value: '94%' },
       { label: 'Reviewer Query Closure', value: '100% Addressed' },
       { label: 'Editorial Support', value: 'Full Revision Cycle' }
     ],
@@ -610,7 +610,7 @@ export const WORKSHOPS_DATA: WorkshopItem[] = [
       'Drafting Title, Abstract, and Keywords for Maximum Citation Impact',
       'IMRaD Structure & Scientific English Writing Polish',
       'ChemDraw & OriginPro for Publication-Quality 300+ DPI Figures',
-      'Handling Reviewer Rebuttals & Editor Queries Professionally',
+      'Addressing Reviewer Critiques & Editor Queries Professionally',
       'Plagiarism Prevention & Journal Selection Matrix'
     ],
     instructor: 'Prof. K. Sundaram',

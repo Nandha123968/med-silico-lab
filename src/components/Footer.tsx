@@ -47,9 +47,6 @@ export const Footer: React.FC<FooterProps> = ({
               <div className="text-[11px] text-slate-600 font-times mt-0.5">
                 EST. 2026 &bull; Computational Drug Discovery &bull; Pharmaceutical Research &bull; Scientific Education
               </div>
-              <div className="mt-2 px-3 py-1 bg-[#1e3a8a] text-white text-[10px] font-bold uppercase tracking-wider rounded-xs font-times">
-                Transforming Pharmaceutical Research Through Computational Innovation
-              </div>
             </div>
 
             {/* Social / Quick Contact Icons under Emblem */}
@@ -67,11 +64,11 @@ export const Footer: React.FC<FooterProps> = ({
                 </svg>
               </a>
               <a
-                href="https://wa.me/917827943097"
+                href="https://wa.me/918310468262"
                 target="_blank"
                 rel="noopener noreferrer"
                 aria-label="WhatsApp"
-                title="Chat on WhatsApp (+91 7827943097)"
+                title="Chat on WhatsApp (+91 8310468262)"
                 className="w-8 h-8 rounded-full bg-[#25D366] hover:bg-[#20ba59] text-white flex items-center justify-center transition shadow-2xs hover:scale-105 cursor-pointer"
               >
                 <svg className="w-4 h-4 fill-white" viewBox="0 0 24 24">
@@ -138,19 +135,10 @@ export const Footer: React.FC<FooterProps> = ({
               <li>
                 <button
                   type="button"
-                  onClick={() => handleTabSelect('upcoming-workshops')}
-                  className="text-slate-700 hover:text-[#1e3a8a] transition cursor-pointer font-times"
-                >
-                  Upcoming Workshops
-                </button>
-              </li>
-              <li>
-                <button
-                  type="button"
                   onClick={() => handleTabSelect('recent-workshops')}
                   className="text-slate-700 hover:text-[#1e3a8a] transition cursor-pointer font-times"
                 >
-                  Recent Workshops
+                  Workshops
                 </button>
               </li>
               <li>
@@ -184,19 +172,19 @@ export const Footer: React.FC<FooterProps> = ({
                 <MapPin className="w-4 h-4 text-[#1e3a8a] shrink-0 mt-0.5" />
                 <div className="font-times text-slate-700 leading-relaxed text-xs">
                   <span className="font-bold text-[#1e3a8a] block text-[11px] uppercase tracking-wider">Head Office:</span>
-                  Veerabhadreshwara Nagar Main Rd, Herohalli, Sunkadakatte, Bengaluru, Karnataka 560091, India.
+                  Pahalamanpur-10, Ghodaghodi Municipality, Kailali, Nepal.
                 </div>
               </div>
               <div className="flex items-start gap-2.5">
                 <MapPin className="w-4 h-4 text-[#1e3a8a] shrink-0 mt-0.5" />
                 <div className="font-times text-slate-700 leading-relaxed text-xs">
                   <span className="font-bold text-[#1e3a8a] block text-[11px] uppercase tracking-wider">Branch Office:</span>
-                  Pahalamanpur-10, Ghodaghodi Municipality, Kailali, Nepal.
+                  Veerabhadreshwara Nagar Main Rd, Herohalli, Sunkadakatte, Bengaluru, Karnataka 560091, India.
                 </div>
               </div>
               <div className="flex items-center gap-2.5 pt-1">
                 <Phone className="w-4 h-4 text-[#1e3a8a] shrink-0" />
-                <a href="tel:+917827943097" className="font-times text-slate-700 hover:text-[#1e3a8a] transition underline">+91 7827943097</a>
+                <a href="tel:+918310468262" className="font-times text-slate-700 hover:text-[#1e3a8a] transition underline">+91 8310468262</a>
               </div>
               <div className="flex items-center gap-2.5">
                 <Mail className="w-4 h-4 text-[#1e3a8a] shrink-0" />

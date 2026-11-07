@@ -228,7 +228,7 @@ add_action( 'init', 'med_silico_register_cpts' );
                 Pioneering in silico drug discovery, molecular dynamics simulations, QSAR modeling, and high-impact manuscript publication consulting for biomedical researchers and academic institutions worldwide.
             </p>
             <div class="text-xs font-mono text-slate-500">
-                Registered Research Consulting Hub · In Silico Bio-Computing · Phone: +91 7827943097
+                Registered Research Consulting Hub · In Silico Bio-Computing · Phone: +91 8310468262
             </div>
         </div>
 
@@ -256,7 +256,7 @@ add_action( 'init', 'med_silico_register_cpts' );
     </div>
 
     <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 mt-12 pt-8 border-t border-slate-900 text-xs text-slate-500 flex flex-col sm:flex-row items-center justify-between gap-4 font-serif">
-        <div>© <?php echo date('Y'); ?> Med-Silico Lab. All Rights Reserved. Desk: +91 7827943097</div>
+        <div>© <?php echo date('Y'); ?> Med-Silico Lab. All Rights Reserved. Desk: +91 8310468262</div>
         <div class="flex items-center gap-6">
             <a href="#" class="hover:text-slate-400">Research Ethics</a>
             <a href="#" class="hover:text-slate-400">Data Confidentiality</a>
@@ -379,7 +379,7 @@ get_header(); ?>
             <div class="service-card border-indigo-200 bg-indigo-50/30">
                 <span class="text-xs font-mono text-indigo-700 font-bold">EDITORIAL SUPPORT</span>
                 <h3 class="text-lg font-bold text-slate-900 mt-2 mb-2">Publication Guidance</h3>
-                <p class="text-sm text-slate-600">Point-by-point rebuttal letters for major/minor revisions, reviewer critiques resolution, and submission support.</p>
+                <p class="text-sm text-slate-600">Reviewer critique resolution, technical query deconstruction, supplementary simulation data, and submission support.</p>
             </div>
             <!-- Plagiarism Checking -->
             <div class="service-card border-indigo-200 bg-indigo-50/30">

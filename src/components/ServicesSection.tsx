@@ -246,7 +246,7 @@ export const ServicesSection: React.FC<ServicesSectionProps> = ({
                 </h4>
                 <ul className="space-y-1.5 text-xs sm:text-sm text-slate-700">
                   <li>1. Manuscript Technical Preparation for SCI Journals</li>
-                  <li>2. Publication Guidance &amp; Reviewer Rebuttal Letters</li>
+                  <li>2. Publication Guidance &amp; Peer-Review Technical Mentorship</li>
                   <li>3. Certified Plagiarism Checking (iThenticate/Turnitin)</li>
                   <li>4. Strategic SCI / Scopus Journal Selection</li>
                   <li>5. High-Resolution Graphical Abstract Design</li>
