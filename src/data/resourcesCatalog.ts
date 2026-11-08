@@ -57,8 +57,12 @@ import stringDbLogo from '../assets/images/software_logos/string_db.png';
 import genecardsLogo from '../assets/images/software_logos/genecards.png';
 import nmrdbLogo from '../assets/images/software_logos/nmrdb.png';
 import halalFtirLogo from '../assets/images/software_logos/halal_ftir.png';
+import ftirLabLogo from '../assets/images/software_logos/ftir_lab.png';
 import irSolutionLogo from '../assets/images/software_logos/ir_solution.png';
 import metlabLogo from '../assets/images/software_logos/metlab.png';
+import matlabLogo from '../assets/images/software_logos/matlab.png';
+import seamdockLogo from '../assets/images/software_logos/seamdock.png';
+import hdockLogo from '../assets/images/software_logos/hdock.png';
 import ortep3Logo from '../assets/images/software_logos/ortep3.png';
 import mercuryLogo from '../assets/images/software_logos/mercury.png';
 import olex2Logo from '../assets/images/software_logos/olex2.png';
@@ -83,8 +87,11 @@ export const FULL_SOFTWARE_CATALOG: SoftwareToolItem[] = [
   // 1. Molecular Docking Tools
   { id: 'autodock-vina', name: 'AutoDock Vina', logo: autodockVinaLogo, url: 'https://vina.scripps.edu/', category: 'Molecular Docking' },
   { id: 'pyrx', name: 'PyRx', logo: pyrxLogo, url: 'https://pyrx.sourceforge.io/', category: 'Molecular Docking' },
-  { id: 'dockamon-pro', name: 'Dockamon Pro', logo: dockamonLogo, url: 'https://dockamon.com/', category: 'Molecular Docking' },
-  { id: 'mzdock', name: 'MzDock', logo: mzdockLogo, url: 'https://mzdock.rpbs.univ-paris-diderot.fr/', category: 'Molecular Docking' },
+  { id: 'dockamon-pro', name: 'Dockamon Pro', logo: dockamonLogo, url: 'https://crescent-silico.com/', category: 'Molecular Docking' },
+  { id: 'mzdock', name: 'MzDock', logo: mzdockLogo, url: 'https://sourceforge.net/projects/mzdock/', category: 'Molecular Docking' },
+  { id: 'mgl-tools', name: 'MGL-Tools', logo: mglToolsLogo, url: 'https://sannerlab.github.io/software/mgltools/download.html', category: 'Molecular Docking' },
+  { id: 'seamdock', name: 'SeamDock', logo: seamdockLogo, url: 'https://bioserv.rpbs.univ-paris-diderot.fr/services/SeamDock/', category: 'Molecular Docking' },
+  { id: 'hdock', name: 'HDOCK', logo: hdockLogo, url: 'http://hdock.phys.hust.edu.cn/', category: 'Molecular Docking' },
 
   // 2. ADME & Toxicity Prediction Tools
   { id: 'swissadme', name: 'SwissADMET', logo: swissadmeLogo, url: 'http://www.swissadme.ch/', category: 'ADME Prediction' },
@@ -95,9 +102,9 @@ export const FULL_SOFTWARE_CATALOG: SoftwareToolItem[] = [
   // 3. 2D & 3D/4D QSAR Tools
   { id: 'qsarian', name: 'QSARIAN', logo: qsarianLogo, url: 'https://qsarian.com/', category: 'QSAR Study' },
   { id: 'padel', name: 'PaDEL', logo: padelLogo, url: 'https://www.yapcwsoft.com/dd/padeldescriptor/', category: 'QSAR Study' },
-  { id: 'ranqsar', name: 'RANQSAR', logo: ranqsarLogo, url: 'https://sites.google.com/site/ranqsar/', category: 'QSAR Study' },
+  { id: 'ranqsar', name: 'RANQSAR', logo: ranqsarLogo, url: 'https://zenodo.org/records/18779245', category: 'QSAR Study' },
   { id: 'dtc-qsar', name: 'DTC-QSAR', logo: dtcQsarLogo, url: 'https://dtc-lab.net/', category: 'QSAR Study' },
-  { id: 'chem-master', name: 'Chem-Master', logo: chemmasterLogo, url: 'https://chemmaster.ch/', category: '3D/4D QSAR' },
+  { id: 'chem-master', name: 'Chem-Master', logo: chemmasterLogo, url: 'https://crescent-silico.com/pages/chemmaster', category: '3D/4D QSAR' },
   { id: '3d-qsar', name: '3D-QSAR', logo: qsar3dLogo, url: 'http://open3dqsar.sourceforge.net/', category: '3D/4D QSAR' },
 
   // 4. Pharmacophore Modeling Tools
@@ -112,8 +119,10 @@ export const FULL_SOFTWARE_CATALOG: SoftwareToolItem[] = [
   // 6. Spectral & Analytical Characterization (NMR, FT-IR, LC-MS)
   { id: 'mestreonova', name: 'MestReoNova', logo: mnovaLogo, url: 'https://mestrelab.com/software/mnova/', category: 'NMR / LC-MS' },
   { id: 'nmrdb', name: 'NMRDB', logo: nmrdbLogo, url: 'https://www.nmrdb.org/', category: 'NMR Characterization' },
+  { id: 'ftir-lab', name: 'FTIR Lab', logo: ftirLabLogo, url: 'https://doi.org/10.5281/zenodo.21909294', category: 'FT-IR Characterization' },
   { id: 'halal-ftir', name: 'Halal FT-IR', logo: halalFtirLogo, url: 'https://ftir.halalchem.org/', category: 'FT-IR Characterization' },
   { id: 'ir-solution', name: 'IR Solution', logo: irSolutionLogo, url: 'https://www.shimadzu.com/an/service-support/software/irsolution.html', category: 'FT-IR Characterization' },
+  { id: 'matlab', name: 'MATLAB', logo: matlabLogo, url: 'https://www.mathworks.com/products/matlab.html', category: 'Data Analysis & Modeling' },
   { id: 'metlab', name: 'MetLab', logo: metlabLogo, url: 'https://www.metaboanalyst.ca/', category: 'LC-MS Analysis' },
 
   // 7. Quantum Chemistry & DFT Calculation
@@ -167,6 +176,8 @@ export const FULL_DATABASES_LIST: DatabaseItem[] = [
   { id: 'materials-project', name: 'Materials Project', fullName: 'Open Quantum Mechanical DFT Database', url: 'https://materialsproject.org/' },
   { id: 'bmrb', name: 'BMRB', fullName: 'Biological Magnetic Resonance Data Bank', url: 'https://bmrb.io/' },
   { id: 'hmdb', name: 'HMDB', fullName: 'Human Metabolome Database for LC-MS', url: 'https://hmdb.ca/' },
+  { id: 'seamdock-server', name: 'SeamDock Server', fullName: 'RPBS Structural Docking & Virtual Screening Service', url: 'https://bioserv.rpbs.univ-paris-diderot.fr/services/SeamDock/' },
+  { id: 'hdock-server', name: 'HDOCK Server', fullName: 'HUST Hybrid Macromolecular & Protein-Protein Docking Server', url: 'http://hdock.phys.hust.edu.cn/' },
 ];
 
 export interface StudyManualItem {

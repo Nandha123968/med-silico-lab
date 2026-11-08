@@ -1,3 +1,8 @@
+import posterNetworkPharmacology from '../assets/images/workshops/poster_network_pharmacology.jpg';
+import posterQsarModelDev from '../assets/images/workshops/poster_qsar_model_dev.jpg';
+import posterAdmet3dQsar from '../assets/images/workshops/poster_admet_3d_qsar.jpg';
+import posterPharmacophoreDocking from '../assets/images/workshops/poster_pharmacophore_docking.jpg';
+
 export interface ServiceItem {
   id: string;
   orderNumber: string;
@@ -513,176 +518,179 @@ export const ORDERED_SERVICES: ServiceItem[] = [
 export interface WorkshopItem {
   id: string;
   title: string;
+  tagline?: string;
+  organizer: string;
+  organizerRole?: string;
+  speaker: string;
+  speakerRole: string;
   dateStr: string;
-  duration: string;
+  duration?: string;
   timings: string;
-  mode: string;
+  platform: string;
   category: string;
   topics: string[];
+  feeStudentsInr: number;
+  feeFacultyInr: number;
+  capacity?: string;
+  certificate: string;
+  registrationUrl: string;
+  registrationType: 'google-form' | 'whatsapp';
+  contactPhone?: string;
+  posterImg: string;
   instructor: string;
   instructorRole: string;
   feeInr: number;
   feeUsd: number;
+  mode: string;
   brochurePdf: string;
   isUpcoming: boolean;
 }
 
 export const WORKSHOPS_DATA: WorkshopItem[] = [
-  // Upcoming Workshops (2026)
   {
-    id: 'ws-docking-2026',
-    title: 'Hands-on Training on Molecular Docking: From Theory to Practical',
-    dateStr: '9th to 15th March 2026',
-    duration: '07 Days',
-    timings: '3:00 PM - 5:00 PM IST',
-    mode: 'Hybrid (Live Interactive + Recorded Access)',
-    category: 'In Silico Drug Discovery',
+    id: 'ws-pharmacophore-docking-2026',
+    title: 'Webinar on Pharmacophore Modeling and Molecular Docking for Publication',
+    tagline: 'Learn. Apply. Publish. — Learn today, Publish tomorrow!',
+    organizer: 'The Scientific Circle',
+    organizerRole: 'Head: Mahalakshmi Suresha Biradar',
+    speaker: 'Shankar Thapa',
+    speakerRole: 'Medicinal Chemistry and Computational Drug Design Researcher',
+    instructor: 'Shankar Thapa',
+    instructorRole: 'Guest Speaker & CADD Researcher',
+    dateStr: '5th & 6th Sep 2026',
+    duration: '2 Days',
+    timings: '6:00 PM - 7:30 PM IST',
+    platform: 'Google Meet',
+    category: 'Pharmacophore Modeling & Docking',
     topics: [
-      'Protein & Ligand Preparation (PDB, SMILES, Energy Minimization)',
-      'Grid Box optimization & Active Site Pocket Identification',
-      'AutoDock Vina & AutoDock4 Docking Workflows',
-      'Blind Docking vs Site-Specific Docking',
-      'Discovery Studio & PyMOL 2D/3D Interaction Visualization',
-      'Binding Affinity Interpretation for Research Publications'
+      'Expert Guidance in Pharmacophore Modeling & Virtual Screening',
+      'Molecular Docking for High-Impact Publication (Dockamon Pro 1.2)',
+      'Practical Approach to Receptor-Ligand Interactions',
+      'Publication-Focused Analysis & Manuscript Structuring',
+      'Verified E-Certificate Provided upon completion'
     ],
-    instructor: 'Dr. R. Shivakumar',
-    instructorRole: 'Ph.D. (NIT Karnataka), Postdoc (POSTECH, S. Korea)',
-    feeInr: 1200,
-    feeUsd: 25,
-    brochurePdf: 'brochure_molecular_docking_2026.pdf',
-    isUpcoming: true
+    feeStudentsInr: 300,
+    feeFacultyInr: 350,
+    feeInr: 300,
+    feeUsd: 10,
+    capacity: 'Early: ₹300 (Deadline: 30 Aug 2026) | Late: ₹350 (Deadline: 4 Sep 2026)',
+    certificate: 'Official Verified E-Certificate Provided',
+    registrationUrl: 'https://wa.me/918310468262?text=Hi%2C%20I%20would%20like%20to%20register%20for%20the%20Webinar%20on%20Pharmacophore%20Modeling%20and%20Molecular%20Docking%20for%20Publication',
+    registrationType: 'whatsapp',
+    contactPhone: '+91 8310468262',
+    posterImg: posterPharmacophoreDocking,
+    mode: 'Google Meet Live Interactive',
+    brochurePdf: 'brochure_pharmacophore_docking_2026.pdf',
+    isUpcoming: false
   },
   {
-    id: 'ws-md-gromacs-2026',
-    title: 'Skill Development Workshop on Molecular Dynamics (MD) Simulations using GROMACS',
-    dateStr: '23rd to 29th March 2026',
-    duration: '07 Days',
-    timings: '6:30 PM - 8:30 PM IST',
-    mode: 'Live Hands-On Virtual Laboratory',
-    category: 'Biophysical Simulations',
-    topics: [
-      'GROMACS Installation & Linux Environment Setup via WSL',
-      'CHARMM36m Force Field parameterization of Proteins & Ligands',
-      'Solvation, Ion Neutralization, NVT and NPT Equilibration',
-      '100ns Production Run execution on Cloud GPU Nodes',
-      'Trajectory analysis: RMSD, RMSF, Rg, SASA, and H-bonds using XMGrace',
-      'MM-PBSA Binding Free Energy calculation using gmx_MMPBSA'
-    ],
-    instructor: 'Dr. A. Venkatesh',
-    instructorRole: 'Senior Computational Biologist & GROMACS Specialist',
-    feeInr: 1800,
-    feeUsd: 35,
-    brochurePdf: 'brochure_md_simulation_2026.pdf',
-    isUpcoming: true
-  },
-  {
-    id: 'ws-vaccine-2026',
-    title: 'In Silico Vaccine Design & Reverse Vaccinology Workshop',
-    dateStr: '3rd to 7th April 2026',
-    duration: '05 Days',
-    timings: '6:30 PM - 8:30 PM IST',
-    mode: 'Virtual Live Training',
-    category: 'Immunoinformatics',
-    topics: [
-      'Pathogen proteome retrieval and virulence antigenicity screening',
-      'CTL, HTL, and B-cell epitope prediction using IEDB tools',
-      'Multi-epitope construct assembling with linkers and adjuvant',
-      'AlphaFold 3D structure prediction and Ramachandran validation',
-      'Molecular Docking with Immune Receptors (TLR-4/TLR-2)',
-      'In silico Immune Simulation via C-ImmSim and in silico cloning'
-    ],
-    instructor: 'Dr. Sneha Nair',
-    instructorRole: 'Ph.D. Bioinformatics, Vaccine Informatics Researcher',
-    feeInr: 1500,
-    feeUsd: 30,
-    brochurePdf: 'brochure_vaccine_design_2026.pdf',
-    isUpcoming: true
-  },
-  {
-    id: 'ws-manuscript-2026',
-    title: 'Skill-Oriented Workshop on Academic & Scientific Writing for SCI/Scopus Journals',
-    dateStr: '15th to 19th April 2026',
-    duration: '05 Days',
-    timings: '7:00 PM - 9:00 PM IST',
-    mode: 'Interactive Online Masterclass',
-    category: 'Academic Publishing',
-    topics: [
-      'Drafting Title, Abstract, and Keywords for Maximum Citation Impact',
-      'IMRaD Structure & Scientific English Writing Polish',
-      'ChemDraw & OriginPro for Publication-Quality 300+ DPI Figures',
-      'Addressing Reviewer Critiques & Editor Queries Professionally',
-      'Plagiarism Prevention & Journal Selection Matrix'
-    ],
-    instructor: 'Prof. K. Sundaram',
-    instructorRole: 'Associate Editor & Senior Academic Reviewer',
-    feeInr: 999,
-    feeUsd: 20,
-    brochurePdf: 'brochure_scientific_writing_2026.pdf',
-    isUpcoming: true
-  },
-  // Recent / Completed Workshops
-  {
-    id: 'ws-recent-dft',
-    title: 'Hands-on Training on Density Functional Theory (DFT) Calculations using Gaussian & ORCA',
-    dateStr: '8th to 14th February 2026',
-    duration: '07 Days',
+    id: 'ws-network-pharmacology',
+    title: 'Webinar on Network Pharmacology & Molecular Docking',
+    tagline: 'Multi-target pharmacology, protein-protein interactomes & docking validation',
+    organizer: 'The Scientific Circle',
+    organizerRole: 'Organizer: Ms. Mahalakshmi S Biradar',
+    speaker: 'Mr. Shankar Thapa',
+    speakerRole: 'Speaker & Computational Drug Discovery Researcher',
+    instructor: 'Mr. Shankar Thapa',
+    instructorRole: 'Lead Speaker',
+    dateStr: '28 & 29 June 2025',
+    duration: '2 Days',
     timings: '6:00 PM - 8:00 PM IST',
-    mode: 'Online Training',
-    category: 'Quantum Chemistry',
+    platform: 'Google Meet',
+    category: 'Network Pharmacology & Docking',
     topics: [
-      'Quantum mechanical principles of DFT (B3LYP, PBE0, M06-2X)',
-      'Geometry optimization and vibrational frequency calculations',
-      'HOMO-LUMO energy gaps, MEP (Molecular Electrostatic Potential)',
-      'Spectroscopic analysis (IR, Raman, UV-Vis spectra simulation)'
+      'Basics of network pharmacology & multi-target mechanisms',
+      'Software installation & setup workflow',
+      'Key tools: GeneCards, STRING DB, and Cytoscape network visualization',
+      'Introduction to Molecular Docking principles',
+      'Docking tools: AutoDock and Discovery Studio',
+      'Ligand and Protein Preparation protocols',
+      'Interpreting Docking Results (Binding Score & RMSD)'
     ],
-    instructor: 'Dr. R. Shivakumar',
-    instructorRole: 'Founder & Computational Chemist',
-    feeInr: 1500,
-    feeUsd: 30,
-    brochurePdf: 'brochure_dft_gaussian.pdf',
+    feeStudentsInr: 400,
+    feeFacultyInr: 500,
+    feeInr: 400,
+    feeUsd: 12,
+    capacity: 'Limited to 40 Participants Only',
+    certificate: 'E-Certificate for All Participants',
+    registrationUrl: 'https://forms.gle/vEsKa7x1sRz9vNvu6',
+    registrationType: 'google-form',
+    contactPhone: '+91 8310468262',
+    posterImg: posterNetworkPharmacology,
+    mode: 'Google Meet Live Training',
+    brochurePdf: 'brochure_network_pharmacology.pdf',
     isUpcoming: false
   },
   {
-    id: 'ws-recent-cadd',
-    title: 'Comprehensive Three-Week Certificate Course on Computer-Aided Drug Design (CADD)',
-    dateStr: '5th May - 23rd May 2026',
-    duration: '21 Days',
-    timings: '6:30 PM - 8:30 PM IST',
-    mode: 'Intensive Boot Camp',
-    category: 'In Silico Drug Discovery',
+    id: 'ws-qsar-model-dev',
+    title: 'Hands-on Training on QSAR Model Development and Validation in Drug Design',
+    tagline: 'Completely free QSAR experience with ChemMaster v1.2 & free web tools',
+    organizer: 'The Scientific Circle',
+    organizerRole: 'Head: Mahalakshmi S Biradar',
+    speaker: 'Shankar Thapa',
+    speakerRole: 'Researcher: Medicinal Chemistry and CADD',
+    instructor: 'Shankar Thapa',
+    instructorRole: 'CADD Research Trainer',
+    dateStr: '08 November 2025',
+    duration: '1 Day Intensive',
+    timings: '06:00 PM IST',
+    platform: 'Google Meet',
+    category: 'QSAR & ChemMaster',
     topics: [
-      'Structure-Based Drug Design (SBDD) and Ligand-Based Drug Design (LBDD)',
-      'Molecular Docking (AutoDock Vina, PyRx, Glide)',
-      '2D & 3D QSAR modeling with descriptor generation',
-      'Pharmacophore generation and virtual database screening',
-      'ADMET profiling and lead optimization case studies'
+      'Web server and free open tools for QSAR',
+      'Step-by-step model development & statistical validation (Q², R²)',
+      'Result interpretation & manuscript writing for journals',
+      'Demonstration using ChemMaster v1.2 software',
+      'Completely free QSAR experience without expensive commercial suites'
     ],
-    instructor: 'Dr. R. Shivakumar & Invited Scientists',
-    instructorRole: 'Med-Silico Lab Consortium',
-    feeInr: 4500,
-    feeUsd: 85,
-    brochurePdf: 'brochure_cadd_course.pdf',
+    feeStudentsInr: 250,
+    feeFacultyInr: 300,
+    feeInr: 250,
+    feeUsd: 8,
+    capacity: 'Limited to 20 Participants Only',
+    certificate: 'E-Certificate for All Participants',
+    registrationUrl: 'https://forms.gle/qqYFGR7rC2S8KdKT6',
+    registrationType: 'google-form',
+    contactPhone: '+91 8310468262',
+    posterImg: posterQsarModelDev,
+    mode: 'Google Meet Live Hands-on',
+    brochurePdf: 'brochure_qsar_chem_master.pdf',
     isUpcoming: false
   },
   {
-    id: 'ws-recent-qsar',
-    title: 'Advanced Training on 2D & 3D QSAR with CoMFA & CoMSIA Modeling',
-    dateStr: '4th to 13th August 2026',
-    duration: '10 Days',
-    timings: '6:30 PM - 8:30 PM IST',
-    mode: 'Online Hands-on Workshop',
-    category: 'Computational Chemistry',
+    id: 'ws-admet-3d-qsar',
+    title: 'Hands-on Training for ADMET Prediction and 3D QSAR Analysis',
+    tagline: 'Integration of QSAR and ADMET in lead optimization without software installation',
+    organizer: 'The Scientific Circle',
+    organizerRole: 'Head: Ms. Mahalakshmi S Biradar',
+    speaker: 'Mr. Shankar Thapa',
+    speakerRole: 'Speaker & CADD Researcher',
+    instructor: 'Mr. Shankar Thapa',
+    instructorRole: 'CADD Specialist',
+    dateStr: '4 & 5 October 2025',
+    duration: '2 Days',
+    timings: '6:00 PM - 8:00 PM IST',
+    platform: 'Google Meet',
+    category: 'ADMET & 3D QSAR',
     topics: [
-      'PaDEL and Mordred descriptor computation for 50+ bioactives',
-      'MLR and PLS regression modeling with cross-validation Q²',
-      '3D lattice field generation and CoMFA steric/electrostatic maps',
-      'Williams plot applicability domain verification for journal submission'
+      'Fundamentals of ADMET & drug-likeness criteria',
+      'Computational tools and online web servers for ADMET prediction',
+      'Integration of QSAR and ADMET in lead optimization',
+      'Basics of 3D-QSAR (CoMFA & CoMSIA methodology)',
+      'Hands-on practical training without local software installation'
     ],
-    instructor: 'Dr. P. Deshmukh',
-    instructorRole: 'QSAR Research Consultant',
-    feeInr: 2200,
-    feeUsd: 40,
-    brochurePdf: 'brochure_qsar_training.pdf',
+    feeStudentsInr: 350,
+    feeFacultyInr: 450,
+    feeInr: 350,
+    feeUsd: 10,
+    capacity: 'Limited to 40 Participants Only',
+    certificate: 'E-Certificate for All Participants',
+    registrationUrl: 'https://forms.gle/vEsKa7x1sRz9vNvu6',
+    registrationType: 'google-form',
+    contactPhone: '+91 8310468262',
+    posterImg: posterAdmet3dQsar,
+    mode: 'Google Meet Live Workshop',
+    brochurePdf: 'brochure_admet_3d_qsar.pdf',
     isUpcoming: false
   }
 ];

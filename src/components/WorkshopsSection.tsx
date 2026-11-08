@@ -1,5 +1,5 @@
 import React, { useState } from 'react';
-import { Calendar, Clock, Download, CheckCircle, Video, UserCheck, X, AlertCircle } from 'lucide-react';
+import { Calendar, Clock, Download, CheckCircle, Video, UserCheck, X, AlertCircle, ExternalLink, Maximize2, ShieldCheck, Award } from 'lucide-react';
 import { WORKSHOPS_DATA, WorkshopItem } from '../data/servicesData';
 import vaccineImg from '../assets/images/insilico_vaccine_bioinformatics_1793813248004.jpg';
 import {
@@ -16,16 +16,12 @@ interface WorkshopsSectionProps {
   viewMode?: 'upcoming' | 'recent' | 'all';
 }
 
-export const WorkshopsSection: React.FC<WorkshopsSectionProps> = ({
-  viewMode = 'all',
-}) => {
+export const WorkshopsSection: React.FC<WorkshopsSectionProps> = () => {
   const [selectedWorkshop, setSelectedWorkshop] = useState<WorkshopItem | null>(null);
+  const [previewPoster, setPreviewPoster] = useState<WorkshopItem | null>(null);
   const [registerSuccess, setRegisterSuccess] = useState(false);
   const [regError, setRegError] = useState('');
   const [csrfToken] = useState<string>(() => getCsrfToken());
-  const [activeTab, setActiveTab] = useState<'upcoming' | 'recent'>(
-    viewMode === 'recent' ? 'recent' : 'upcoming'
-  );
 
   const [regForm, setRegForm] = useState({
     name: '',
@@ -35,32 +31,38 @@ export const WorkshopsSection: React.FC<WorkshopsSectionProps> = ({
     designation: 'Research Scholar',
   });
 
-  const displayedWorkshops = WORKSHOPS_DATA.filter((w) => !w.isUpcoming);
+  const displayedWorkshops = WORKSHOPS_DATA;
 
   const handleDownloadBrochure = (workshop: WorkshopItem) => {
-    const text = `MED-SILICO LAB - WORKSHOP SYLLABUS & BROCHURE
-=====================================================
+    const text = `THE SCIENTIFIC CIRCLE & MED-SILICO LAB - WORKSHOP SYLLABUS
+======================================================================
 Title: ${workshop.title}
+Organized by: ${workshop.organizer} (${workshop.organizerRole || 'Academic Head'})
+Speaker: ${workshop.speaker} (${workshop.speakerRole})
 Date: ${workshop.dateStr}
-Duration: ${workshop.duration} (${workshop.timings})
-Mode: ${workshop.mode}
-Instructor: ${workshop.instructor} (${workshop.instructorRole})
-Registration Fee: INR ${workshop.feeInr} / USD ${workshop.feeUsd}
+Timings: ${workshop.timings}
+Platform: ${workshop.platform}
+Registration Fee: Students: INR ${workshop.feeStudentsInr} | Faculty/Professionals: INR ${workshop.feeFacultyInr}
+Capacity: ${workshop.capacity || 'Limited Seats'}
+Certification: ${workshop.certificate}
+Direct Registration Link: ${workshop.registrationUrl}
+Contact / WhatsApp: ${workshop.contactPhone || '+91 8310468262'}
 
-KEY MODULES & SYLLABUS:
+KEY MODULES & HANDS-ON SYLLABUS:
 ${workshop.topics.map((t, i) => `${i + 1}. ${t}`).join('\n')}
 
 CERTIFICATION:
-Official Verified E-Certificate with Unique Verification ID and Institutional Seal from Med-Silico Lab.
+Official E-Certificate with Unique Verification ID and Institutional Seal from The Scientific Circle.
 
-For enquiries: contact@medsilicolab.com | +91 8310468262
-=====================================================`;
+For enquiries & registration assistance:
+WhatsApp: +91 8310468262 | thescientificcircle@gmail.com
+======================================================================`;
 
     const blob = new Blob([text], { type: 'text/plain;charset=utf-8' });
     const url = URL.createObjectURL(blob);
     const link = document.createElement('a');
     link.href = url;
-    link.download = `${workshop.id}-brochure.txt`;
+    link.download = `${workshop.id}-syllabus.txt`;
     link.click();
     URL.revokeObjectURL(url);
   };
@@ -119,114 +121,161 @@ For enquiries: contact@medsilicolab.com | +91 8310468262
         {/* Section Header */}
         <div className="text-center max-w-3xl mx-auto mb-10 sm:mb-12">
           <div className="font-times italic text-xs sm:text-sm tracking-wider text-[#1e3a8a] font-semibold mb-2">
-            Skill Development &amp; Practical Training
+            The Scientific Circle &amp; Med-Silico Lab Practical Training
           </div>
           <h2 className="text-2xl sm:text-3xl lg:text-4xl font-normal text-slate-900 tracking-tight font-times">
-            Workshops &amp; Hands-On Training Sessions
+            Official Workshops &amp; Hands-On Webinars
           </h2>
           <p className="font-times italic text-slate-700 mt-2 text-sm sm:text-base">
-            Missed our live training sessions due to time constraints? You can still join and learn through our complete session recordings and verified certification.
+            Comprehensive skill-oriented training sessions in Molecular Docking, QSAR Modeling, ADMET Profiling, and Network Pharmacology. Click any poster to view full resolution.
           </p>
         </div>
 
         {/* Workshop Cards Grid */}
-        <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-5 sm:gap-6 lg:gap-8">
+        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-2 gap-6 sm:gap-8 lg:gap-10">
           {displayedWorkshops.map((w) => (
             <div
               key={w.id}
-              className="bg-white rounded-2xl border border-blue-100 overflow-hidden shadow-xs hover:shadow-md transition-all duration-200 flex flex-col justify-between h-full"
+              className="bg-white rounded-2xl border border-blue-200 overflow-hidden shadow-sm hover:shadow-xl transition-all duration-300 flex flex-col justify-between"
             >
               <div>
-                {/* Header banner */}
-                <div className="p-5 sm:p-6 bg-[#1e3a8a] text-white relative">
-                  <div className="text-[11px] font-times text-blue-200 uppercase tracking-widest mb-1">
+                {/* Poster Preview Container with Lightbox Click */}
+                <div
+                  className="relative group cursor-pointer overflow-hidden bg-slate-900 aspect-[16/10] sm:aspect-[16/11]"
+                  onClick={() => setPreviewPoster(w)}
+                  title="Click to view full poster"
+                >
+                  <img
+                    src={w.posterImg}
+                    alt={`${w.title} Official Poster`}
+                    className="w-full h-full object-cover object-top group-hover:scale-105 transition-transform duration-500"
+                    referrerPolicy="no-referrer"
+                  />
+                  <div className="absolute inset-0 bg-slate-950/30 group-hover:bg-slate-950/60 transition-colors flex items-center justify-center">
+                    <div className="opacity-0 group-hover:opacity-100 transition-opacity transform translate-y-2 group-hover:translate-y-0 duration-300 bg-[#1e3a8a]/90 text-white px-4 py-2 rounded-full text-xs font-semibold flex items-center gap-2 shadow-lg backdrop-blur-xs">
+                      <Maximize2 className="w-4 h-4" />
+                      <span>Click to Enlarge Poster</span>
+                    </div>
+                  </div>
+                  <div className="absolute top-3 left-3 bg-[#1e3a8a] text-white text-[11px] font-times px-3 py-1 rounded-full shadow-md font-medium tracking-wide">
                     {w.category}
                   </div>
-                  <h3 className="text-sm sm:text-base font-bold leading-snug text-white font-times">
-                    {w.title}
-                  </h3>
                 </div>
 
-                <div className="p-5 sm:p-6 space-y-3.5 text-xs sm:text-sm font-times">
-                  <div className="flex items-center gap-2 text-slate-800 font-medium">
-                    <Calendar className="w-4 h-4 text-[#1e3a8a] shrink-0" />
-                    <span>{w.dateStr} ({w.duration})</span>
+                {/* Card Content */}
+                <div className="p-5 sm:p-6 space-y-4 font-times">
+                  <div>
+                    <div className="text-xs font-times text-slate-500 uppercase tracking-wider mb-1">
+                      {w.organizer} • <span className="text-[#1e3a8a] font-medium">{w.organizerRole}</span>
+                    </div>
+                    <h3 className="text-lg sm:text-xl font-bold leading-snug text-[#1e3a8a] font-times">
+                      {w.title}
+                    </h3>
+                    {w.tagline && (
+                      <p className="text-xs italic text-slate-600 mt-1">
+                        "{w.tagline}"
+                      </p>
+                    )}
                   </div>
 
-                  <div className="flex items-center gap-2 text-slate-600">
-                    <Clock className="w-4 h-4 text-[#1e3a8a] shrink-0" />
-                    <span>{w.timings}</span>
+                  {/* Metadata Row */}
+                  <div className="grid grid-cols-1 sm:grid-cols-2 gap-2.5 text-xs sm:text-sm text-slate-700 bg-blue-50/60 p-3 rounded-lg border border-blue-100">
+                    <div className="flex items-center gap-2">
+                      <Calendar className="w-4 h-4 text-[#1e3a8a] shrink-0" />
+                      <span className="font-medium text-slate-900">{w.dateStr}</span>
+                    </div>
+                    <div className="flex items-center gap-2">
+                      <Clock className="w-4 h-4 text-[#1e3a8a] shrink-0" />
+                      <span>{w.timings}</span>
+                    </div>
+                    <div className="flex items-center gap-2">
+                      <UserCheck className="w-4 h-4 text-[#1e3a8a] shrink-0" />
+                      <span>Speaker: <strong>{w.speaker}</strong></span>
+                    </div>
+                    <div className="flex items-center gap-2">
+                      <Video className="w-4 h-4 text-emerald-600 shrink-0" />
+                      <span>Platform: <strong>{w.platform}</strong></span>
+                    </div>
                   </div>
 
-                  <div className="flex items-start gap-2 text-slate-700 font-times">
-                    <UserCheck className="w-4 h-4 text-[#1e3a8a] shrink-0 mt-0.5" />
-                    <span>{w.instructor} <span className="text-slate-500 font-times italic">({w.instructorRole})</span></span>
-                  </div>
-
-                  {/* Key Topics List in Times New Roman */}
-                  <div className="pt-3 border-t border-slate-100 font-times">
-                    <div className="text-xs font-semibold uppercase text-[#1e3a8a] mb-2">
-                      Hands-On Curriculum:
+                  {/* Hands-On Curriculum */}
+                  <div className="pt-2 border-t border-slate-100 font-times">
+                    <div className="text-xs font-semibold uppercase text-[#1e3a8a] mb-2 flex items-center justify-between">
+                      <span>Hands-On Curriculum:</span>
+                      <span className="text-[11px] font-normal text-slate-500">
+                        {w.certificate}
+                      </span>
                     </div>
                     <ul className="space-y-1.5 text-slate-700 text-xs sm:text-sm">
-                      {w.topics.slice(0, 4).map((topic, idx) => (
+                      {w.topics.slice(0, 5).map((topic, idx) => (
                         <li key={idx} className="flex items-start gap-2">
                           <span className="font-times text-xs text-[#1e3a8a] font-bold shrink-0">{idx + 1}.</span>
-                          <span className="line-clamp-1">{topic}</span>
+                          <span className="line-clamp-2">{topic}</span>
                         </li>
                       ))}
                     </ul>
                   </div>
 
-                  {/* Price */}
-                  <div className="pt-3 border-t border-slate-100 flex items-center justify-between font-times">
-                    <span className="text-slate-500">Registration Fee:</span>
-                    <span className="text-base font-bold text-[#1e3a8a]">
-                      &#8377;{w.feeInr} <span className="text-slate-400 font-normal">/ ${w.feeUsd}</span>
-                    </span>
+                  {/* Price Breakdown */}
+                  <div className="pt-3 border-t border-slate-100 flex flex-wrap items-center justify-between gap-2 text-xs font-times bg-slate-50 p-3 rounded-lg">
+                    <div>
+                      <span className="text-slate-500 block text-[11px]">Students Fee</span>
+                      <span className="text-base font-bold text-[#1e3a8a]">&#8377;{w.feeStudentsInr}</span>
+                    </div>
+                    <div>
+                      <span className="text-slate-500 block text-[11px]">Faculty / Professionals</span>
+                      <span className="text-base font-bold text-slate-800">&#8377;{w.feeFacultyInr}</span>
+                    </div>
+                    {w.capacity && (
+                      <div className="text-[11px] text-amber-800 font-medium bg-amber-50 px-2 py-1 rounded border border-amber-200">
+                        {w.capacity}
+                      </div>
+                    )}
                   </div>
                 </div>
               </div>
 
-              {/* Card Bottom Actions */}
+              {/* Card Actions */}
               <div className="p-5 sm:p-6 pt-0 space-y-2 font-times">
+                <div className="grid grid-cols-1 sm:grid-cols-2 gap-2">
+                  <a
+                    href={w.registrationUrl}
+                    target="_blank"
+                    rel="noopener noreferrer"
+                    className="w-full py-2.5 bg-[#1e3a8a] hover:bg-[#1e40af] text-white text-xs sm:text-sm font-semibold rounded-md transition cursor-pointer shadow-xs flex items-center justify-center gap-1.5"
+                  >
+                    <span>{w.registrationType === 'whatsapp' ? 'Register on WhatsApp' : 'Register via Google Form'}</span>
+                    <ExternalLink className="w-3.5 h-3.5 shrink-0" />
+                  </a>
+
+                  <button
+                    type="button"
+                    onClick={() => setPreviewPoster(w)}
+                    className="w-full py-2.5 bg-[#faf7fc] hover:bg-[#dbeafe] text-[#1e3a8a] border border-blue-200 text-xs sm:text-sm font-medium rounded-md transition cursor-pointer flex items-center justify-center gap-1.5"
+                  >
+                    <Maximize2 className="w-3.5 h-3.5 shrink-0" />
+                    <span>View Full Poster</span>
+                  </button>
+                </div>
+
                 <button
                   type="button"
                   onClick={() => handleDownloadBrochure(w)}
-                  className="w-full py-2.5 bg-[#faf7fc] hover:bg-[#dbeafe] text-[#1e3a8a] border border-blue-200 text-xs sm:text-sm font-medium rounded-md transition cursor-pointer flex items-center justify-center gap-2"
+                  className="w-full py-2 bg-slate-50 hover:bg-slate-100 text-slate-700 border border-slate-200 text-xs font-normal rounded-md transition cursor-pointer flex items-center justify-center gap-1.5"
                 >
                   <Download className="w-3.5 h-3.5 shrink-0" />
-                  <span>Download Syllabus / Brochure</span>
+                  <span>Download Syllabus (.txt)</span>
                 </button>
-
-                {w.isUpcoming ? (
-                  <button
-                    type="button"
-                    onClick={() => setSelectedWorkshop(w)}
-                    className="w-full py-2.5 bg-[#1e3a8a] hover:bg-[#1e40af] text-white text-xs sm:text-sm font-normal rounded-md transition cursor-pointer shadow-xs"
-                  >
-                    Register for Workshop
-                  </button>
-                ) : (
-                  <button
-                    type="button"
-                    onClick={() => setSelectedWorkshop(w)}
-                    className="w-full py-2.5 bg-[#1e3a8a] hover:bg-[#1e40af] text-white text-xs sm:text-sm font-normal rounded-md transition cursor-pointer flex items-center justify-center gap-1.5"
-                  >
-                    <Video className="w-3.5 h-3.5 shrink-0" />
-                    <span>Request Recorded Access</span>
-                  </button>
-                )}
               </div>
             </div>
           ))}
         </div>
 
-        {/* Showcase of Excellence */}
+        {/* Participant Showcase */}
         <div className="mt-16 sm:mt-20 pt-12 sm:pt-16 border-t border-slate-200">
           <div className="text-center max-w-2xl mx-auto mb-8 sm:mb-10">
-            <span className="text-xs font-mono uppercase tracking-widest text-cyan-800">PARTICIPANT WORKS</span>
-            <h3 className="text-xl sm:text-2xl font-bold text-slate-900 mt-1 font-sans-modern">Showcase of Excellence</h3>
+            <span className="text-xs font-mono uppercase tracking-widest text-[#1e3a8a] font-semibold">PARTICIPANT WORKS</span>
+            <h3 className="text-xl sm:text-2xl font-bold text-slate-900 mt-1 font-times">Showcase of Excellence</h3>
             <p className="font-times italic text-xs sm:text-sm text-slate-600 mt-1">
               Real computational biology workflows, molecular dynamics trajectories, and binding evaluations executed by workshop scholars.
             </p>
@@ -278,14 +327,14 @@ For enquiries: contact@medsilicolab.com | +91 8310468262
               </div>
               <div className="p-5 flex-1 flex flex-col justify-between font-times">
                 <div>
-                  <h4 className="text-sm font-bold text-slate-900 font-sans-modern">
+                  <h4 className="text-sm font-bold text-slate-900 font-times">
                     In Silico Multi-Epitope Vaccine Construct Docking with TLR4
                   </h4>
                   <p className="text-xs text-slate-600 mt-1 leading-relaxed">
                     Participant submission by Central University research scholar. Analyzed using ClusPro, PyMOL, and C-ImmSim immune response simulator.
                   </p>
                 </div>
-                <div className="mt-3 text-[11px] font-mono text-cyan-800 flex flex-wrap items-center justify-between gap-2 border-t border-slate-100 pt-2">
+                <div className="mt-3 text-[11px] font-mono text-[#1e3a8a] flex flex-wrap items-center justify-between gap-2 border-t border-slate-100 pt-2">
                   <span>Score: -1042.8 kcal/mol</span>
                   <span className="text-slate-500">Published in Elsevier 2026</span>
                 </div>
@@ -296,14 +345,82 @@ For enquiries: contact@medsilicolab.com | +91 8310468262
 
       </div>
 
-      {/* Workshop Registration Modal */}
+      {/* Lightbox Poster Viewer Modal */}
+      {previewPoster && (
+        <div
+          className="fixed inset-0 z-50 flex items-center justify-center p-3 sm:p-5 bg-slate-950/85 backdrop-blur-xs font-times"
+          onClick={() => setPreviewPoster(null)}
+        >
+          <div
+            className="relative bg-white rounded-2xl shadow-2xl border border-slate-700 max-w-2xl w-full max-h-[92vh] flex flex-col overflow-hidden"
+            onClick={(e) => e.stopPropagation()}
+          >
+            {/* Header */}
+            <div className="flex items-center justify-between p-4 border-b border-slate-200 bg-slate-50">
+              <div className="min-w-0 pr-2">
+                <h3 className="text-sm sm:text-base font-bold text-[#1e3a8a] truncate font-times">
+                  {previewPoster.title}
+                </h3>
+                <p className="text-xs text-slate-600 font-times">
+                  {previewPoster.organizer} • Speaker: {previewPoster.speaker}
+                </p>
+              </div>
+              <button
+                type="button"
+                onClick={() => setPreviewPoster(null)}
+                className="text-slate-500 hover:text-slate-900 p-1 rounded-full hover:bg-slate-200 transition cursor-pointer"
+                aria-label="Close poster view"
+              >
+                <X className="w-5 h-5" />
+              </button>
+            </div>
+
+            {/* Poster Image */}
+            <div className="flex-1 overflow-y-auto p-4 flex items-center justify-center bg-slate-900/5">
+              <img
+                src={previewPoster.posterImg}
+                alt={previewPoster.title}
+                className="max-h-[68vh] w-auto object-contain rounded-lg shadow-md border border-slate-200"
+              />
+            </div>
+
+            {/* Modal Bottom Actions */}
+            <div className="p-4 border-t border-slate-200 bg-white flex flex-wrap items-center justify-between gap-3">
+              <div className="text-xs text-slate-600 font-times">
+                <span>Fee: <strong>Students ₹{previewPoster.feeStudentsInr}</strong> | Faculty ₹{previewPoster.feeFacultyInr}</span>
+              </div>
+              <div className="flex items-center gap-2">
+                <a
+                  href={previewPoster.posterImg}
+                  download={`${previewPoster.id}-poster.jpg`}
+                  className="px-3.5 py-2 bg-slate-100 hover:bg-slate-200 text-slate-700 text-xs font-medium rounded-md transition flex items-center gap-1.5"
+                >
+                  <Download className="w-3.5 h-3.5" />
+                  <span>Save Poster</span>
+                </a>
+                <a
+                  href={previewPoster.registrationUrl}
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  className="px-4 py-2 bg-[#1e3a8a] hover:bg-[#1e40af] text-white text-xs font-semibold rounded-md transition shadow-xs flex items-center gap-1.5"
+                >
+                  <span>{previewPoster.registrationType === 'whatsapp' ? 'Register on WhatsApp' : 'Register Now'}</span>
+                  <ExternalLink className="w-3.5 h-3.5" />
+                </a>
+              </div>
+            </div>
+          </div>
+        </div>
+      )}
+
+      {/* Internal Registration Modal (Fallback) */}
       {selectedWorkshop && (
-        <div className="fixed inset-0 z-50 flex items-center justify-center p-3 sm:p-4 bg-slate-950/70 backdrop-blur-xs font-sans-modern">
+        <div className="fixed inset-0 z-50 flex items-center justify-center p-3 sm:p-4 bg-slate-950/70 backdrop-blur-xs font-times">
           <div className="bg-white rounded-xl shadow-2xl border border-slate-200 max-w-lg w-full p-5 sm:p-6 max-h-[90vh] overflow-y-auto">
             <div className="flex items-start justify-between gap-3 pb-4 border-b border-slate-200">
               <div>
-                <span className="text-xs font-mono font-bold text-cyan-800 uppercase">
-                  {selectedWorkshop.isUpcoming ? 'Workshop Registration' : 'Recorded Access Request'}
+                <span className="text-xs font-bold text-[#1e3a8a] uppercase">
+                  Workshop Registration
                 </span>
                 <h3 className="text-sm sm:text-base font-bold text-slate-900 mt-1">
                   {selectedWorkshop.title}
@@ -329,7 +446,7 @@ For enquiries: contact@medsilicolab.com | +91 8310468262
             {registerSuccess ? (
               <div className="py-8 text-center space-y-3 font-times">
                 <CheckCircle className="w-12 h-12 text-emerald-600 mx-auto" />
-                <h4 className="text-lg font-bold text-slate-900 font-sans-modern">Registration Received!</h4>
+                <h4 className="text-lg font-bold text-slate-900 font-times">Registration Received!</h4>
                 <p className="text-xs text-slate-600 max-w-xs mx-auto">
                   Confirmation email and meeting portal coordinates have been sent. Welcome to Med-Silico Lab!
                 </p>
@@ -345,7 +462,7 @@ For enquiries: contact@medsilicolab.com | +91 8310468262
                     maxLength={120}
                     value={regForm.name}
                     onChange={(e) => setRegForm({ ...regForm, name: e.target.value })}
-                    className="w-full px-3 py-2 border border-slate-300 rounded-lg text-slate-900 focus:outline-cyan-700 font-times"
+                    className="w-full px-3 py-2 border border-slate-300 rounded-lg text-slate-900 focus:outline-[#1e3a8a] font-times"
                     placeholder="e.g. Debanjali Kundu"
                   />
                 </div>
@@ -358,7 +475,7 @@ For enquiries: contact@medsilicolab.com | +91 8310468262
                     maxLength={254}
                     value={regForm.email}
                     onChange={(e) => setRegForm({ ...regForm, email: e.target.value })}
-                    className="w-full px-3 py-2 border border-slate-300 rounded-lg text-slate-900 focus:outline-cyan-700 font-times"
+                    className="w-full px-3 py-2 border border-slate-300 rounded-lg text-slate-900 focus:outline-[#1e3a8a] font-times"
                     placeholder="scholar@university.edu"
                   />
                 </div>
@@ -370,8 +487,8 @@ For enquiries: contact@medsilicolab.com | +91 8310468262
                     maxLength={24}
                     value={regForm.phone}
                     onChange={(e) => setRegForm({ ...regForm, phone: e.target.value })}
-                    className="w-full px-3 py-2 border border-slate-300 rounded-lg text-slate-900 focus:outline-cyan-700 font-mono"
-                    placeholder="+91 9876543210"
+                    className="w-full px-3 py-2 border border-slate-300 rounded-lg text-slate-900 focus:outline-[#1e3a8a] font-mono"
+                    placeholder="+91 8310468262"
                   />
                 </div>
 
@@ -383,14 +500,14 @@ For enquiries: contact@medsilicolab.com | +91 8310468262
                     maxLength={180}
                     value={regForm.institution}
                     onChange={(e) => setRegForm({ ...regForm, institution: e.target.value })}
-                    className="w-full px-3 py-2 border border-slate-300 rounded-lg text-slate-900 focus:outline-cyan-700 font-times"
+                    className="w-full px-3 py-2 border border-slate-300 rounded-lg text-slate-900 focus:outline-[#1e3a8a] font-times"
                     placeholder="e.g. IIT Madras, CSIR, or University Dept."
                   />
                 </div>
 
                 <div className="pt-2 flex items-center justify-between text-xs font-mono">
                   <span className="text-slate-500">Workshop Fee:</span>
-                  <span className="font-bold text-slate-900">&#8377;{selectedWorkshop.feeInr} / ${selectedWorkshop.feeUsd}</span>
+                  <span className="font-bold text-slate-900">&#8377;{selectedWorkshop.feeStudentsInr} (Students) / &#8377;{selectedWorkshop.feeFacultyInr} (Faculty)</span>
                 </div>
 
                 <div className="pt-4 flex items-center gap-3">
@@ -403,7 +520,7 @@ For enquiries: contact@medsilicolab.com | +91 8310468262
                   </button>
                   <button
                     type="submit"
-                    className="w-1/2 py-2.5 bg-cyan-800 hover:bg-cyan-900 text-white font-semibold rounded-lg uppercase tracking-wider cursor-pointer"
+                    className="w-1/2 py-2.5 bg-[#1e3a8a] hover:bg-[#1e40af] text-white font-semibold rounded-lg uppercase tracking-wider cursor-pointer"
                   >
                     Submit Registration
                   </button>

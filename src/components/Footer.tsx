@@ -32,7 +32,7 @@ export const Footer: React.FC<FooterProps> = ({
     <footer className="bg-[#fafafa] text-slate-900 border-t border-slate-200 font-times">
       <div className="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8 py-12 sm:py-16">
         <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-12 gap-8 sm:gap-10 lg:gap-12">
-          
+
           {/* Column 1: Academic Emblem & Brand Info matching Page 3 of Reference PDF */}
           <div className="sm:col-span-2 lg:col-span-5 space-y-4 font-times">
             <div className="bg-white p-6 rounded-2xl border border-slate-200/90 shadow-xs inline-flex flex-col items-center text-center max-w-[300px] w-full">

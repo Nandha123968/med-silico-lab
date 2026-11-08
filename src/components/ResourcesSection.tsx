@@ -22,7 +22,7 @@ export const ResourcesSection: React.FC = () => {
     { id: 'adme', label: 'ADME & Toxicity', match: ['ADME Prediction', 'Toxicity Prediction'] },
     { id: 'qsar', label: 'QSAR & Pharmacophore', match: ['QSAR Study', '3D/4D QSAR', 'Pharmacophore Modeling'] },
     { id: 'network', label: 'Network Pharmacology', match: 'Network Pharmacology' },
-    { id: 'analytical', label: 'NMR, FT-IR & LC-MS', match: ['NMR Characterization', 'FT-IR Characterization', 'LC-MS Analysis', 'NMR / LC-MS', 'NMR Spectroscopy'] },
+    { id: 'analytical', label: 'NMR, FT-IR & LC-MS', match: ['NMR Characterization', 'FT-IR Characterization', 'LC-MS Analysis', 'NMR / LC-MS', 'NMR Spectroscopy', 'Data Analysis & Modeling'] },
     { id: 'dft', label: 'DFT & Quantum', match: ['DFT Calculation', 'Quantum Chemistry'] },
     { id: 'md', label: 'MD & Modeling', match: ['MD Simulations', 'Molecular Modeling', 'Visualization', 'Crystallography'] },
   ];
