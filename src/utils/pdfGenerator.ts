@@ -168,3 +168,4 @@ export function downloadPdfDocument(filename: string, options: PdfDocumentOption
   document.body.removeChild(link);
   URL.revokeObjectURL(url);
 }
+
