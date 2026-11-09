@@ -61,7 +61,7 @@ export function generatePdfBytes(options: PdfDocumentOptions): Uint8Array {
   streamOps.push('40 748 515 60 re f');
 
   // Header Organization Title
-  streamOps.push('BT 1 1 1 rg /F2 15 Tf 54 784 Td (MED-SILICO LAB  |  THE SCIENTIFIC CIRCLE) Tj ET');
+  streamOps.push('BT 1 1 1 rg /F2 15 Tf 54 784 Td (MEDSILICO LAB  |  THE SCIENTIFIC CIRCLE) Tj ET');
   streamOps.push(
     `BT 0.85 0.92 1 rg /F1 10 Tf 54 764 Td (${escapePdfString(options.subtitle)}) Tj ET`
   );
@@ -120,7 +120,7 @@ export function generatePdfBytes(options: PdfDocumentOptions): Uint8Array {
 
   const footerText =
     options.footerNote ||
-    'Official Document  |  Med-Silico Lab  |  Contact / WhatsApp: +91 8310468262  |  contact@medsilicolab.com';
+    'Official Document  |  Medsilico Lab  |  Contact / WhatsApp: +91 8310468262  |  contact@medsilicolab.com';
   streamOps.push(
     `BT 0.35 0.4 0.5 rg /F1 8.5 Tf 45 42 Td (${escapePdfString(footerText)}) Tj ET`
   );

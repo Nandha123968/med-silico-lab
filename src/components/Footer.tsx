@@ -13,7 +13,7 @@ interface FooterProps {
 
 export const Footer: React.FC<FooterProps> = ({
   onSelectTab,
-  brandName = 'Med-Silico Lab',
+  brandName = 'Medsilico Lab',
   logoUrl,
   onOpenWpExport,
 }) => {
@@ -86,7 +86,7 @@ export const Footer: React.FC<FooterProps> = ({
             </div>
 
             <p className="font-times text-slate-700 text-xs sm:text-sm leading-relaxed max-w-md">
-              Med-Silico Lab is an academic research consulting platform specializing in Molecular Docking, GPU Molecular Dynamics Simulations (GROMACS), 2D/3D QSAR, In Silico Vaccine Design, and Q1/Q2 SCI Manuscript Publication Guidance.
+              Medsilico Lab is an academic research consulting platform specializing in Molecular Docking, GPU Molecular Dynamics Simulations (GROMACS), 2D/3D QSAR, In Silico Vaccine Design, and Q1/Q2 SCI Manuscript Publication Guidance.
             </p>
           </div>
 

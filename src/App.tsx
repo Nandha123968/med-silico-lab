@@ -23,7 +23,6 @@ import labImg from './assets/images/computational_lab_workstation_1793813247708.
 import medsilicoLogo from './assets/images/medsilico_logo.png';
 import shankarThapaImg from './assets/images/team/shankar_thapa.jpg';
 import sadikShaikImg from './assets/images/team/sadik_shaik.jpg';
-import mahalakshmiBiradarImg from './assets/images/team/mahalakshmi_biradar.jpg';
 
 export default function App() {
   const [activeTab, setActiveTab] = useState<NavTab>('home');
@@ -51,7 +50,7 @@ export default function App() {
       <Navbar
         activeTab={activeTab}
         onSelectTab={setActiveTab}
-        brandName="Med-Silico Lab"
+        brandName="Medsilico Lab"
         logoUrl={customLogoUrl}
         onOpenConsultation={() => handleOpenConsultation()}
       />
@@ -73,13 +72,13 @@ export default function App() {
                 <div className="grid grid-cols-1 lg:grid-cols-12 gap-8 items-center">
                   <div className="lg:col-span-8">
                     <h2 className="text-2xl sm:text-3xl font-bold text-slate-900 tracking-tight mb-2 font-times">
-                      About Med-Silico Lab
+                      About Medsilico Lab
                     </h2>
                     <p className="font-times italic text-[#1e3a8a] text-base sm:text-lg mb-4 font-medium">
                       &ldquo;Transforming Pharmaceutical Research Through Computational Innovation.&rdquo;
                     </p>
                     <p className="font-times text-slate-800 text-sm sm:text-[15.5px] leading-relaxed mb-6">
-                      Med-Silico Lab is a scientific and educational platform dedicated to advancing pharmaceutical research through computational approaches, medicinal chemistry, and modern drug discovery technologies. We aim to bridge the gap between conventional pharmaceutical sciences and emerging computational technologies by providing practical research guidance, scientific training, and computational drug discovery resources to students, research scholars, academicians, and pharmaceutical researchers worldwide.
+                      Medsilico Lab is a scientific and educational platform dedicated to advancing pharmaceutical research through computational approaches, medicinal chemistry, and modern drug discovery technologies. We aim to bridge the gap between conventional pharmaceutical sciences and emerging computational technologies by providing practical research guidance, scientific training, and computational drug discovery resources to students, research scholars, academicians, and pharmaceutical researchers worldwide.
                     </p>
                     <button
                       onClick={() => {
@@ -124,21 +123,43 @@ export default function App() {
                     </p>
                   </div>
 
-                  <div className="grid grid-cols-1 md:grid-cols-3 gap-6 sm:gap-8 max-w-5xl mx-auto text-center font-times">
+                  <div className="grid grid-cols-1 md:grid-cols-2 gap-6 sm:gap-8 max-w-4xl mx-auto text-center font-times">
                     {/* Member 1: Shankar Thapa */}
                     <div className="bg-white border border-slate-200/90 rounded-xl p-6 text-center flex flex-col items-center justify-between h-full shadow-2xs hover:shadow-md transition-shadow">
                       <div className="flex flex-col items-center w-full">
                         <div className="w-32 h-32 sm:w-36 sm:h-36 rounded-full border-2 border-[#1e3a8a]/40 mb-4 overflow-hidden flex items-center justify-center shrink-0 shadow-xs bg-slate-100">
                           <img
                             src={shankarThapaImg}
-                            alt="Shankar Thapa, M.Pharm"
+                            alt="Shankar Thapa"
                             className="w-full h-full object-cover object-center"
                           />
                         </div>
                         <h4 className="text-base sm:text-lg font-bold text-slate-900 font-times">Shankar Thapa</h4>
-                        <p className="text-xs text-[#1e3a8a] font-bold mt-0.5">Founder, @ Med-Silico Lab</p>
-                        <div className="mt-3 pt-3 border-t border-slate-100 text-xs text-slate-600 space-y-1 text-center w-full">
+                        <p className="text-xs text-[#1e3a8a] font-bold mt-0.5">Founder, @ Medsilico Lab</p>
+                        <div className="mt-3 pt-3 border-t border-slate-100 text-xs text-slate-600 space-y-1.5 text-center w-full">
                           <div><strong>Specialization:</strong> In Silico Drug Design &amp; Molecular Modeling</div>
+                          <div>
+                            <strong>ORCID ID:</strong>{' '}
+                            <a
+                              href="https://orcid.org/0000-0003-1801-5668"
+                              target="_blank"
+                              rel="noopener noreferrer"
+                              className="text-[#1e3a8a] hover:underline font-semibold"
+                            >
+                              0000-0003-1801-5668
+                            </a>
+                          </div>
+                          <div>
+                            <strong>Google Scholar ID:</strong>{' '}
+                            <a
+                              href="https://scholar.google.com/citations?user=dTEmrVMAAAAJ&hl=en"
+                              target="_blank"
+                              rel="noopener noreferrer"
+                              className="text-[#1e3a8a] hover:underline font-semibold"
+                            >
+                              dTEmrVMAAAAJ (View Profile)
+                            </a>
+                          </div>
                         </div>
                       </div>
                     </div>
@@ -155,26 +176,30 @@ export default function App() {
                         </div>
                         <h4 className="text-base sm:text-lg font-bold text-slate-900 font-times">Dr. Sadik Shaik</h4>
                         <p className="text-xs text-[#1e3a8a] font-bold mt-0.5">Supervisor &amp; Consultant, Pharmacology Research</p>
-                        <div className="mt-3 pt-3 border-t border-slate-100 text-xs text-slate-600 space-y-1 text-center w-full">
+                        <div className="mt-3 pt-3 border-t border-slate-100 text-xs text-slate-600 space-y-1.5 text-center w-full">
                           <div><strong>Specialization:</strong> Pharmacological Screening &amp; Experimental Validation</div>
-                        </div>
-                      </div>
-                    </div>
-
-                    {/* Member 3: Mahalakshmi Suresha Biradar */}
-                    <div className="bg-white border border-slate-200/90 rounded-xl p-6 text-center flex flex-col items-center justify-between h-full shadow-2xs hover:shadow-md transition-shadow">
-                      <div className="flex flex-col items-center w-full">
-                        <div className="w-32 h-32 sm:w-36 sm:h-36 rounded-full border-2 border-[#1e3a8a]/40 mb-4 overflow-hidden flex items-center justify-center shrink-0 shadow-xs bg-slate-100">
-                          <img
-                            src={mahalakshmiBiradarImg}
-                            alt="Mahalakshmi Suresha Biradar"
-                            className="w-full h-full object-cover object-center"
-                          />
-                        </div>
-                        <h4 className="text-base sm:text-lg font-bold text-slate-900 font-times">Mahalakshmi Suresha Biradar</h4>
-                        <p className="text-xs text-[#1e3a8a] font-bold mt-0.5">Expert CADD Research and Publication</p>
-                        <div className="mt-3 pt-3 border-t border-slate-100 text-xs text-slate-600 space-y-1 text-center w-full">
-                          <div><strong>Specialization:</strong> CADD Workflows, Q1/Q2 Manuscript Publication Mentorship</div>
+                          <div>
+                            <strong>ORCID ID:</strong>{' '}
+                            <a
+                              href="https://orcid.org/0000-0003-0176-3504"
+                              target="_blank"
+                              rel="noopener noreferrer"
+                              className="text-[#1e3a8a] hover:underline font-semibold"
+                            >
+                              0000-0003-0176-3504
+                            </a>
+                          </div>
+                          <div>
+                            <strong>Google Scholar ID:</strong>{' '}
+                            <a
+                              href="https://scholar.google.com/citations?user=x3mcFnUAAAAJ&hl=en"
+                              target="_blank"
+                              rel="noopener noreferrer"
+                              className="text-[#1e3a8a] hover:underline font-semibold"
+                            >
+                              x3mcFnUAAAAJ (View Profile)
+                            </a>
+                          </div>
                         </div>
                       </div>
                     </div>
@@ -196,7 +221,7 @@ export default function App() {
                 <div className="bg-white border border-blue-200/90 rounded-2xl p-6 sm:p-8 lg:p-10 shadow-xs flex flex-col lg:flex-row lg:items-center justify-between gap-6 lg:gap-8">
                   <div className="max-w-3xl">
                     <div className="font-times italic text-xs sm:text-sm tracking-wide text-[#1e3a8a] font-semibold mb-2">
-                      Dedicated Academic Consulting Wing &middot; Med-Silico Lab
+                      Dedicated Academic Consulting Wing &middot; Medsilico Lab
                     </div>
                     <h3 className="text-xl sm:text-2xl lg:text-3xl font-bold text-slate-900 font-times mb-3">
                       Need Dedicated Manuscript Preparation &amp; Publication Guidance?
@@ -256,7 +281,7 @@ export default function App() {
                     Contact Us
                   </h3>
                   <p className="font-times text-sm sm:text-base text-white/95 leading-relaxed mb-8">
-                    Join a community of forward-thinking researchers and professionals, and take your scientific career to the next level with Med-Silico Lab!
+                    Join a community of forward-thinking researchers and professionals, and take your scientific career to the next level with Medsilico Lab!
                   </p>
                   <div className="text-center sm:text-left">
                     <button
@@ -322,7 +347,7 @@ export default function App() {
       {/* 3. Footer */}
       <Footer
         onSelectTab={setActiveTab}
-        brandName="Med-Silico Lab"
+        brandName="Medsilico Lab"
         logoUrl={customLogoUrl}
         onOpenWpExport={() => setIsWpModalOpen(true)}
       />
@@ -346,7 +371,7 @@ export default function App() {
 
       {/* 6. Floating WhatsApp Instant Connect Widget */}
       <a
-        href="https://wa.me/918310468262?text=Hello%20Med-Silico%20Lab%2C%20I%20am%20interested%20in%20your%20computational%20research%20services"
+        href="https://wa.me/918310468262?text=Hello%20Medsilico%20Lab%2C%20I%20am%20interested%20in%20your%20computational%20research%20services"
         target="_blank"
         rel="noopener noreferrer"
         aria-label="Chat with us on WhatsApp"

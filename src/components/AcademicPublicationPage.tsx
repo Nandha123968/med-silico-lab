@@ -151,7 +151,7 @@ export const AcademicPublicationPage: React.FC<AcademicPublicationPageProps> = (
         <div className="bg-white rounded-2xl border border-blue-200 p-6 sm:p-10 lg:p-12 mb-10 sm:mb-12 shadow-xs">
           <div className="max-w-3xl">
             <div className="font-times italic text-xs sm:text-sm tracking-wide text-[#1e3a8a] font-semibold mb-2">
-              Academic &amp; Publication Consulting &middot; Med-Silico Lab
+              Academic &amp; Publication Consulting &middot; Medsilico Lab
             </div>
             <h1 className="text-2xl sm:text-3xl lg:text-4xl font-normal text-slate-900 tracking-tight font-times mb-4">
               Academic Manuscript Preparation &amp; Publication Consulting
@@ -649,7 +649,7 @@ export const AcademicPublicationPage: React.FC<AcademicPublicationPageProps> = (
               <div className="space-y-3 font-times">
                 <a
                   href={`https://wa.me/918310468262?text=${encodeURIComponent(
-                    `Hello Med-Silico Lab, I am interested in the ${selectedPlan} service for approximately ${wordCount} words.`
+                    `Hello Medsilico Lab, I am interested in the ${selectedPlan} service for approximately ${wordCount} words.`
                   )}`}
                   target="_blank"
                   rel="noopener noreferrer"

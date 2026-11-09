@@ -126,7 +126,7 @@ export const WorkshopsSection: React.FC<WorkshopsSectionProps> = () => {
         {/* Section Header */}
         <div className="text-center max-w-3xl mx-auto mb-10 sm:mb-12">
           <div className="font-times italic text-xs sm:text-sm tracking-wider text-[#1e3a8a] font-semibold mb-2">
-            The Scientific Circle &amp; Med-Silico Lab Practical Training
+            The Scientific Circle &amp; Medsilico Lab Practical Training
           </div>
           <h2 className="text-2xl sm:text-3xl lg:text-4xl font-normal text-slate-900 tracking-tight font-times">
             Official Workshops &amp; Hands-On Webinars
@@ -453,7 +453,7 @@ export const WorkshopsSection: React.FC<WorkshopsSectionProps> = () => {
                 <CheckCircle className="w-12 h-12 text-emerald-600 mx-auto" />
                 <h4 className="text-lg font-bold text-slate-900 font-times">Registration Received!</h4>
                 <p className="text-xs text-slate-600 max-w-xs mx-auto">
-                  Confirmation email and meeting portal coordinates have been sent. Welcome to Med-Silico Lab!
+                  Confirmation email and meeting portal coordinates have been sent. Welcome to Medsilico Lab!
                 </p>
               </div>
             ) : (

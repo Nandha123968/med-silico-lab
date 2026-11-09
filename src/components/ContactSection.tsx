@@ -165,7 +165,7 @@ export const ContactSection: React.FC<ContactSectionProps> = ({
         {
           heading: '1. OVERVIEW & INVITATION',
           lines: [
-            'Med-Silico Lab invites applications from experienced and skilled educators, postdoctoral fellows, researchers, and industry experts to serve as Resource Persons for conducting Scientific Study Workshops in hybrid mode (both online and offline) across multiple research domains.'
+            'Medsilico Lab invites applications from experienced and skilled educators, postdoctoral fellows, researchers, and industry experts to serve as Resource Persons for conducting Scientific Study Workshops in hybrid mode (both online and offline) across multiple research domains.'
           ]
         },
         {
@@ -184,7 +184,7 @@ export const ContactSection: React.FC<ContactSectionProps> = ({
           heading: '3. APPLICATION REVIEW SCHEDULE & HONORARIUM',
           lines: [
             'Review Schedule: Candidates can apply throughout the year. Applications are reviewed quarterly on 31 March, 30 June, 30 September, and 31 December.',
-            'Honorarium & Recognition: Competitive per-session academic honorarium + Official Verified Certificate of Facilitation from Med-Silico Lab.'
+            'Honorarium & Recognition: Competitive per-session academic honorarium + Official Verified Certificate of Facilitation from Medsilico Lab.'
           ]
         },
         {
@@ -222,7 +222,7 @@ export const ContactSection: React.FC<ContactSectionProps> = ({
           </div>
 
           <p className="font-times text-slate-700 text-xs sm:text-base max-w-2xl mx-auto leading-relaxed">
-            Med-Silico Lab invites applications from experienced and skilled educators, researchers, and industry experts to serve as Resource Persons for conducting Scientific Study Workshops in hybrid mode (both online and offline) across multiple research domains.
+            Medsilico Lab invites applications from experienced and skilled educators, researchers, and industry experts to serve as Resource Persons for conducting Scientific Study Workshops in hybrid mode (both online and offline) across multiple research domains.
           </p>
 
           <div className="text-xs font-times text-slate-500 mt-4 space-y-0.5">

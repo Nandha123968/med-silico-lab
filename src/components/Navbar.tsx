@@ -23,7 +23,7 @@ interface NavbarProps {
 export const Navbar: React.FC<NavbarProps> = ({
   activeTab,
   onSelectTab,
-  brandName = 'Med-Silico Lab',
+  brandName = 'Medsilico Lab',
   logoUrl,
   onOpenConsultation,
 }) => {
@@ -55,7 +55,7 @@ export const Navbar: React.FC<NavbarProps> = ({
           <button
             onClick={() => handleLinkClick('home')}
             className="flex items-center gap-2.5 sm:gap-3 text-left focus:outline-none focus-visible:ring-2 focus-visible:ring-[#1e3a8a] rounded-lg p-1 cursor-pointer shrink-0 z-10"
-            aria-label="Med-Silico Lab Home"
+            aria-label="Medsilico Lab Home"
           >
             <img
               src={safeLogoUrl || defaultLogo}
