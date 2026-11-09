@@ -14,6 +14,7 @@ import {
   resetRateLimits,
   initSecurityBootstrap,
 } from './security.ts';
+import { generatePdfBytes } from './pdfGenerator.ts';
 
 test('OWASP XSS sanitization strips scripts and dangerous attributes', () => {
   const dirty = '<script>alert("xss")</script><img src=x onerror=alert(1)>Dr. Shivakumar';
@@ -82,4 +83,29 @@ test('initSecurityBootstrap initializes OWASP, CSRF, and JWT status', () => {
   assert.equal(status.owaspHardened, true);
   assert.equal(status.csrfProtected, true);
   assert.equal(status.jwtActive, true);
+});
+
+test('generatePdfBytes generates valid PDF 1.4 binary with safe string escaping', () => {
+  const bytes = generatePdfBytes({
+    title: 'CALL FOR APPLICATIONS – SCIENTIFIC WORKSHOP FACILITATORS (HYBRID MODE)',
+    subtitle: 'Advertisement No.: MSL/AI/2026/08 | Dated: 18-08-2026',
+    referenceCode: 'Ref: MSL/AI/2026/08',
+    sections: [
+      {
+        heading: '1. INVITATION OVERVIEW',
+        lines: [
+          'Med-Silico Lab invites applications from experienced educators (online & offline) — ₹300/compound.',
+        ],
+      },
+    ],
+  });
+
+  const text = new TextDecoder('ascii').decode(bytes);
+  assert.ok(text.startsWith('%PDF-1.4\n'));
+  assert.ok(text.includes('/Type /Catalog'));
+  assert.ok(text.includes('xref\n'));
+  assert.ok(text.trimEnd().endsWith('%%EOF'));
+  assert.ok(text.includes('CALL FOR APPLICATIONS - SCIENTIFIC WORKSHOP FACILITATORS'));
+  assert.ok(text.includes('\\(HYBRID MODE\\)'));
+  assert.ok(text.includes('INR 300/compound'));
 });

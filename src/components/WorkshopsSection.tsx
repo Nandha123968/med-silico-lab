@@ -1,6 +1,7 @@
 import React, { useState } from 'react';
 import { Calendar, Clock, Download, CheckCircle, Video, UserCheck, X, AlertCircle, ExternalLink, Maximize2, ShieldCheck, Award } from 'lucide-react';
 import { WORKSHOPS_DATA, WorkshopItem } from '../data/servicesData';
+import { downloadPdfDocument } from '../utils/pdfGenerator';
 import vaccineImg from '../assets/images/insilico_vaccine_bioinformatics_1793813248004.jpg';
 import {
   sanitizeText,
@@ -34,37 +35,41 @@ export const WorkshopsSection: React.FC<WorkshopsSectionProps> = () => {
   const displayedWorkshops = WORKSHOPS_DATA;
 
   const handleDownloadBrochure = (workshop: WorkshopItem) => {
-    const text = `THE SCIENTIFIC CIRCLE & MED-SILICO LAB - WORKSHOP SYLLABUS
-======================================================================
-Title: ${workshop.title}
-Organized by: ${workshop.organizer} (${workshop.organizerRole || 'Academic Head'})
-Speaker: ${workshop.speaker} (${workshop.speakerRole})
-Date: ${workshop.dateStr}
-Timings: ${workshop.timings}
-Platform: ${workshop.platform}
-Registration Fee: Students: INR ${workshop.feeStudentsInr} | Faculty/Professionals: INR ${workshop.feeFacultyInr}
-Capacity: ${workshop.capacity || 'Limited Seats'}
-Certification: ${workshop.certificate}
-Direct Registration Link: ${workshop.registrationUrl}
-Contact / WhatsApp: ${workshop.contactPhone || '+91 8310468262'}
-
-KEY MODULES & HANDS-ON SYLLABUS:
-${workshop.topics.map((t, i) => `${i + 1}. ${t}`).join('\n')}
-
-CERTIFICATION:
-Official E-Certificate with Unique Verification ID and Institutional Seal from The Scientific Circle.
-
-For enquiries & registration assistance:
-WhatsApp: +91 8310468262 | thescientificcircle@gmail.com
-======================================================================`;
-
-    const blob = new Blob([text], { type: 'text/plain;charset=utf-8' });
-    const url = URL.createObjectURL(blob);
-    const link = document.createElement('a');
-    link.href = url;
-    link.download = `${workshop.id}-syllabus.txt`;
-    link.click();
-    URL.revokeObjectURL(url);
+    downloadPdfDocument(`${workshop.id}-syllabus.pdf`, {
+      title: workshop.title,
+      subtitle: `${workshop.organizer}  |  ${workshop.organizerRole || 'Academic Training Division'}`,
+      referenceNo: `Date: ${workshop.dateStr}  |  Time: ${workshop.timings}  |  Platform: ${workshop.platform}`,
+      sections: [
+        {
+          heading: '1. SPEAKER & ORGANIZER DETAILS',
+          lines: [
+            `Speaker: ${workshop.speaker} (${workshop.speakerRole})`,
+            `Organized by: ${workshop.organizer} (${workshop.organizerRole || 'Head'})`,
+            `Mode & Platform: ${workshop.platform} (${workshop.mode})`
+          ]
+        },
+        {
+          heading: '2. KEY MODULES & HANDS-ON SYLLABUS',
+          lines: workshop.topics.map((t, i) => `${i + 1}. ${t}`)
+        },
+        {
+          heading: '3. REGISTRATION FEES & CERTIFICATION',
+          lines: [
+            `Students Fee: INR ${workshop.feeStudentsInr}`,
+            `Faculty / Professionals Fee: INR ${workshop.feeFacultyInr}`,
+            `Seat Capacity: ${workshop.capacity || 'Limited Seats'}`,
+            `Certification: ${workshop.certificate}`
+          ]
+        },
+        {
+          heading: '4. REGISTRATION & ENQUIRIES',
+          lines: [
+            `Registration Link: ${workshop.registrationUrl}`,
+            `WhatsApp / Call Desk: ${workshop.contactPhone || '+91 8310468262'}`
+          ]
+        }
+      ]
+    });
   };
 
   const handleRegisterSubmit = (e: React.FormEvent) => {
@@ -264,7 +269,7 @@ WhatsApp: +91 8310468262 | thescientificcircle@gmail.com
                   className="w-full py-2 bg-slate-50 hover:bg-slate-100 text-slate-700 border border-slate-200 text-xs font-normal rounded-md transition cursor-pointer flex items-center justify-center gap-1.5"
                 >
                   <Download className="w-3.5 h-3.5 shrink-0" />
-                  <span>Download Syllabus (.txt)</span>
+                  <span>Download Syllabus (.pdf)</span>
                 </button>
               </div>
             </div>

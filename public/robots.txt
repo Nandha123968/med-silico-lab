@@ -8,3 +8,4 @@ User-agent: Bingbot
 Allow: /
 
 Sitemap: https://medsilicolab.com/sitemap.xml
+

@@ -1,6 +1,7 @@
 import React, { useState } from 'react';
 import { Mail, Phone, MapPin, Download, CheckCircle, Send, X, AlertCircle } from 'lucide-react';
 import { ORDERED_SERVICES } from '../data/servicesData';
+import { downloadPdfDocument } from '../utils/pdfGenerator';
 import {
   sanitizeText,
   sanitizeEmail,
@@ -156,35 +157,45 @@ export const ContactSection: React.FC<ContactSectionProps> = ({
   };
 
   const handleDownloadAdvertisement = () => {
-    const text = `MED-SILICO LAB - CALL FOR APPLICATIONS
-=====================================================
-Advertisement No.: MSL/AI/2026/08
-Dated: 18-08-2026
-
-INVITATION FOR SCIENTIFIC WORKSHOP FACILITATORS & RESOURCE PERSONS (HYBRID MODE)
-
-Med-Silico Lab invites applications from experienced and skilled educators, postdoctoral fellows, researchers, and industry experts to serve as Resource Persons for conducting Scientific Study Workshops in hybrid mode (both online and offline) across computational domains:
-1. Molecular Docking & CADD (AutoDock Vina, Glide, Gold)
-2. Molecular Dynamics Simulations (GROMACS, NAMD, AMBER)
-3. 2D & 3D QSAR Modeling (PaDEL, CoMFA, CoMSIA)
-4. In Silico Vaccine Design & Immunoinformatics
-5. Quantum Chemical Calculations (DFT, Gaussian, ORCA)
-6. Academic Manuscript Writing for SCI/Scopus Q1 Journals
-
-Review Schedule:
-Quarterly cycle: 31 March, 30 June, 30 September, and 31 December.
-Honorarium & Perks: Competitive per-session academic honorarium + Certificate of Facilitation.
-
-Send credentials directly to: contact@medsilicolab.com
-=====================================================`;
-
-    const blob = new Blob([text], { type: 'text/plain;charset=utf-8' });
-    const url = URL.createObjectURL(blob);
-    const link = document.createElement('a');
-    link.href = url;
-    link.download = 'Advertisement_Facilitators_MSL_2026_08.txt';
-    link.click();
-    URL.revokeObjectURL(url);
+    downloadPdfDocument('Advertisement_Facilitators_MSL_2026_08.pdf', {
+      title: 'CALL FOR APPLICATIONS - SCIENTIFIC WORKSHOP FACILITATORS (HYBRID MODE)',
+      subtitle: 'Bridging Medicinal Chemistry & Computational Science',
+      referenceNo: 'Advertisement No.: MSL/AI/2026/08  |  Dated: 18-08-2026',
+      sections: [
+        {
+          heading: '1. OVERVIEW & INVITATION',
+          lines: [
+            'Med-Silico Lab invites applications from experienced and skilled educators, postdoctoral fellows, researchers, and industry experts to serve as Resource Persons for conducting Scientific Study Workshops in hybrid mode (both online and offline) across multiple research domains.'
+          ]
+        },
+        {
+          heading: '2. TARGET RESEARCH & TRAINING DOMAINS',
+          lines: [
+            '1. Molecular Docking & CADD (AutoDock Vina, Dockamon Pro, MzDock, SeamDock, HDOCK)',
+            '2. Molecular Dynamics Simulations (GROMACS 300ns+ GPU Trajectories, NAMD, MM-PBSA)',
+            '3. 2D & 3D QSAR Modeling (Chem-Master, RANQSAR, PaDEL, CoMFA, CoMSIA)',
+            '4. Network Pharmacology & Multi-Target Interactomes (GeneCards, STRING, Cytoscape)',
+            '5. Pharmacophore Modeling & Virtual Screening (Pharmit, ZINCPharmer)',
+            '6. Quantum Chemical Calculations (DFT, Gaussian, ORCA, Quantum ESPRESSO)',
+            '7. Academic Manuscript Writing & Peer-Review Guidance for SCI/Scopus Q1/Q2 Journals'
+          ]
+        },
+        {
+          heading: '3. APPLICATION REVIEW SCHEDULE & HONORARIUM',
+          lines: [
+            'Review Schedule: Candidates can apply throughout the year. Applications are reviewed quarterly on 31 March, 30 June, 30 September, and 31 December.',
+            'Honorarium & Recognition: Competitive per-session academic honorarium + Official Verified Certificate of Facilitation from Med-Silico Lab.'
+          ]
+        },
+        {
+          heading: '4. HOW TO APPLY',
+          lines: [
+            'Submit your CV and research specialization online via the "Apply as Facilitator" portal on medsilicolab.com or email directly to contact@medsilicolab.com.',
+            'Enquiries / WhatsApp Desk: +91 8310468262'
+          ]
+        }
+      ]
+    });
   };
 
   return (
@@ -230,7 +241,7 @@ Send credentials directly to: contact@medsilicolab.com
               className="px-5 py-2.5 bg-white border border-blue-300 hover:bg-blue-50 text-[#1e3a8a] text-xs sm:text-sm font-semibold rounded-md transition flex items-center justify-center gap-2 cursor-pointer"
             >
               <Download className="w-4 h-4 shrink-0" />
-              <span>Download Advertisement</span>
+              <span>Download Advertisement (PDF)</span>
             </button>
 
             <button
