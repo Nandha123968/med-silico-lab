@@ -1,4 +1,4 @@
-﻿import React, { useState } from 'react';
+import React, { useState } from 'react';
 import { Check, ArrowRight, ShieldCheck, Clock, Info } from 'lucide-react';
 import { ORDERED_SERVICES } from '../data/servicesData';
 import { calculateConsultationEstimate, BASE_SERVICE_PRICES } from '../utils/pricing';
