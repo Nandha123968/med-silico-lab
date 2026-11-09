@@ -141,14 +141,14 @@ WhatsApp: +91 8310468262 | thescientificcircle@gmail.com
               <div>
                 {/* Poster Preview Container with Lightbox Click */}
                 <div
-                  className="relative group cursor-pointer overflow-hidden bg-slate-900 aspect-[16/10] sm:aspect-[16/11]"
+                  className="relative group cursor-pointer overflow-hidden bg-slate-950 aspect-[3/4] max-h-[460px] w-full flex items-center justify-center"
                   onClick={() => setPreviewPoster(w)}
                   title="Click to view full poster"
                 >
                   <img
                     src={w.posterImg}
                     alt={`${w.title} Official Poster`}
-                    className="w-full h-full object-cover object-top group-hover:scale-105 transition-transform duration-500"
+                    className="w-full h-full object-contain group-hover:scale-102 transition-transform duration-500"
                     referrerPolicy="no-referrer"
                   />
                   <div className="absolute inset-0 bg-slate-950/30 group-hover:bg-slate-950/60 transition-colors flex items-center justify-center">

@@ -359,7 +359,6 @@ export const AboutSection: React.FC<AboutSectionProps> = ({
                 <h4 className="text-base sm:text-lg font-bold text-slate-900 font-times">Shankar Thapa</h4>
                 <p className="text-xs text-[#1e3a8a] font-bold mt-0.5">Founder, @ Med-Silico Lab</p>
                 <div className="mt-3 pt-3 border-t border-slate-100 text-xs text-slate-600 space-y-1 text-center w-full">
-                  <div><strong>Qualification:</strong> M.Pharm (Medicinal Chemistry)</div>
                   <div><strong>Specialization:</strong> In Silico Drug Design &amp; Molecular Modeling</div>
                 </div>
               </div>
@@ -371,14 +370,13 @@ export const AboutSection: React.FC<AboutSectionProps> = ({
                 <div className="w-32 h-32 sm:w-36 sm:h-36 rounded-full border-2 border-[#1e3a8a]/40 mb-4 overflow-hidden flex items-center justify-center shrink-0 shadow-xs bg-slate-100">
                   <img
                     src={sadikShaikImg}
-                    alt="Dr. Sadik Shaik, PhD"
+                    alt="Dr. Sadik Shaik"
                     className="w-full h-full object-cover object-center"
                   />
                 </div>
                 <h4 className="text-base sm:text-lg font-bold text-slate-900 font-times">Dr. Sadik Shaik</h4>
                 <p className="text-xs text-[#1e3a8a] font-bold mt-0.5">Supervisor &amp; Consultant, Pharmacology Research</p>
                 <div className="mt-3 pt-3 border-t border-slate-100 text-xs text-slate-600 space-y-1 text-center w-full">
-                  <div><strong>Qualification:</strong> PhD (Pharmacology)</div>
                   <div><strong>Specialization:</strong> Pharmacological Screening &amp; Experimental Validation</div>
                 </div>
               </div>
@@ -390,14 +388,13 @@ export const AboutSection: React.FC<AboutSectionProps> = ({
                 <div className="w-32 h-32 sm:w-36 sm:h-36 rounded-full border-2 border-[#1e3a8a]/40 mb-4 overflow-hidden flex items-center justify-center shrink-0 shadow-xs bg-slate-100">
                   <img
                     src={mahalakshmiBiradarImg}
-                    alt="Mahalakshmi Suresha Biradar, M.Pharm"
+                    alt="Mahalakshmi Suresha Biradar"
                     className="w-full h-full object-cover object-center"
                   />
                 </div>
                 <h4 className="text-base sm:text-lg font-bold text-slate-900 font-times">Mahalakshmi Suresha Biradar</h4>
                 <p className="text-xs text-[#1e3a8a] font-bold mt-0.5">Expert CADD Research and Publication</p>
                 <div className="mt-3 pt-3 border-t border-slate-100 text-xs text-slate-600 space-y-1 text-center w-full">
-                  <div><strong>Qualification:</strong> M.Pharm (Medicinal/Pharmaceutical Chemistry)</div>
                   <div><strong>Specialization:</strong> CADD Workflows, Q1/Q2 Manuscript Publication Mentorship</div>
                 </div>
               </div>

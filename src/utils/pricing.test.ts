@@ -2,7 +2,7 @@ import test from 'node:test';
 import assert from 'node:assert/strict';
 import { calculateConsultationEstimate } from './pricing.ts';
 
-test('calculates molecular docking estimate with ligand multiplier', () => {
+test('calculates molecular docking estimate with ligand multiplier (300 per compound)', () => {
   const result = calculateConsultationEstimate({
     serviceIds: ['molecular-docking'],
     ligandCount: 4,
@@ -10,15 +10,15 @@ test('calculates molecular docking estimate with ligand multiplier', () => {
     currency: 'INR',
   });
 
-  // 1500 * 4 = 6000
-  assert.equal(result.subtotal, 6000);
+  // 300 * 4 = 1200
+  assert.equal(result.subtotal, 1200);
   assert.equal(result.discountAmount, 0);
-  assert.equal(result.total, 6000);
+  assert.equal(result.total, 1200);
   assert.equal(result.currency, 'INR');
   assert.ok(result.estimatedDays > 0);
 });
 
-test('applies academic scholar discount of 20%', () => {
+test('applies academic scholar discount of 20% and enforces QSAR minimum 15 compounds', () => {
   const result = calculateConsultationEstimate({
     serviceIds: ['molecular-docking', 'qsar-study'],
     ligandCount: 2,
@@ -26,24 +26,23 @@ test('applies academic scholar discount of 20%', () => {
     currency: 'INR',
   });
 
-  // docking (1500 * 2 = 3000) + qsar (6500) = 9500
-  assert.equal(result.subtotal, 9500);
-  // 20% discount of 9500 = 1900
-  assert.equal(result.discountAmount, 1900);
-  assert.equal(result.total, 7600);
+  // docking (300 * 2 = 600) + qsar (700 * 15 min = 10500) = 11100
+  assert.equal(result.subtotal, 11100);
+  // 20% discount of 11100 = 2220
+  assert.equal(result.discountAmount, 2220);
+  assert.equal(result.total, 8880);
 });
 
-test('calculates MD simulation based on trajectory length', () => {
+test('calculates MD simulation at 1800 per compound and Pharmacophore min 5 compounds', () => {
   const result = calculateConsultationEstimate({
-    serviceIds: ['md-simulations'],
-    ligandCount: 1,
-    mdTrajectoryNs: 100,
+    serviceIds: ['md-simulations', 'pharmacophore-modeling'],
+    ligandCount: 2,
     isAcademicScholar: false,
-    currency: 'USD',
+    currency: 'INR',
   });
 
-  // 2.5 * 100 = 250
-  assert.equal(result.subtotal, 250);
-  assert.equal(result.total, 250);
-  assert.equal(result.currency, 'USD');
+  // MD (1800 * 2 = 3600) + Pharmacophore (500 * 5 min = 2500) = 6100
+  assert.equal(result.subtotal, 6100);
+  assert.equal(result.total, 6100);
+  assert.equal(result.currency, 'INR');
 });

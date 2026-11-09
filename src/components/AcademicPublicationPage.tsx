@@ -61,18 +61,18 @@ export const AcademicPublicationPage: React.FC<AcademicPublicationPageProps> = (
   // Calculate publication package estimates
   const calculateCost = () => {
     let baseInr = 0;
-    if (selectedPlan === 'manuscript') baseInr = Math.round(wordCount * 1.5 + 2000);
-    else if (selectedPlan === 'publication') baseInr = 6500;
-    else if (selectedPlan === 'plagiarism') baseInr = Math.round(wordCount * 0.8 + 1000);
-    else if (selectedPlan === 'journal') baseInr = 3500;
-    else if (selectedPlan === 'full-package') baseInr = Math.round(wordCount * 1.8 + 9000);
+    if (selectedPlan === 'manuscript') baseInr = 4000;
+    else if (selectedPlan === 'publication') baseInr = 3000;
+    else if (selectedPlan === 'plagiarism') baseInr = 400;
+    else if (selectedPlan === 'journal') baseInr = 1000;
+    else if (selectedPlan === 'full-package') baseInr = 8400;
 
     if (turnaround === 'express') {
-      baseInr = Math.round(baseInr * 1.35);
+      baseInr = Math.round(baseInr * 1.25);
     }
 
     if (currency === 'USD') {
-      return Math.round(baseInr / 80);
+      return Math.max(5, Math.round(baseInr / 80));
     }
     return baseInr;
   };
