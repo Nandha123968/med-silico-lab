@@ -26,6 +26,7 @@ import {
 import labImg from '../assets/images/computational_lab_workstation_1793813247708.jpg';
 import shankarThapaImg from '../assets/images/team/shankar_thapa.jpg';
 import sadikShaikImg from '../assets/images/team/sadik_shaik.jpg';
+import meenDeubaImg from '../assets/images/team/meen_deuba.jpg';
 
 interface AboutSectionProps {
   onJoinTeam: () => void;
@@ -344,7 +345,7 @@ export const AboutSection: React.FC<AboutSectionProps> = ({
             </p>
           </div>
 
-          <div className="grid grid-cols-1 md:grid-cols-2 gap-6 sm:gap-8 max-w-4xl mx-auto font-times text-center">
+          <div className="grid grid-cols-1 md:grid-cols-3 gap-6 sm:gap-8 max-w-5xl mx-auto font-times text-center">
             {/* 1. Shankar Thapa */}
             <div className="bg-white border border-slate-200 rounded-xl p-6 text-center flex flex-col items-center justify-between h-full shadow-2xs hover:shadow-md transition-shadow">
               <div className="flex flex-col items-center w-full">
@@ -453,6 +454,23 @@ export const AboutSection: React.FC<AboutSectionProps> = ({
                       </svg>
                     </a>
                   </div>
+                </div>
+              </div>
+            </div>
+
+            {/* 3. Meen Deuba */}
+            <div className="bg-white border border-slate-200 rounded-xl p-6 text-center flex flex-col items-center justify-between h-full shadow-2xs hover:shadow-md transition-shadow">
+              <div className="flex flex-col items-center w-full">
+                <div className="w-32 h-32 sm:w-36 sm:h-36 rounded-full border-2 border-[#1e3a8a]/40 mb-4 overflow-hidden flex items-center justify-center shrink-0 shadow-xs bg-slate-100">
+                  <img
+                    src={meenDeubaImg}
+                    alt="Meen Deuba"
+                    className="w-full h-full object-cover object-center"
+                  />
+                </div>
+                <h4 className="text-base sm:text-lg font-bold text-slate-900 font-times">Meen Deuba</h4>
+                <div className="mt-3 pt-3 border-t border-slate-100 text-xs text-slate-600 space-y-2.5 text-center w-full">
+                  <div><strong>Specialization:</strong> Engineering and Computation</div>
                 </div>
               </div>
             </div>

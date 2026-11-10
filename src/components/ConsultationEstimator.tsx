@@ -196,7 +196,7 @@ export const ConsultationEstimator: React.FC<ConsultationEstimatorProps> = ({
                     {hasPharmacophoreSelected && (
                       <div>
                         <strong>Pharmacophore Modeling:</strong> Minimum 5 compounds needed (
-                        {currency === 'INR' ? '₹500' : currency === 'NPR' ? 'NPR 800' : '$6'} per compound).
+                        {currency === 'INR' ? '₹1,000' : currency === 'NPR' ? 'NPR 1,600' : '$12'} per compound).
                       </div>
                     )}
                   </div>

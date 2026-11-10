@@ -33,7 +33,7 @@ test('applies academic scholar discount of 20% and enforces QSAR minimum 15 comp
   assert.equal(result.total, 8880);
 });
 
-test('calculates MD simulation at 1800 per compound and Pharmacophore min 5 compounds', () => {
+test('calculates MD simulation at 1800 per compound and Pharmacophore min 5 compounds at 1000', () => {
   const result = calculateConsultationEstimate({
     serviceIds: ['md-simulations', 'pharmacophore-modeling'],
     ligandCount: 2,
@@ -41,23 +41,23 @@ test('calculates MD simulation at 1800 per compound and Pharmacophore min 5 comp
     currency: 'INR',
   });
 
-  // MD (1800 * 2 = 3600) + Pharmacophore (500 * 5 min = 2500) = 6100
-  assert.equal(result.subtotal, 6100);
-  assert.equal(result.total, 6100);
+  // MD (1800 * 2 = 3600) + Pharmacophore (1000 * 5 min = 5000) = 8600
+  assert.equal(result.subtotal, 8600);
+  assert.equal(result.total, 8600);
   assert.equal(result.currency, 'INR');
 });
 
-test('calculates DFT at 600 per compound, Vaccine Design at 12000 per project, and Manuscript as flexible', () => {
+test('calculates DFT at 600, Vaccine Design at 12000, Bioinformatics at 8000, Publication at 4000, and Manuscript as flexible', () => {
   const result = calculateConsultationEstimate({
-    serviceIds: ['dft-calculation', 'in-silico-vaccine-design', 'manuscript-preparation'],
+    serviceIds: ['dft-calculation', 'in-silico-vaccine-design', 'bioinformatics', 'publication-guidance', 'manuscript-preparation'],
     ligandCount: 2,
     isAcademicScholar: false,
     currency: 'INR',
   });
 
-  // DFT (600 * 2 = 1200) + Vaccine Design (12000) + Manuscript (0 flexible) = 13200
-  assert.equal(result.subtotal, 13200);
-  assert.equal(result.total, 13200);
+  // DFT (600 * 2 = 1200) + Vaccine (12000) + Bioinformatics (8000) + Publication (4000) + Manuscript (0 flexible) = 25200
+  assert.equal(result.subtotal, 25200);
+  assert.equal(result.total, 25200);
 });
 
 test('calculates Nepal currency (NPR) rates accurately (1 INR = 1.6 NPR)', () => {
