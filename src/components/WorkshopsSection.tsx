@@ -65,7 +65,7 @@ export const WorkshopsSection: React.FC<WorkshopsSectionProps> = () => {
           heading: '4. REGISTRATION & ENQUIRIES',
           lines: [
             `Registration Link: ${workshop.registrationUrl}`,
-            `WhatsApp / Call Desk: ${workshop.contactPhone || '+91 8310468262'}`
+            'Email: contact@medsilicolab.com'
           ]
         }
       ]
@@ -493,7 +493,7 @@ export const WorkshopsSection: React.FC<WorkshopsSectionProps> = () => {
                     value={regForm.phone}
                     onChange={(e) => setRegForm({ ...regForm, phone: e.target.value })}
                     className="w-full px-3 py-2 border border-slate-300 rounded-lg text-slate-900 focus:outline-[#1e3a8a] font-mono"
-                    placeholder="+91 8310468262"
+                    placeholder="Enter WhatsApp or phone number"
                   />
                 </div>
 

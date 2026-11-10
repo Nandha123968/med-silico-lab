@@ -191,7 +191,7 @@ export const ContactSection: React.FC<ContactSectionProps> = ({
           heading: '4. HOW TO APPLY',
           lines: [
             'Submit your CV and research specialization online via the "Apply as Facilitator" portal on medsilicolab.com or email directly to contact@medsilicolab.com.',
-            'Enquiries / WhatsApp Desk: +91 8310468262'
+            'Official Website: https://www.medsilicolab.com  |  Email: contact@medsilicolab.com'
           ]
         }
       ]
@@ -260,24 +260,12 @@ export const ContactSection: React.FC<ContactSectionProps> = ({
             <div className="w-10 h-10 rounded-full bg-[#dbeafe] text-[#1e3a8a] flex items-center justify-center mb-3 shrink-0">
               <MapPin className="w-5 h-5" />
             </div>
-            <h4 className="text-xs font-times font-bold uppercase tracking-wider text-slate-400 mb-2">Our Offices</h4>
+            <h4 className="text-xs font-times font-bold uppercase tracking-wider text-slate-400 mb-2">Head Office</h4>
             <div className="font-times text-xs sm:text-sm text-slate-700 font-medium leading-relaxed space-y-2.5 w-full">
               <div className="text-center">
-                <span className="inline-block px-2 py-0.5 bg-blue-50 text-[#1e3a8a] text-[10px] font-bold uppercase tracking-wider rounded-xs mb-1">
-                  Head Office
-                </span>
                 <p className="font-times text-xs sm:text-sm text-slate-700">
                   Pahalamanpur-10, Ghodaghodi Municipality,<br />
                   Kailali, Nepal
-                </p>
-              </div>
-              <div className="pt-2 border-t border-slate-100 text-center">
-                <span className="inline-block px-2 py-0.5 bg-slate-100 text-slate-700 text-[10px] font-bold uppercase tracking-wider rounded-xs mb-1">
-                  Branch Office
-                </span>
-                <p className="font-times text-xs sm:text-sm text-slate-700">
-                  Veerabhadreshwara Nagar Main Rd, Herohalli,<br />
-                  Sunkadakatte, Bengaluru, Karnataka 560091, India
                 </p>
               </div>
             </div>
@@ -287,9 +275,9 @@ export const ContactSection: React.FC<ContactSectionProps> = ({
             <div className="w-10 h-10 rounded-full bg-[#dbeafe] text-[#1e3a8a] flex items-center justify-center mb-3 shrink-0">
               <Phone className="w-5 h-5" />
             </div>
-            <h4 className="text-xs font-times font-bold uppercase tracking-wider text-slate-400 mb-1">Call &amp; WhatsApp</h4>
+            <h4 className="text-xs font-times font-bold uppercase tracking-wider text-slate-400 mb-1">WhatsApp Support</h4>
             <p className="font-times text-xs sm:text-sm text-slate-700 font-medium">
-              <a href="tel:+918310468262" className="hover:text-[#1e3a8a] underline font-semibold">+91 8310468262</a><br />
+              <a href="https://wa.me/918310468262" target="_blank" rel="noopener noreferrer" className="hover:text-[#1e3a8a] underline font-semibold">Chat on WhatsApp</a><br />
               <span className="text-slate-500 font-normal font-times text-xs">Mon - Sat: 9:00 AM - 7:00 PM IST</span>
             </p>
           </div>

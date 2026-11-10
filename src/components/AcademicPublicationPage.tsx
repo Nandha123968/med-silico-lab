@@ -155,7 +155,7 @@ export const AcademicPublicationPage: React.FC<AcademicPublicationPageProps> = (
               </div>
               <div className="flex items-center gap-2 bg-slate-50 text-slate-800 px-3.5 py-2 rounded-lg border border-slate-300">
                 <Phone className="w-3.5 h-3.5 text-[#1e3a8a] shrink-0" />
-                <span>Consultation Desk: <a href="tel:+918310468262" className="font-semibold underline hover:text-[#1e3a8a]">+91 8310468262</a></span>
+                <span>Consultation Desk: <a href="https://wa.me/918310468262" target="_blank" rel="noopener noreferrer" className="font-semibold underline hover:text-[#1e3a8a]">Chat on WhatsApp</a></span>
               </div>
             </div>
           </div>
@@ -604,7 +604,7 @@ export const AcademicPublicationPage: React.FC<AcademicPublicationPageProps> = (
                   className="w-full py-3 px-4 bg-emerald-600 hover:bg-emerald-500 text-white font-semibold text-xs uppercase tracking-wider rounded-lg transition flex items-center justify-center gap-2 font-times shadow-sm"
                 >
                   <Phone className="w-4 h-4 shrink-0" />
-                  <span>Instant WhatsApp (+91 8310468262)</span>
+                  <span>Instant WhatsApp Consultation</span>
                 </a>
 
                 <button
@@ -648,7 +648,7 @@ export const AcademicPublicationPage: React.FC<AcademicPublicationPageProps> = (
                 Inquiry Successfully Transmitted!
               </h4>
               <p className="text-xs text-emerald-800 mt-1">
-                Our academic publication coordinator will review your manuscript scope and contact you via email or WhatsApp (+91 8310468262) shortly.
+                Our academic publication coordinator will review your manuscript scope and contact you via email or WhatsApp shortly.
               </p>
             </div>
           ) : (
@@ -689,7 +689,7 @@ export const AcademicPublicationPage: React.FC<AcademicPublicationPageProps> = (
                     maxLength={24}
                     value={formData.phone}
                     onChange={(e) => setFormData({ ...formData, phone: e.target.value })}
-                    placeholder="e.g. +91 8310468262"
+                    placeholder="Enter WhatsApp or mobile number"
                     className="w-full p-2.5 rounded-lg border border-slate-300 focus:outline-none focus:ring-2 focus:ring-blue-700 bg-slate-50 font-times"
                   />
                 </div>
@@ -749,7 +749,7 @@ export const AcademicPublicationPage: React.FC<AcademicPublicationPageProps> = (
           <div className="mt-8 pt-6 border-t border-slate-100 flex flex-col sm:flex-row items-center justify-between text-xs font-times text-slate-600 gap-3">
             <div className="flex items-center gap-2">
               <Phone className="w-3.5 h-3.5 text-blue-800 shrink-0" />
-              <span>Call / WhatsApp: <a href="tel:+918310468262" className="font-bold text-slate-900 underline hover:text-blue-900">+91 8310468262</a></span>
+              <span>WhatsApp: <a href="https://wa.me/918310468262" target="_blank" rel="noopener noreferrer" className="font-bold text-slate-900 underline hover:text-blue-900">Chat on WhatsApp</a></span>
             </div>
             <div className="flex items-center gap-2">
               <Mail className="w-3.5 h-3.5 text-blue-800 shrink-0" />

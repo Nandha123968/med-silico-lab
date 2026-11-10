@@ -120,7 +120,7 @@ export function generatePdfBytes(options: PdfDocumentOptions): Uint8Array {
 
   const footerText =
     options.footerNote ||
-    'Official Document  |  Medsilico Lab  |  Contact / WhatsApp: +91 8310468262  |  contact@medsilicolab.com';
+    'Official Document  |  Medsilico Lab  |  contact@medsilicolab.com';
   streamOps.push(
     `BT 0.35 0.4 0.5 rg /F1 8.5 Tf 45 42 Td (${escapePdfString(footerText)}) Tj ET`
   );

@@ -302,10 +302,12 @@ export default function App() {
                       <ArrowRight className="w-4 h-4 shrink-0" />
                     </button>
                     <a
-                      href="tel:+918310468262"
+                      href="https://wa.me/918310468262"
+                      target="_blank"
+                      rel="noopener noreferrer"
                       className="px-6 py-2.5 bg-[#faf7fc] hover:bg-[#dbeafe] text-[#1e3a8a] border border-blue-300 font-semibold text-xs sm:text-sm uppercase tracking-wider rounded-md transition text-center flex items-center justify-center gap-2 font-times"
                     >
-                      <span>Call Desk: +91 8310468262</span>
+                      <span>Chat on WhatsApp</span>
                     </a>
                   </div>
                 </div>
@@ -425,7 +427,7 @@ export default function App() {
         target="_blank"
         rel="noopener noreferrer"
         aria-label="Chat with us on WhatsApp"
-        title="Chat on WhatsApp (+91 8310468262)"
+        title="Chat on WhatsApp"
         className="fixed bottom-6 right-6 z-50 bg-[#25D366] hover:bg-[#20ba59] text-white p-3.5 rounded-full shadow-lg hover:shadow-2xl transition-all duration-300 flex items-center gap-2 group cursor-pointer hover:scale-105"
       >
         <svg className="w-6 h-6 fill-current shrink-0" viewBox="0 0 24 24">

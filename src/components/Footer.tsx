@@ -68,7 +68,7 @@ export const Footer: React.FC<FooterProps> = ({
                 target="_blank"
                 rel="noopener noreferrer"
                 aria-label="WhatsApp"
-                title="Chat on WhatsApp (+91 8310468262)"
+                title="Chat on WhatsApp"
                 className="w-8 h-8 rounded-full bg-[#25D366] hover:bg-[#20ba59] text-white flex items-center justify-center transition shadow-2xs hover:scale-105 cursor-pointer"
               >
                 <svg className="w-4 h-4 fill-white" viewBox="0 0 24 24">
@@ -162,10 +162,10 @@ export const Footer: React.FC<FooterProps> = ({
             </ul>
           </div>
 
-          {/* Column 3: Registered Offices & Contact */}
+          {/* Column 3: Registered Office & Contact */}
           <div className="sm:col-span-1 lg:col-span-4 font-times">
             <h4 className="text-sm font-times font-normal text-slate-900 mb-4">
-              Registered Offices &amp; Contact
+              Registered Office &amp; Contact
             </h4>
             <div className="space-y-3 text-xs sm:text-sm text-slate-700 font-times">
               <div className="flex items-start gap-2.5">
@@ -175,20 +175,11 @@ export const Footer: React.FC<FooterProps> = ({
                   Pahalamanpur-10, Ghodaghodi Municipality, Kailali, Nepal.
                 </div>
               </div>
-              <div className="flex items-start gap-2.5">
-                <MapPin className="w-4 h-4 text-[#1e3a8a] shrink-0 mt-0.5" />
-                <div className="font-times text-slate-700 leading-relaxed text-xs">
-                  <span className="font-bold text-[#1e3a8a] block text-[11px] uppercase tracking-wider">Branch Office:</span>
-                  Veerabhadreshwara Nagar Main Rd, Herohalli, Sunkadakatte, Bengaluru, Karnataka 560091, India.
-                </div>
-              </div>
               <div className="flex items-center gap-2.5 pt-1">
-                <Phone className="w-4 h-4 text-[#1e3a8a] shrink-0" />
-                <a href="tel:+918310468262" className="font-times text-slate-700 hover:text-[#1e3a8a] transition underline">+91 8310468262</a>
-              </div>
-              <div className="flex items-center gap-2.5">
                 <Mail className="w-4 h-4 text-[#1e3a8a] shrink-0" />
-                <span className="font-times text-slate-700">contact@medsilicolab.com</span>
+                <a href="mailto:contact@medsilicolab.com" className="font-times text-slate-700 hover:text-[#1e3a8a] transition">
+                  contact@medsilicolab.com
+                </a>
               </div>
             </div>
 
