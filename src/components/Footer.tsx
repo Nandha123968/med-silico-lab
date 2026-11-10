@@ -188,6 +188,14 @@ export const Footer: React.FC<FooterProps> = ({
                   Veerabhadreshwara Nagar Main Rd, Herohalli, Sunkadakatte, Bengaluru, Karnataka 560091, India.
                 </div>
               </div>
+              <div className="flex items-start gap-2.5 pt-1">
+                <MapPin className="w-4 h-4 text-[#1e3a8a] shrink-0 mt-0.5" />
+                <div className="font-times text-slate-700 leading-relaxed text-xs">
+                  <span className="font-bold text-[#1e3a8a] block text-[11px] uppercase tracking-wider">Contact (US):</span>
+                  Los Angeles, California, US<br />
+                  <span>Mail: <a href="mailto:contact@medsilicolab.com" className="hover:text-[#1e3a8a] underline">contact@medsilicolab.com</a></span>
+                </div>
+              </div>
             </div>
 
             <div className="mt-6 pt-4 border-t border-slate-200 font-times">
