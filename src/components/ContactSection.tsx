@@ -358,7 +358,7 @@ export const ContactSection: React.FC<ContactSectionProps> = ({
                     value={formData.mobile}
                     onChange={(e) => setFormData({ ...formData, mobile: e.target.value })}
                     className="w-full px-3.5 py-2.5 border border-slate-300 rounded-lg text-slate-900 focus:outline-cyan-700 font-mono text-sm"
-                    placeholder="+91 8310468262"
+                    placeholder="Enter WhatsApp or mobile number"
                   />
                 </div>
 
