@@ -260,12 +260,24 @@ export const ContactSection: React.FC<ContactSectionProps> = ({
             <div className="w-10 h-10 rounded-full bg-[#dbeafe] text-[#1e3a8a] flex items-center justify-center mb-3 shrink-0">
               <MapPin className="w-5 h-5" />
             </div>
-            <h4 className="text-xs font-times font-bold uppercase tracking-wider text-slate-400 mb-2">Head Office</h4>
+            <h4 className="text-xs font-times font-bold uppercase tracking-wider text-slate-400 mb-2">Our Offices</h4>
             <div className="font-times text-xs sm:text-sm text-slate-700 font-medium leading-relaxed space-y-2.5 w-full">
               <div className="text-center">
+                <span className="inline-block px-2 py-0.5 bg-blue-50 text-[#1e3a8a] text-[10px] font-bold uppercase tracking-wider rounded-xs mb-1">
+                  Head Office
+                </span>
                 <p className="font-times text-xs sm:text-sm text-slate-700">
                   Pahalamanpur-10, Ghodaghodi Municipality,<br />
                   Kailali, Nepal
+                </p>
+              </div>
+              <div className="pt-2 border-t border-slate-100 text-center">
+                <span className="inline-block px-2 py-0.5 bg-slate-100 text-slate-700 text-[10px] font-bold uppercase tracking-wider rounded-xs mb-1">
+                  Branch Office
+                </span>
+                <p className="font-times text-xs sm:text-sm text-slate-700">
+                  Veerabhadreshwara Nagar Main Rd, Herohalli,<br />
+                  Sunkadakatte, Bengaluru, Karnataka 560091, India
                 </p>
               </div>
             </div>
