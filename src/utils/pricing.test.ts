@@ -47,7 +47,7 @@ test('calculates MD simulation at 1800 per compound and Pharmacophore min 5 comp
   assert.equal(result.currency, 'INR');
 });
 
-test('calculates DFT at 600, Vaccine Design at 12000, Bioinformatics at 8000, Publication at 4000, and Manuscript as flexible', () => {
+test('calculates DFT at 600, Vaccine Design at 12000, Bioinformatics at 8000, Publication at 4000, and Manuscript at 3000', () => {
   const result = calculateConsultationEstimate({
     serviceIds: ['dft-calculation', 'in-silico-vaccine-design', 'bioinformatics', 'publication-guidance', 'manuscript-preparation'],
     ligandCount: 2,
@@ -55,9 +55,9 @@ test('calculates DFT at 600, Vaccine Design at 12000, Bioinformatics at 8000, Pu
     currency: 'INR',
   });
 
-  // DFT (600 * 2 = 1200) + Vaccine (12000) + Bioinformatics (8000) + Publication (4000) + Manuscript (0 flexible) = 25200
-  assert.equal(result.subtotal, 25200);
-  assert.equal(result.total, 25200);
+  // DFT (600 * 2 = 1200) + Vaccine (12000) + Bioinformatics (8000) + Publication (4000) + Manuscript (3000) = 28200
+  assert.equal(result.subtotal, 28200);
+  assert.equal(result.total, 28200);
 });
 
 test('calculates Nepal currency (NPR) rates accurately (1 INR = 1.6 NPR)', () => {

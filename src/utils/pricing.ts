@@ -30,7 +30,7 @@ export const BASE_SERVICE_PRICES: Record<string, ServicePriceConfig> = {
   'dft-calculation': { inr: 600, npr: 960, usd: 8, unitType: 'per_ligand', minCompounds: 1, unitLabel: 'per compound' },
   'in-silico-vaccine-design': { inr: 12000, npr: 19200, usd: 145, unitType: 'fixed', unitLabel: 'per project' },
   'bioinformatics': { inr: 8000, npr: 12800, usd: 96, unitType: 'fixed', unitLabel: 'per project' },
-  'manuscript-preparation': { inr: 0, npr: 0, usd: 0, unitType: 'flexible', unitLabel: 'Flexible (Variable)' },
+  'manuscript-preparation': { inr: 3000, npr: 4800, usd: 36, unitType: 'fixed', unitLabel: 'per manuscript' },
   'publication-guidance': { inr: 4000, npr: 6400, usd: 50, unitType: 'fixed', unitLabel: 'per manuscript' },
   'plagiarism-checking': { inr: 400, npr: 640, usd: 5, unitType: 'fixed', unitLabel: 'per manuscript' },
   'journal-selection': { inr: 1000, npr: 1600, usd: 12, unitType: 'fixed', unitLabel: 'per manuscript' },
