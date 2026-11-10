@@ -12,7 +12,6 @@ export const ConsultationEstimator: React.FC<ConsultationEstimatorProps> = ({
 }) => {
   const [selectedIds, setSelectedIds] = useState<string[]>(['molecular-docking']);
   const [ligandCount, setLigandCount] = useState<number>(3);
-  const [isAcademic, setIsAcademic] = useState<boolean>(false);
   const [currency, setCurrency] = useState<'INR' | 'NPR' | 'USD'>('INR');
 
   const currencySymbol = currency === 'INR' ? '₹' : currency === 'NPR' ? 'NPR ' : '$';
@@ -42,7 +41,7 @@ export const ConsultationEstimator: React.FC<ConsultationEstimatorProps> = ({
   const estimate = calculateConsultationEstimate({
     serviceIds: selectedIds,
     ligandCount: effectiveLigandCount,
-    isAcademicScholar: isAcademic,
+    isAcademicScholar: false,
     currency,
   });
 
@@ -204,20 +203,6 @@ export const ConsultationEstimator: React.FC<ConsultationEstimatorProps> = ({
               )}
             </div>
           )}
-
-          {/* Academic Discount Checkbox */}
-          <div className="flex items-start sm:items-center gap-2.5 pt-2">
-            <input
-              type="checkbox"
-              id="academicDiscount"
-              checked={isAcademic}
-              onChange={(e) => setIsAcademic(e.target.checked)}
-              className="w-4 h-4 mt-0.5 sm:mt-0 text-blue-800 rounded border-slate-300 accent-blue-800 cursor-pointer shrink-0"
-            />
-            <label htmlFor="academicDiscount" className="text-xs text-slate-700 cursor-pointer font-medium leading-snug">
-              Apply Academic &amp; University Scholar Subsidy (20% Off for M.Pharm, M.Sc, Ph.D. &amp; Postdoc researchers)
-            </label>
-          </div>
         </div>
 
         {/* Right Column: Calculated Cost Card */}
@@ -236,15 +221,6 @@ export const ConsultationEstimator: React.FC<ConsultationEstimatorProps> = ({
                     : `${currencySymbol}${estimate.subtotal.toLocaleString()}${hasFlexibleService ? ' + Flexible' : ''}`}
                 </span>
               </div>
-
-              {isAcademic && estimate.discountAmount > 0 && (
-                <div className="flex justify-between text-emerald-400">
-                  <span>Academic Subsidy (20%):</span>
-                  <span className="font-mono">
-                    -{currencySymbol}{estimate.discountAmount.toLocaleString()}
-                  </span>
-                </div>
-              )}
 
               <div className="pt-3 border-t border-slate-800 flex justify-between items-baseline">
                 <span className="text-sm font-semibold text-white">Estimated Total:</span>
