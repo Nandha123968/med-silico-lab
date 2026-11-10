@@ -136,28 +136,44 @@ export default function App() {
                         </div>
                         <h4 className="text-base sm:text-lg font-bold text-slate-900 font-times">Shankar Thapa</h4>
                         <p className="text-xs text-[#1e3a8a] font-bold mt-0.5">Founder, @ Medsilico Lab</p>
-                        <div className="mt-3 pt-3 border-t border-slate-100 text-xs text-slate-600 space-y-1.5 text-center w-full">
+                        <div className="mt-3 pt-3 border-t border-slate-100 text-xs text-slate-600 space-y-2.5 text-center w-full">
                           <div><strong>Specialization:</strong> In Silico Drug Design &amp; Molecular Modeling</div>
-                          <div>
-                            <strong>ORCID ID:</strong>{' '}
+                          <div className="flex flex-wrap items-center justify-center gap-2.5 pt-1">
+                            {/* Official ORCID iD Logo Button */}
                             <a
                               href="https://orcid.org/0000-0003-1801-5668"
                               target="_blank"
                               rel="noopener noreferrer"
-                              className="text-[#1e3a8a] hover:underline font-semibold"
+                              title="Verified ORCID Profile (0000-0003-1801-5668)"
+                              aria-label="Shankar Thapa ORCID Profile"
+                              className="inline-flex items-center gap-1.5 px-3 py-1.5 rounded-full bg-[#f7fee7] hover:bg-[#ecfccb] border border-[#a6ce39]/60 text-slate-800 font-semibold text-xs transition shadow-2xs hover:scale-105 cursor-pointer"
                             >
-                              0000-0003-1801-5668
+                              <svg className="w-4 h-4 shrink-0" viewBox="0 0 256 256" aria-hidden="true">
+                                <circle cx="128" cy="128" r="128" fill="#A6CE39" />
+                                <path
+                                  fill="#FFFFFF"
+                                  d="M86.3 186.2H70.9V79.1h15.4v107.1zM78.6 47.2c-5.7 0-10.3 4.6-10.3 10.3 0 5.7 4.6 10.3 10.3 10.3s10.3-4.6 10.3-10.3c0-5.7-4.6-10.3-10.3-10.3zm30.3 31.9h41.6c39.6 0 57 28.3 57 53.6 0 27.5-21.5 53.6-56.8 53.6h-41.8V79.1zm15.4 93.3h24.5c34.9 0 42.9-26.5 42.9-39.7C191.7 111.2 178 93 148 93h-23.7v79.4z"
+                                />
+                              </svg>
+                              <span>ORCID</span>
                             </a>
-                          </div>
-                          <div>
-                            <strong>Google Scholar ID:</strong>{' '}
+
+                            {/* Official Google Scholar Verified Logo Button */}
                             <a
                               href="https://scholar.google.com/citations?user=dTEmrVMAAAAJ&hl=en"
                               target="_blank"
                               rel="noopener noreferrer"
-                              className="text-[#1e3a8a] hover:underline font-semibold"
+                              title="Verified Google Scholar Profile"
+                              aria-label="Shankar Thapa Google Scholar Profile"
+                              className="inline-flex items-center gap-1.5 px-3 py-1.5 rounded-full bg-blue-50 hover:bg-blue-100 border border-blue-300 text-[#1e3a8a] font-semibold text-xs transition shadow-2xs hover:scale-105 cursor-pointer"
                             >
-                              dTEmrVMAAAAJ (View Profile)
+                              <svg className="w-4 h-4 shrink-0" viewBox="0 0 24 24" aria-hidden="true">
+                                <path fill="#4285F4" d="M12 24a7 7 0 1 1 0-14 7 7 0 0 1 0 14zm0-24L0 9.5l4.838 3.94A8 8 0 0 1 12 9a8 8 0 0 1 7.162 4.44L24 9.5z" />
+                              </svg>
+                              <span>Google Scholar</span>
+                              <svg className="w-3.5 h-3.5 text-[#1d9bf0] shrink-0" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true">
+                                <path d="M22.25 12c0-1.43-.88-2.67-2.19-3.34.46-1.39.2-2.9-.81-3.91s-2.52-1.27-3.91-.81c-.66-1.31-1.91-2.19-3.34-2.19s-2.67.88-3.33 2.19c-1.4-.46-2.91-.2-3.92.81s-1.26 2.52-.8 3.91c-1.31.67-2.2 1.91-2.2 3.34s.89 2.67 2.2 3.34c-.46 1.39-.21 2.9.8 3.91s2.52 1.26 3.91.81c.67 1.31 1.91 2.19 3.34 2.19s2.68-.88 3.34-2.19c1.39.45 2.9.2 3.91-.81s1.27-2.52.81-3.91c1.31-.67 2.19-1.91 2.19-3.34zm-11.71 4.2L6.8 12.46l1.41-1.42 2.26 2.26 4.8-5.23 1.47 1.36-6.2 6.77z" />
+                              </svg>
                             </a>
                           </div>
                         </div>
@@ -176,28 +192,44 @@ export default function App() {
                         </div>
                         <h4 className="text-base sm:text-lg font-bold text-slate-900 font-times">Dr. Sadik Shaik</h4>
                         <p className="text-xs text-[#1e3a8a] font-bold mt-0.5">Supervisor &amp; Consultant, Pharmacology Research</p>
-                        <div className="mt-3 pt-3 border-t border-slate-100 text-xs text-slate-600 space-y-1.5 text-center w-full">
+                        <div className="mt-3 pt-3 border-t border-slate-100 text-xs text-slate-600 space-y-2.5 text-center w-full">
                           <div><strong>Specialization:</strong> Pharmacological Screening &amp; Experimental Validation</div>
-                          <div>
-                            <strong>ORCID ID:</strong>{' '}
+                          <div className="flex flex-wrap items-center justify-center gap-2.5 pt-1">
+                            {/* Official ORCID iD Logo Button */}
                             <a
                               href="https://orcid.org/0000-0003-0176-3504"
                               target="_blank"
                               rel="noopener noreferrer"
-                              className="text-[#1e3a8a] hover:underline font-semibold"
+                              title="Verified ORCID Profile (0000-0003-0176-3504)"
+                              aria-label="Dr. Sadik Shaik ORCID Profile"
+                              className="inline-flex items-center gap-1.5 px-3 py-1.5 rounded-full bg-[#f7fee7] hover:bg-[#ecfccb] border border-[#a6ce39]/60 text-slate-800 font-semibold text-xs transition shadow-2xs hover:scale-105 cursor-pointer"
                             >
-                              0000-0003-0176-3504
+                              <svg className="w-4 h-4 shrink-0" viewBox="0 0 256 256" aria-hidden="true">
+                                <circle cx="128" cy="128" r="128" fill="#A6CE39" />
+                                <path
+                                  fill="#FFFFFF"
+                                  d="M86.3 186.2H70.9V79.1h15.4v107.1zM78.6 47.2c-5.7 0-10.3 4.6-10.3 10.3 0 5.7 4.6 10.3 10.3 10.3s10.3-4.6 10.3-10.3c0-5.7-4.6-10.3-10.3-10.3zm30.3 31.9h41.6c39.6 0 57 28.3 57 53.6 0 27.5-21.5 53.6-56.8 53.6h-41.8V79.1zm15.4 93.3h24.5c34.9 0 42.9-26.5 42.9-39.7C191.7 111.2 178 93 148 93h-23.7v79.4z"
+                                />
+                              </svg>
+                              <span>ORCID</span>
                             </a>
-                          </div>
-                          <div>
-                            <strong>Google Scholar ID:</strong>{' '}
+
+                            {/* Official Google Scholar Verified Logo Button */}
                             <a
                               href="https://scholar.google.com/citations?user=x3mcFnUAAAAJ&hl=en"
                               target="_blank"
                               rel="noopener noreferrer"
-                              className="text-[#1e3a8a] hover:underline font-semibold"
+                              title="Verified Google Scholar Profile"
+                              aria-label="Dr. Sadik Shaik Google Scholar Profile"
+                              className="inline-flex items-center gap-1.5 px-3 py-1.5 rounded-full bg-blue-50 hover:bg-blue-100 border border-blue-300 text-[#1e3a8a] font-semibold text-xs transition shadow-2xs hover:scale-105 cursor-pointer"
                             >
-                              x3mcFnUAAAAJ (View Profile)
+                              <svg className="w-4 h-4 shrink-0" viewBox="0 0 24 24" aria-hidden="true">
+                                <path fill="#4285F4" d="M12 24a7 7 0 1 1 0-14 7 7 0 0 1 0 14zm0-24L0 9.5l4.838 3.94A8 8 0 0 1 12 9a8 8 0 0 1 7.162 4.44L24 9.5z" />
+                              </svg>
+                              <span>Google Scholar</span>
+                              <svg className="w-3.5 h-3.5 text-[#1d9bf0] shrink-0" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true">
+                                <path d="M22.25 12c0-1.43-.88-2.67-2.19-3.34.46-1.39.2-2.9-.81-3.91s-2.52-1.27-3.91-.81c-.66-1.31-1.91-2.19-3.34-2.19s-2.67.88-3.33 2.19c-1.4-.46-2.91-.2-3.92.81s-1.26 2.52-.8 3.91c-1.31.67-2.2 1.91-2.2 3.34s.89 2.67 2.2 3.34c-.46 1.39-.21 2.9.8 3.91s2.52 1.26 3.91.81c.67 1.31 1.91 2.19 3.34 2.19s2.68-.88 3.34-2.19c1.39.45 2.9.2 3.91-.81s1.27-2.52.81-3.91c1.31-.67 2.19-1.91 2.19-3.34zm-11.71 4.2L6.8 12.46l1.41-1.42 2.26 2.26 4.8-5.23 1.47 1.36-6.2 6.77z" />
+                              </svg>
                             </a>
                           </div>
                         </div>
