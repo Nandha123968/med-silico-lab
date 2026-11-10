@@ -9,7 +9,7 @@ export interface QuoteParams {
 export interface ServicePriceConfig {
   inr: number;
   usd: number;
-  unitType: 'fixed' | 'per_ligand';
+  unitType: 'fixed' | 'per_ligand' | 'flexible';
   minCompounds?: number;
   unitLabel: string;
 }
@@ -26,11 +26,11 @@ export const BASE_SERVICE_PRICES: Record<string, ServicePriceConfig> = {
   'nmr-characterization': { inr: 400, usd: 5, unitType: 'per_ligand', minCompounds: 1, unitLabel: 'per compound' },
   'ftir-characterization': { inr: 300, usd: 4, unitType: 'per_ligand', minCompounds: 1, unitLabel: 'per compound' },
   'lcms-analysis': { inr: 400, usd: 5, unitType: 'per_ligand', minCompounds: 1, unitLabel: 'per compound' },
-  'dft-calculation': { inr: 400, usd: 5, unitType: 'per_ligand', minCompounds: 1, unitLabel: 'per compound' },
-  'in-silico-vaccine-design': { inr: 2500, usd: 30, unitType: 'fixed', unitLabel: 'per project' },
+  'dft-calculation': { inr: 600, usd: 8, unitType: 'per_ligand', minCompounds: 1, unitLabel: 'per compound' },
+  'in-silico-vaccine-design': { inr: 12000, usd: 145, unitType: 'fixed', unitLabel: 'per project' },
   'bioinformatics': { inr: 1500, usd: 20, unitType: 'fixed', unitLabel: 'per project' },
-  'manuscript-preparation': { inr: 4000, usd: 50, unitType: 'fixed', unitLabel: 'per manuscript' },
-  'publication-guidance': { inr: 3000, usd: 38, unitType: 'fixed', unitLabel: 'per manuscript' },
+  'manuscript-preparation': { inr: 0, usd: 0, unitType: 'flexible', unitLabel: 'Flexible (Variable)' },
+  'publication-guidance': { inr: 0, usd: 0, unitType: 'flexible', unitLabel: 'Flexible (Variable)' },
   'plagiarism-checking': { inr: 400, usd: 5, unitType: 'fixed', unitLabel: 'per manuscript' },
   'journal-selection': { inr: 1000, usd: 12, unitType: 'fixed', unitLabel: 'per manuscript' },
 };

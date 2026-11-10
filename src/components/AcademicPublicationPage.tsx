@@ -38,11 +38,10 @@ export const AcademicPublicationPage: React.FC<AcademicPublicationPageProps> = (
   const plagiarismService = ORDERED_SERVICES.find(s => s.id === 'plagiarism-checking')!;
   const journalService = ORDERED_SERVICES.find(s => s.id === 'journal-selection')!;
 
-  // Dedicated Estimator State
+  // Dedicated Configurator State
   const [selectedPlan, setSelectedPlan] = useState<'manuscript' | 'publication' | 'plagiarism' | 'journal' | 'full-package'>('full-package');
   const [wordCount, setWordCount] = useState<number>(4500);
   const [turnaround, setTurnaround] = useState<'standard' | 'express'>('standard');
-  const [currency, setCurrency] = useState<'INR' | 'USD'>('INR');
 
   // Consultation Quick Form State
   const [formSubmitted, setFormSubmitted] = useState(false);
@@ -57,25 +56,6 @@ export const AcademicPublicationPage: React.FC<AcademicPublicationPageProps> = (
     manuscriptTitle: '',
     notes: '',
   });
-
-  // Calculate publication package estimates
-  const calculateCost = () => {
-    let baseInr = 0;
-    if (selectedPlan === 'manuscript') baseInr = 4000;
-    else if (selectedPlan === 'publication') baseInr = 3000;
-    else if (selectedPlan === 'plagiarism') baseInr = 400;
-    else if (selectedPlan === 'journal') baseInr = 1000;
-    else if (selectedPlan === 'full-package') baseInr = 8400;
-
-    if (turnaround === 'express') {
-      baseInr = Math.round(baseInr * 1.25);
-    }
-
-    if (currency === 'USD') {
-      return Math.max(5, Math.round(baseInr / 80));
-    }
-    return baseInr;
-  };
 
   const handleFormSubmit = (e: React.FormEvent) => {
     e.preventDefault();
@@ -482,7 +462,7 @@ export const AcademicPublicationPage: React.FC<AcademicPublicationPageProps> = (
           </div>
         </div>
 
-        {/* Interactive Academic Publication Fee Estimator */}
+        {/* Interactive Academic Publication Scope Configurator (Flexible / Variable — No Money Shown) */}
         <div className="bg-white text-slate-900 rounded-2xl p-6 sm:p-10 lg:p-12 mb-14 sm:mb-16 shadow-md border border-blue-200 font-times">
           <div className="grid grid-cols-1 lg:grid-cols-12 gap-8 items-stretch">
             
@@ -490,13 +470,13 @@ export const AcademicPublicationPage: React.FC<AcademicPublicationPageProps> = (
               <div>
                 <div className="inline-flex items-center gap-2 text-[#1e3a8a] font-times italic text-xs tracking-wider mb-2 font-semibold">
                   <Calculator className="w-4 h-4 text-[#1e3a8a]" />
-                  <span>Transparent Academic Fee Calculator</span>
+                  <span>Customized Academic Consultation</span>
                 </div>
                 <h3 className="text-xl sm:text-2xl lg:text-3xl font-normal text-slate-900 font-times">
-                  Estimate Your Publication Consulting Investment
+                  Configure Your Publication Consulting Scope
                 </h3>
                 <p className="font-times italic text-xs sm:text-sm text-slate-600 mt-1">
-                  Customized estimates based on manuscript word count, service package, and delivery turnaround.
+                  Flexible and variable support tailored to your manuscript word count, service package, and delivery turnaround.
                 </p>
               </div>
 
@@ -551,83 +531,51 @@ export const AcademicPublicationPage: React.FC<AcademicPublicationPageProps> = (
                 </div>
               </div>
 
-              {/* Turnaround & Currency Selection */}
-              <div className="grid grid-cols-1 sm:grid-cols-2 gap-4">
-                <div>
-                  <label className="block text-xs font-semibold uppercase tracking-wider text-slate-500 mb-2 font-times">
-                    Turnaround Speed:
-                  </label>
-                  <div className="flex gap-2 text-xs font-times">
-                    <button
-                      type="button"
-                      onClick={() => setTurnaround('standard')}
-                      className={`flex-1 py-2.5 px-3 rounded-lg border text-center transition cursor-pointer font-times ${
-                        turnaround === 'standard'
-                          ? 'bg-[#1e3a8a] border-[#1e3a8a] text-white font-semibold'
-                          : 'bg-slate-50 border-slate-200 text-slate-700 hover:border-slate-300'
-                      }`}
-                    >
-                      Standard (7-10d)
-                    </button>
-                    <button
-                      type="button"
-                      onClick={() => setTurnaround('express')}
-                      className={`flex-1 py-2.5 px-3 rounded-lg border text-center transition cursor-pointer font-times ${
-                        turnaround === 'express'
-                          ? 'bg-[#1e3a8a] border-[#1e3a8a] text-white font-semibold'
-                          : 'bg-slate-50 border-slate-200 text-slate-700 hover:border-slate-300'
-                      }`}
-                    >
-                      Express (3-5d)
-                    </button>
-                  </div>
-                </div>
-
-                <div>
-                  <label className="block text-xs font-semibold uppercase tracking-wider text-slate-500 mb-2 font-times">
-                    Currency:
-                  </label>
-                  <div className="flex gap-2 text-xs font-times">
-                    <button
-                      type="button"
-                      onClick={() => setCurrency('INR')}
-                      className={`flex-1 py-2.5 px-3 rounded-lg border text-center transition cursor-pointer font-times ${
-                        currency === 'INR'
-                          ? 'bg-[#1e3a8a] border-[#1e3a8a] text-white font-semibold'
-                          : 'bg-slate-50 border-slate-200 text-slate-700 hover:border-slate-300'
-                      }`}
-                    >
-                      INR (&#8377;)
-                    </button>
-                    <button
-                      type="button"
-                      onClick={() => setCurrency('USD')}
-                      className={`flex-1 py-2.5 px-3 rounded-lg border text-center transition cursor-pointer font-times ${
-                        currency === 'USD'
-                          ? 'bg-[#1e3a8a] border-[#1e3a8a] text-white font-semibold'
-                          : 'bg-slate-50 border-slate-200 text-slate-700 hover:border-slate-300'
-                      }`}
-                    >
-                      USD ($)
-                    </button>
-                  </div>
+              {/* Turnaround Selection */}
+              <div>
+                <label className="block text-xs font-semibold uppercase tracking-wider text-slate-500 mb-2 font-times">
+                  Turnaround Speed:
+                </label>
+                <div className="flex gap-2 text-xs font-times max-w-sm">
+                  <button
+                    type="button"
+                    onClick={() => setTurnaround('standard')}
+                    className={`flex-1 py-2.5 px-3 rounded-lg border text-center transition cursor-pointer font-times ${
+                      turnaround === 'standard'
+                        ? 'bg-[#1e3a8a] border-[#1e3a8a] text-white font-semibold'
+                        : 'bg-slate-50 border-slate-200 text-slate-700 hover:border-slate-300'
+                    }`}
+                  >
+                    Standard (7-10d)
+                  </button>
+                  <button
+                    type="button"
+                    onClick={() => setTurnaround('express')}
+                    className={`flex-1 py-2.5 px-3 rounded-lg border text-center transition cursor-pointer font-times ${
+                      turnaround === 'express'
+                        ? 'bg-[#1e3a8a] border-[#1e3a8a] text-white font-semibold'
+                        : 'bg-slate-50 border-slate-200 text-slate-700 hover:border-slate-300'
+                    }`}
+                  >
+                    Express (3-5d)
+                  </button>
                 </div>
               </div>
 
             </div>
 
-            {/* Estimated Quote Card */}
+            {/* Flexible / Variable Consultation Card (No Money Shown) */}
             <div className="lg:col-span-5 bg-gradient-to-br from-[#1e3a8a] via-[#1e40af] to-[#0f172a] text-white rounded-xl p-6 sm:p-8 border border-blue-900 text-center flex flex-col justify-between shadow-sm">
               <div>
                 <span className="text-xs uppercase font-times italic tracking-wider text-blue-200">
-                  Estimated Fee Total
+                  Consultation Fee Structure
                 </span>
-                <div className="text-3xl sm:text-5xl font-normal text-white my-3 font-times">
-                  {currency === 'INR' ? `₹${calculateCost().toLocaleString()}` : `$${calculateCost().toLocaleString()}`}
+                <div className="text-3xl sm:text-4xl font-normal text-white my-3 font-times">
+                  Flexible (Variable)
                 </div>
                 <div className="text-xs text-blue-100 font-times italic mb-6">
                   {turnaround === 'express' ? 'Includes priority 3–5 day express delivery.' : 'Includes standard 7–10 day comprehensive review.'}
-                  <br />Strict mutual NDA confidentiality included.
+                  <br />Customized based on manuscript scope &amp; target journal.
                 </div>
 
                 <div className="text-left text-xs text-blue-100 space-y-2 mb-6 font-times border-t border-blue-400/30 pt-4">

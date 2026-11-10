@@ -46,3 +46,16 @@ test('calculates MD simulation at 1800 per compound and Pharmacophore min 5 comp
   assert.equal(result.total, 6100);
   assert.equal(result.currency, 'INR');
 });
+
+test('calculates DFT at 600 per compound, Vaccine Design at 12000 per project, and Manuscript as flexible', () => {
+  const result = calculateConsultationEstimate({
+    serviceIds: ['dft-calculation', 'in-silico-vaccine-design', 'manuscript-preparation'],
+    ligandCount: 2,
+    isAcademicScholar: false,
+    currency: 'INR',
+  });
+
+  // DFT (600 * 2 = 1200) + Vaccine Design (12000) + Manuscript (0 flexible) = 13200
+  assert.equal(result.subtotal, 13200);
+  assert.equal(result.total, 13200);
+});

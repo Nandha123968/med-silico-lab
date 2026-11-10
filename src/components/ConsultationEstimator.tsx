@@ -47,6 +47,12 @@ export const ConsultationEstimator: React.FC<ConsultationEstimatorProps> = ({
   const hasPerCompoundService = selectedIds.some(
     (id) => BASE_SERVICE_PRICES[id]?.unitType === 'per_ligand'
   );
+  const hasFlexibleService = selectedIds.some(
+    (id) => BASE_SERVICE_PRICES[id]?.unitType === 'flexible'
+  );
+  const hasPricedService = selectedIds.some(
+    (id) => BASE_SERVICE_PRICES[id] && BASE_SERVICE_PRICES[id].unitType !== 'flexible'
+  );
 
   const hasQsarSelected = selectedIds.some((id) => ['qsar-study', '3d-qsar'].includes(id));
   const hasPharmacophoreSelected = selectedIds.includes('pharmacophore-modeling');
@@ -101,9 +107,11 @@ export const ConsultationEstimator: React.FC<ConsultationEstimatorProps> = ({
               const isSelected = selectedIds.includes(svc.id);
               const priceCfg = BASE_SERVICE_PRICES[svc.id];
               const priceText = priceCfg
-                ? currency === 'INR'
-                  ? `₹${priceCfg.inr.toLocaleString()} ${priceCfg.unitLabel}`
-                  : `$${priceCfg.usd} ${priceCfg.unitLabel}`
+                ? priceCfg.unitType === 'flexible'
+                  ? priceCfg.unitLabel
+                  : currency === 'INR'
+                    ? `₹${priceCfg.inr.toLocaleString()} ${priceCfg.unitLabel}`
+                    : `$${priceCfg.usd} ${priceCfg.unitLabel}`
                 : '';
 
               return (
@@ -204,7 +212,11 @@ export const ConsultationEstimator: React.FC<ConsultationEstimatorProps> = ({
               <div className="flex justify-between text-slate-400">
                 <span>Subtotal:</span>
                 <span className="font-mono text-slate-200">
-                  {currency === 'INR' ? `₹${estimate.subtotal.toLocaleString()}` : `$${estimate.subtotal.toLocaleString()}`}
+                  {!hasPricedService && hasFlexibleService
+                    ? 'Flexible (Variable)'
+                    : currency === 'INR'
+                      ? `₹${estimate.subtotal.toLocaleString()}${hasFlexibleService ? ' + Flexible' : ''}`
+                      : `$${estimate.subtotal.toLocaleString()}${hasFlexibleService ? ' + Flexible' : ''}`}
                 </span>
               </div>
 
@@ -219,8 +231,12 @@ export const ConsultationEstimator: React.FC<ConsultationEstimatorProps> = ({
 
               <div className="pt-3 border-t border-slate-800 flex justify-between items-baseline">
                 <span className="text-sm font-semibold text-white">Estimated Total:</span>
-                <span className="text-2xl font-bold font-mono text-blue-400">
-                  {currency === 'INR' ? `₹${estimate.total.toLocaleString()}` : `$${estimate.total.toLocaleString()}`}
+                <span className="text-xl sm:text-2xl font-bold font-mono text-blue-400 text-right">
+                  {!hasPricedService && hasFlexibleService
+                    ? 'Flexible'
+                    : currency === 'INR'
+                      ? `₹${estimate.total.toLocaleString()}${hasFlexibleService ? ' + Flexible' : ''}`
+                      : `$${estimate.total.toLocaleString()}${hasFlexibleService ? ' + Flexible' : ''}`}
                 </span>
               </div>
             </div>
