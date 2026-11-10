@@ -167,33 +167,55 @@ export const Footer: React.FC<FooterProps> = ({
             <h4 className="text-sm font-times font-normal text-slate-900 mb-4">
               Registered Offices &amp; Contact
             </h4>
-            <div className="space-y-3 text-xs sm:text-sm text-slate-700 font-times">
-              <div className="flex items-start gap-2.5">
-                <MapPin className="w-4 h-4 text-[#1e3a8a] shrink-0 mt-0.5" />
-                <div className="font-times text-slate-700 leading-relaxed text-xs">
-                  <span className="font-bold text-[#1e3a8a] block text-[11px] uppercase tracking-wider">Head Office:</span>
-                  Pahalamanpur-10, Ghodaghodi Municipality, Kailali, Nepal.
+            <div className="space-y-4 text-xs sm:text-sm text-slate-700 font-times">
+              {/* 1. Head Office */}
+              <div className="space-y-1.5">
+                <div className="flex items-start gap-2.5">
+                  <MapPin className="w-4 h-4 text-[#1e3a8a] shrink-0 mt-0.5" />
+                  <div className="font-times text-slate-700 leading-relaxed text-xs">
+                    <span className="font-bold text-[#1e3a8a] block text-[11px] uppercase tracking-wider">Head Office:</span>
+                    Pahalamanpur-10, Ghodaghodi Municipality, Kailali, Nepal.
+                  </div>
+                </div>
+                <div className="flex items-center gap-2.5 pl-0.5">
+                  <Mail className="w-4 h-4 text-[#1e3a8a] shrink-0" />
+                  <a href="mailto:contact@medsilicolab.com" className="font-times text-xs text-slate-700 hover:text-[#1e3a8a] transition">
+                    contact@medsilicolab.com
+                  </a>
                 </div>
               </div>
-              <div className="flex items-center gap-2.5 pt-1">
-                <Mail className="w-4 h-4 text-[#1e3a8a] shrink-0" />
-                <a href="mailto:contact@medsilicolab.com" className="font-times text-slate-700 hover:text-[#1e3a8a] transition">
-                  contact@medsilicolab.com
-                </a>
-              </div>
-              <div className="flex items-start gap-2.5 pt-1">
-                <MapPin className="w-4 h-4 text-[#1e3a8a] shrink-0 mt-0.5" />
-                <div className="font-times text-slate-700 leading-relaxed text-xs">
-                  <span className="font-bold text-[#1e3a8a] block text-[11px] uppercase tracking-wider">Branch Office:</span>
-                  Veerabhadreshwara Nagar Main Rd, Herohalli, Sunkadakatte, Bengaluru, Karnataka 560091, India.
+
+              {/* 2. Contact Office (India) */}
+              <div className="space-y-1.5 pt-2 border-t border-slate-200/60">
+                <div className="flex items-start gap-2.5">
+                  <MapPin className="w-4 h-4 text-[#1e3a8a] shrink-0 mt-0.5" />
+                  <div className="font-times text-slate-700 leading-relaxed text-xs">
+                    <span className="font-bold text-[#1e3a8a] block text-[11px] uppercase tracking-wider">Contact Office (India):</span>
+                    Veerabhadreshwara Nagar Main Rd, Herohalli, Sunkadakatte, Bengaluru, Karnataka 560091, India.
+                  </div>
+                </div>
+                <div className="flex items-center gap-2.5 pl-0.5">
+                  <Mail className="w-4 h-4 text-[#1e3a8a] shrink-0" />
+                  <a href="mailto:contact@medsilicolab.com" className="font-times text-xs text-slate-700 hover:text-[#1e3a8a] transition">
+                    contact@medsilicolab.com
+                  </a>
                 </div>
               </div>
-              <div className="flex items-start gap-2.5 pt-1">
-                <MapPin className="w-4 h-4 text-[#1e3a8a] shrink-0 mt-0.5" />
-                <div className="font-times text-slate-700 leading-relaxed text-xs">
-                  <span className="font-bold text-[#1e3a8a] block text-[11px] uppercase tracking-wider">Contact (US):</span>
-                  Los Angeles, California, US<br />
-                  <span>Mail: <a href="mailto:contact@medsilicolab.com" className="hover:text-[#1e3a8a] underline">contact@medsilicolab.com</a></span>
+
+              {/* 3. Contact Office (US) */}
+              <div className="space-y-1.5 pt-2 border-t border-slate-200/60">
+                <div className="flex items-start gap-2.5">
+                  <MapPin className="w-4 h-4 text-[#1e3a8a] shrink-0 mt-0.5" />
+                  <div className="font-times text-slate-700 leading-relaxed text-xs">
+                    <span className="font-bold text-[#1e3a8a] block text-[11px] uppercase tracking-wider">Contact Office (US):</span>
+                    Los Angeles, California, US.
+                  </div>
+                </div>
+                <div className="flex items-center gap-2.5 pl-0.5">
+                  <Mail className="w-4 h-4 text-[#1e3a8a] shrink-0" />
+                  <a href="mailto:contact@medsilicolab.com" className="font-times text-xs text-slate-700 hover:text-[#1e3a8a] transition">
+                    contact@medsilicolab.com
+                  </a>
                 </div>
               </div>
             </div>

@@ -268,25 +268,27 @@ export const ContactSection: React.FC<ContactSectionProps> = ({
                 </span>
                 <p className="font-times text-xs sm:text-sm text-slate-700">
                   Pahalamanpur-10, Ghodaghodi Municipality,<br />
-                  Kailali, Nepal
+                  Kailali, Nepal<br />
+                  <a href="mailto:contact@medsilicolab.com" className="text-xs text-[#1e3a8a] underline">contact@medsilicolab.com</a>
                 </p>
               </div>
               <div className="pt-2 border-t border-slate-100 text-center">
                 <span className="inline-block px-2 py-0.5 bg-slate-100 text-slate-700 text-[10px] font-bold uppercase tracking-wider rounded-xs mb-1">
-                  Branch Office
+                  Contact Office (India)
                 </span>
                 <p className="font-times text-xs sm:text-sm text-slate-700">
                   Veerabhadreshwara Nagar Main Rd, Herohalli,<br />
-                  Sunkadakatte, Bengaluru, Karnataka 560091, India
+                  Sunkadakatte, Bengaluru, Karnataka 560091, India<br />
+                  <a href="mailto:contact@medsilicolab.com" className="text-xs text-[#1e3a8a] underline">contact@medsilicolab.com</a>
                 </p>
               </div>
               <div className="pt-2 border-t border-slate-100 text-center">
                 <span className="inline-block px-2 py-0.5 bg-blue-50 text-[#1e3a8a] text-[10px] font-bold uppercase tracking-wider rounded-xs mb-1">
-                  Contact (US)
+                  Contact Office (US)
                 </span>
                 <p className="font-times text-xs sm:text-sm text-slate-700">
                   Los Angeles, California, US<br />
-                  <span className="text-xs text-slate-600">Mail: <a href="mailto:contact@medsilicolab.com" className="hover:text-[#1e3a8a] underline">contact@medsilicolab.com</a></span>
+                  <a href="mailto:contact@medsilicolab.com" className="text-xs text-[#1e3a8a] underline">contact@medsilicolab.com</a>
                 </p>
               </div>
             </div>
