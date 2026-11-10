@@ -59,3 +59,17 @@ test('calculates DFT at 600 per compound, Vaccine Design at 12000 per project, a
   assert.equal(result.subtotal, 13200);
   assert.equal(result.total, 13200);
 });
+
+test('calculates Nepal currency (NPR) rates accurately (1 INR = 1.6 NPR)', () => {
+  const result = calculateConsultationEstimate({
+    serviceIds: ['molecular-docking', 'dft-calculation', 'in-silico-vaccine-design'],
+    ligandCount: 2,
+    isAcademicScholar: false,
+    currency: 'NPR',
+  });
+
+  // Docking (480 * 2 = 960) + DFT (960 * 2 = 1920) + Vaccine Design (19200) = 22080 NPR
+  assert.equal(result.subtotal, 22080);
+  assert.equal(result.total, 22080);
+  assert.equal(result.currency, 'NPR');
+});

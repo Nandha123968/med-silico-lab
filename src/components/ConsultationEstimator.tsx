@@ -13,7 +13,9 @@ export const ConsultationEstimator: React.FC<ConsultationEstimatorProps> = ({
   const [selectedIds, setSelectedIds] = useState<string[]>(['molecular-docking']);
   const [ligandCount, setLigandCount] = useState<number>(3);
   const [isAcademic, setIsAcademic] = useState<boolean>(false);
-  const [currency, setCurrency] = useState<'INR' | 'USD'>('INR');
+  const [currency, setCurrency] = useState<'INR' | 'NPR' | 'USD'>('INR');
+
+  const currencySymbol = currency === 'INR' ? '₹' : currency === 'NPR' ? 'NPR ' : '$';
 
   const toggleService = (id: string) => {
     setSelectedIds((prev) => {
@@ -72,8 +74,8 @@ export const ConsultationEstimator: React.FC<ConsultationEstimatorProps> = ({
           </p>
         </div>
 
-        {/* Currency Switcher */}
-        <div className="flex items-center gap-2 p-1 bg-slate-100 rounded-lg self-start sm:self-auto shrink-0 font-times">
+        {/* Currency Switcher (India INR, Nepal NPR, International USD) */}
+        <div className="flex items-center gap-1.5 p-1 bg-slate-100 rounded-lg self-start sm:self-auto shrink-0 font-times">
           <button
             type="button"
             onClick={() => setCurrency('INR')}
@@ -82,6 +84,15 @@ export const ConsultationEstimator: React.FC<ConsultationEstimatorProps> = ({
             }`}
           >
             INR (&#8377;)
+          </button>
+          <button
+            type="button"
+            onClick={() => setCurrency('NPR')}
+            className={`px-3 py-1 text-xs font-semibold rounded cursor-pointer transition ${
+              currency === 'NPR' ? 'bg-white text-slate-900 shadow-xs' : 'text-slate-600 hover:text-slate-900'
+            }`}
+          >
+            NPR (&#2352;&#2370;)
           </button>
           <button
             type="button"
@@ -111,7 +122,9 @@ export const ConsultationEstimator: React.FC<ConsultationEstimatorProps> = ({
                   ? priceCfg.unitLabel
                   : currency === 'INR'
                     ? `₹${priceCfg.inr.toLocaleString()} ${priceCfg.unitLabel}`
-                    : `$${priceCfg.usd} ${priceCfg.unitLabel}`
+                    : currency === 'NPR'
+                      ? `NPR ${priceCfg.npr.toLocaleString()} ${priceCfg.unitLabel}`
+                      : `$${priceCfg.usd} ${priceCfg.unitLabel}`
                 : '';
 
               return (
@@ -175,10 +188,16 @@ export const ConsultationEstimator: React.FC<ConsultationEstimatorProps> = ({
                   <Info className="w-4 h-4 text-[#1e3a8a] shrink-0 mt-0.5" />
                   <div>
                     {hasQsarSelected && (
-                      <div><strong>QSAR Modeling:</strong> Minimum 15 compounds needed (&#8377;700 per compound).</div>
+                      <div>
+                        <strong>QSAR Modeling:</strong> Minimum 15 compounds needed (
+                        {currency === 'INR' ? '₹700' : currency === 'NPR' ? 'NPR 1,120' : '$9'} per compound).
+                      </div>
                     )}
                     {hasPharmacophoreSelected && (
-                      <div><strong>Pharmacophore Modeling:</strong> Minimum 5 compounds needed (&#8377;500 per compound).</div>
+                      <div>
+                        <strong>Pharmacophore Modeling:</strong> Minimum 5 compounds needed (
+                        {currency === 'INR' ? '₹500' : currency === 'NPR' ? 'NPR 800' : '$6'} per compound).
+                      </div>
                     )}
                   </div>
                 </div>
@@ -214,9 +233,7 @@ export const ConsultationEstimator: React.FC<ConsultationEstimatorProps> = ({
                 <span className="font-mono text-slate-200">
                   {!hasPricedService && hasFlexibleService
                     ? 'Flexible (Variable)'
-                    : currency === 'INR'
-                      ? `₹${estimate.subtotal.toLocaleString()}${hasFlexibleService ? ' + Flexible' : ''}`
-                      : `$${estimate.subtotal.toLocaleString()}${hasFlexibleService ? ' + Flexible' : ''}`}
+                    : `${currencySymbol}${estimate.subtotal.toLocaleString()}${hasFlexibleService ? ' + Flexible' : ''}`}
                 </span>
               </div>
 
@@ -224,7 +241,7 @@ export const ConsultationEstimator: React.FC<ConsultationEstimatorProps> = ({
                 <div className="flex justify-between text-emerald-400">
                   <span>Academic Subsidy (20%):</span>
                   <span className="font-mono">
-                    -{currency === 'INR' ? `₹${estimate.discountAmount.toLocaleString()}` : `$${estimate.discountAmount.toLocaleString()}`}
+                    -{currencySymbol}{estimate.discountAmount.toLocaleString()}
                   </span>
                 </div>
               )}
@@ -234,9 +251,7 @@ export const ConsultationEstimator: React.FC<ConsultationEstimatorProps> = ({
                 <span className="text-xl sm:text-2xl font-bold font-mono text-blue-400 text-right">
                   {!hasPricedService && hasFlexibleService
                     ? 'Flexible'
-                    : currency === 'INR'
-                      ? `₹${estimate.total.toLocaleString()}${hasFlexibleService ? ' + Flexible' : ''}`
-                      : `$${estimate.total.toLocaleString()}${hasFlexibleService ? ' + Flexible' : ''}`}
+                    : `${currencySymbol}${estimate.total.toLocaleString()}${hasFlexibleService ? ' + Flexible' : ''}`}
                 </span>
               </div>
             </div>

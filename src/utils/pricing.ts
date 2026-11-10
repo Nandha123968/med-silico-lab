@@ -3,11 +3,12 @@ export interface QuoteParams {
   ligandCount: number;
   mdTrajectoryNs?: number;
   isAcademicScholar: boolean;
-  currency: 'INR' | 'USD';
+  currency: 'INR' | 'NPR' | 'USD';
 }
 
 export interface ServicePriceConfig {
   inr: number;
+  npr: number;
   usd: number;
   unitType: 'fixed' | 'per_ligand' | 'flexible';
   minCompounds?: number;
@@ -15,31 +16,31 @@ export interface ServicePriceConfig {
 }
 
 export const BASE_SERVICE_PRICES: Record<string, ServicePriceConfig> = {
-  'molecular-docking': { inr: 300, usd: 4, unitType: 'per_ligand', minCompounds: 1, unitLabel: 'per compound' },
-  'adme-prediction': { inr: 150, usd: 2, unitType: 'per_ligand', minCompounds: 1, unitLabel: 'per compound' },
-  'toxicity-prediction': { inr: 150, usd: 2, unitType: 'per_ligand', minCompounds: 1, unitLabel: 'per compound' },
-  'md-simulations': { inr: 1800, usd: 22, unitType: 'per_ligand', minCompounds: 1, unitLabel: 'per compound' },
-  'qsar-study': { inr: 700, usd: 9, unitType: 'per_ligand', minCompounds: 15, unitLabel: 'per compound (Min. 15)' },
-  '3d-qsar': { inr: 700, usd: 9, unitType: 'per_ligand', minCompounds: 15, unitLabel: 'per compound (Min. 15)' },
-  'pharmacophore-modeling': { inr: 500, usd: 6, unitType: 'per_ligand', minCompounds: 5, unitLabel: 'per compound (Min. 5)' },
-  'network-pharmacology': { inr: 350, usd: 5, unitType: 'per_ligand', minCompounds: 1, unitLabel: 'per compound' },
-  'nmr-characterization': { inr: 400, usd: 5, unitType: 'per_ligand', minCompounds: 1, unitLabel: 'per compound' },
-  'ftir-characterization': { inr: 300, usd: 4, unitType: 'per_ligand', minCompounds: 1, unitLabel: 'per compound' },
-  'lcms-analysis': { inr: 400, usd: 5, unitType: 'per_ligand', minCompounds: 1, unitLabel: 'per compound' },
-  'dft-calculation': { inr: 600, usd: 8, unitType: 'per_ligand', minCompounds: 1, unitLabel: 'per compound' },
-  'in-silico-vaccine-design': { inr: 12000, usd: 145, unitType: 'fixed', unitLabel: 'per project' },
-  'bioinformatics': { inr: 1500, usd: 20, unitType: 'fixed', unitLabel: 'per project' },
-  'manuscript-preparation': { inr: 0, usd: 0, unitType: 'flexible', unitLabel: 'Flexible (Variable)' },
-  'publication-guidance': { inr: 0, usd: 0, unitType: 'flexible', unitLabel: 'Flexible (Variable)' },
-  'plagiarism-checking': { inr: 400, usd: 5, unitType: 'fixed', unitLabel: 'per manuscript' },
-  'journal-selection': { inr: 1000, usd: 12, unitType: 'fixed', unitLabel: 'per manuscript' },
+  'molecular-docking': { inr: 300, npr: 480, usd: 4, unitType: 'per_ligand', minCompounds: 1, unitLabel: 'per compound' },
+  'adme-prediction': { inr: 150, npr: 240, usd: 2, unitType: 'per_ligand', minCompounds: 1, unitLabel: 'per compound' },
+  'toxicity-prediction': { inr: 150, npr: 240, usd: 2, unitType: 'per_ligand', minCompounds: 1, unitLabel: 'per compound' },
+  'md-simulations': { inr: 1800, npr: 2880, usd: 22, unitType: 'per_ligand', minCompounds: 1, unitLabel: 'per compound' },
+  'qsar-study': { inr: 700, npr: 1120, usd: 9, unitType: 'per_ligand', minCompounds: 15, unitLabel: 'per compound (Min. 15)' },
+  '3d-qsar': { inr: 700, npr: 1120, usd: 9, unitType: 'per_ligand', minCompounds: 15, unitLabel: 'per compound (Min. 15)' },
+  'pharmacophore-modeling': { inr: 500, npr: 800, usd: 6, unitType: 'per_ligand', minCompounds: 5, unitLabel: 'per compound (Min. 5)' },
+  'network-pharmacology': { inr: 350, npr: 560, usd: 5, unitType: 'per_ligand', minCompounds: 1, unitLabel: 'per compound' },
+  'nmr-characterization': { inr: 400, npr: 640, usd: 5, unitType: 'per_ligand', minCompounds: 1, unitLabel: 'per compound' },
+  'ftir-characterization': { inr: 300, npr: 480, usd: 4, unitType: 'per_ligand', minCompounds: 1, unitLabel: 'per compound' },
+  'lcms-analysis': { inr: 400, npr: 640, usd: 5, unitType: 'per_ligand', minCompounds: 1, unitLabel: 'per compound' },
+  'dft-calculation': { inr: 600, npr: 960, usd: 8, unitType: 'per_ligand', minCompounds: 1, unitLabel: 'per compound' },
+  'in-silico-vaccine-design': { inr: 12000, npr: 19200, usd: 145, unitType: 'fixed', unitLabel: 'per project' },
+  'bioinformatics': { inr: 1500, npr: 2400, usd: 20, unitType: 'fixed', unitLabel: 'per project' },
+  'manuscript-preparation': { inr: 0, npr: 0, usd: 0, unitType: 'flexible', unitLabel: 'Flexible (Variable)' },
+  'publication-guidance': { inr: 0, npr: 0, usd: 0, unitType: 'flexible', unitLabel: 'Flexible (Variable)' },
+  'plagiarism-checking': { inr: 400, npr: 640, usd: 5, unitType: 'fixed', unitLabel: 'per manuscript' },
+  'journal-selection': { inr: 1000, npr: 1600, usd: 12, unitType: 'fixed', unitLabel: 'per manuscript' },
 };
 
 export function calculateConsultationEstimate(params: QuoteParams): {
   subtotal: number;
   discountAmount: number;
   total: number;
-  currency: 'INR' | 'USD';
+  currency: 'INR' | 'NPR' | 'USD';
   estimatedDays: number;
 } {
   const { serviceIds, ligandCount, isAcademicScholar, currency } = params;
@@ -50,7 +51,7 @@ export function calculateConsultationEstimate(params: QuoteParams): {
     const config = BASE_SERVICE_PRICES[id];
     if (!config) continue;
 
-    const baseCost = currency === 'INR' ? config.inr : config.usd;
+    const baseCost = currency === 'INR' ? config.inr : currency === 'NPR' ? config.npr : config.usd;
 
     if (config.unitType === 'per_ligand') {
       const minRequired = config.minCompounds ?? 1;
